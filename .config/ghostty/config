@@ -1,0 +1,5 @@
+theme = dark:Gruvbox Material,light:Gruvbox Material Light
+font-family = JetBrainsMono Nerd Font
+font-size = 13
+background-opacity = 0.9
+background-blur-radius = 20

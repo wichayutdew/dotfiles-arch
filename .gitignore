@@ -1,0 +1,29 @@
+# ignore everything
+/*
+
+# except these directories
+!/.config
+!/.1password
+!/.agents
+!AGENTS.md
+
+# except these files
+!.asdfrc
+!.gitignore
+!.gitconfig
+!README.md
+
+# pi coding agent config
+!/.pi
+
+# ignore RUST specific files
+.config/cargo/*
+!.config/cargo/config.toml
+!.config/cargo/.gitignore
+
+# ignore GitHub CLI authentication files
+.config/gh/hosts.yml
+
+# ignore fish environment file
+.config/fish/conf.d/environment.fish
+.config/fish/fish_variables
