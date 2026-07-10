@@ -1,5 +1,11 @@
 # ignore everything
 /*
+/.config/1Password
+/.config/dconf
+/.config/mozilla
+/.config/pulse
+/.config/spotify
+/.config/ZenNotes
 
 # except these directories
 !/.config
