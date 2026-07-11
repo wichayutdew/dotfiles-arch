@@ -57,6 +57,7 @@ local music = "spotify"
 
 hl.on("hyprland.start", function()
 	hl.exec_cmd("hypridle")
+	hl.exec_cmd("hyprpaper")
 	hl.exec_cmd("waybar")
 	hl.exec_cmd("vicinae server")
 end)
@@ -269,7 +270,11 @@ local meh = "ALT + SHIFT" -- Sets "Windows + Shift" key as main modifier
 ---------------------
 hl.bind("CTRL + ALT + Q", hl.dsp.exec_cmd("sh -c 'hyprlock --immediate-render'"))
 hl.bind("CTRL + ALT + SHIFT + Q", hl.dsp.exec_cmd("wlogout -b 4"))
-hl.bind("switch:on:Lid Switch", hl.dsp.exec_cmd("sh -c 'hyprlock --immediate-render & sleep 1 && systemctl suspend'"), { locked = true })
+hl.bind(
+	"switch:on:Lid Switch",
+	hl.dsp.exec_cmd("sh -c 'hyprlock --immediate-render & sleep 1 && systemctl suspend'"),
+	{ locked = true }
+)
 hl.config({
 	misc = {
 		allow_session_lock_restore = true,
