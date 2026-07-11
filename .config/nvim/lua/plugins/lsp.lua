@@ -26,6 +26,18 @@ return function()
 			cmd = { "lua-language-server" },
 			capabilities = lsp_capabilities,
 			filetypes = { "lua" },
+			settings = {
+				Lua = {
+					diagnostics = {
+						globals = { "hl" },
+					},
+					workspace = {
+						library = {
+							"/usr/share/hypr/stubs",
+						},
+					},
+				},
+			},
 		},
 		rust_analyzer = {
 			cmd = { "rust-analyzer" },
