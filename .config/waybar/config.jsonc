@@ -18,7 +18,8 @@
     "./modules/connections.jsonc",
     "./modules/battery.jsonc",
     "./modules/clock.jsonc",
-    "./modules/tray-notif.jsonc"
+    "./modules/tray-notif.jsonc",
+    "./modules/submap.jsonc"
   ],
   "modules-left": [
     "group/distro-group",
@@ -28,6 +29,7 @@
   "modules-center": [
     "power-profiles-daemon",
     "hyprland/workspaces",
+		"hyprland/submap",
     "idle_inhibitor"
   ],
   "modules-right": [

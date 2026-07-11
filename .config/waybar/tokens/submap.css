@@ -1,0 +1,31 @@
+#submap {
+    margin: 4px 5px;
+    padding: 6px 12px; /* Extra horizontal padding for the submap text */
+    background-color: @surface_container;
+    border-radius: 20px;
+    color: @tertiary;
+    
+    /* Smooth transition when fading in or changing modes */
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Hover effect (matches un-active workspace button hover) */
+#submap:hover {
+    background-color: @surface_container_highest;
+    color: @primary;
+}
+
+/* Optional sub-label spacing adjustment if you use multiple icons/labels */
+#submap label:first-child {
+    margin-right: 8px;
+}
+
+#submap label:last-child {
+    margin-left: 2px;
+}
+
+#submap.empty {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+}
