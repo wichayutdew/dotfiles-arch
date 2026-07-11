@@ -70,24 +70,6 @@ end)
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
 
-
----------------------
----- SCREEN LOCK ----
----------------------
--- Corrected: Use '--immediate-render' for fast drawing, and use sh -c to build an isolated shell thread
-local secure_sleep = hl.dsp.exec_cmd("sh -c 'hyprlock --immediate-render & sleep 1 && systemctl suspend'")
-
--- 1. Manual sleep keybind (Ctrl + Alt + Q)
-hl.bind("CTRL + ALT + Q", secure_sleep)
-
--- 2. Physical Lid Close switch binding
-hl.bind("switch:on:Lid Switch", secure_sleep, { locked = true })
-
-hl.config({
-	misc = {
-		allow_session_lock_restore = true,
-	},
-})
 -----------------------
 ----- PERMISSIONS -----
 -----------------------
@@ -277,15 +259,26 @@ hl.device({
 	sensitivity = -0.5,
 })
 
----------------------
----- KEYBINDINGS ----
----------------------
-
 local alt = "ALT"
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 local secondMod = "SUPER + SHIFT" -- Sets "Windows + Shift" key as main modifier
 local meh = "ALT + SHIFT" -- Sets "Windows + Shift" key as main modifier
 
+---------------------
+---- SCREEN LOCK ----
+---------------------
+hl.bind("CTRL + ALT + Q", hl.dsp.exec_cmd("sh -c 'hyprlock --immediate-render'"))
+hl.bind("CTRL + ALT + SHIFT + Q", hl.dsp.exec_cmd("wlogout"))
+hl.bind("switch:on:Lid Switch", hl.dsp.exec_cmd("sh -c 'hyprlock --immediate-render & sleep 1 && systemctl suspend'"), { locked = true })
+hl.config({
+	misc = {
+		allow_session_lock_restore = true,
+	},
+})
+
+---------------------
+---- KEYBINDINGS ----
+---------------------
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind(alt .. " + q", hl.dsp.window.close())
 hl.bind(alt .. " + Space", hl.dsp.exec_cmd(menu))
