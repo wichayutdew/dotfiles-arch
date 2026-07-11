@@ -28,8 +28,9 @@ hl.bind(
 	hl.dsp.exec_cmd("sh -c 'hyprlock --immediate-render & sleep 1 && systemctl suspend'"),
 	{ locked = true }
 )
+
 ---- APP LAUNCHER ----
-hl.define_submap("app_leader", function()
+hl.define_submap("🚀", function()
 	hl.bind("C", hl.dsp.exec_cmd(terminal))
 	hl.bind("B", hl.dsp.exec_cmd(browser))
 	hl.bind("P", hl.dsp.exec_cmd(pwdManager))
@@ -37,10 +38,10 @@ hl.define_submap("app_leader", function()
 	hl.bind("M", hl.dsp.exec_cmd(music))
 	hl.bind("catchall", hl.dsp.submap("reset"))
 end)
-hl.bind(opt .. " + A", hl.dsp.submap("app_leader"))
+hl.bind(opt .. " + A", hl.dsp.submap("🚀"))
 
 ---- WINDOW MANAGEMENT ----
-hl.define_submap("window_management", function()
+hl.define_submap("🪟", function()
 	hl.bind("H", hl.dsp.focus({ direction = "left" }))
 	hl.bind("L", hl.dsp.focus({ direction = "right" }))
 	hl.bind("K", hl.dsp.focus({ direction = "up" }))
@@ -53,7 +54,7 @@ hl.define_submap("window_management", function()
 	hl.bind("F", hl.dsp.window.fullscreen({ action = "toggle" }))
 	hl.bind("Q", hl.dsp.submap("reset"))
 end)
-hl.bind(opt .. " + B", hl.dsp.submap("window_management"))
+hl.bind(opt .. " + B", hl.dsp.submap("🪟"))
 
 ---- WORKSPACE ----
 hl.bind(opt .. " + S", hl.dsp.focus({ workspace = 1 }))

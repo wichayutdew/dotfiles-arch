@@ -1,6 +1,6 @@
 {
 	"hyprland/submap": {
-		"format": "✌️ Mode: {}",
+		"format": {},
 		"max-length": 20,
 		"tooltip": false
 	}
