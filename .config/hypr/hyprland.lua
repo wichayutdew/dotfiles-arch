@@ -268,7 +268,7 @@ local meh = "ALT + SHIFT" -- Sets "Windows + Shift" key as main modifier
 ---- SCREEN LOCK ----
 ---------------------
 hl.bind("CTRL + ALT + Q", hl.dsp.exec_cmd("sh -c 'hyprlock --immediate-render'"))
-hl.bind("CTRL + ALT + SHIFT + Q", hl.dsp.exec_cmd("wlogout"))
+hl.bind("CTRL + ALT + SHIFT + Q", hl.dsp.exec_cmd("wlogout -b 4"))
 hl.bind("switch:on:Lid Switch", hl.dsp.exec_cmd("sh -c 'hyprlock --immediate-render & sleep 1 && systemctl suspend'"), { locked = true })
 hl.config({
 	misc = {
