@@ -290,7 +290,7 @@ hl.bind(alt .. " + q", hl.dsp.window.close())
 hl.bind(alt .. " + Space", hl.dsp.exec_cmd(menu))
 
 -- Switch keyboard layout (English / Thai)
-hl.bind(alt .. " + grave", hl.dsp.exec_cmd("hyprctl switchxkblayout all next"))
+hl.bind(mainMod .. " + grave", hl.dsp.exec_cmd("hyprctl switchxkblayout all next"))
 
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
