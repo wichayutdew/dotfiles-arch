@@ -22,6 +22,7 @@
 
 # pi coding agent config
 !/.pi
+/.pi/agent/sessions/
 
 # ignore RUST specific files
 .config/cargo/*
