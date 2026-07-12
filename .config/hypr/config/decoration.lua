@@ -2,7 +2,6 @@
 -----------------------
 ---- LOOK AND FEEL ----
 -----------------------
-
 hl.config({
 	general = {
 		gaps_in = 5,
@@ -39,6 +38,9 @@ hl.config({
 	},
 	animations = {
 		enabled = true,
+	},
+	xwayland = {
+		force_zero_scaling = true,
 	},
 })
 
