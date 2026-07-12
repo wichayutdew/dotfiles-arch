@@ -142,19 +142,19 @@
 > `iommu=pt nvme_core.default_ps_max_latency_us=0`
 
 ```
-timeout: 5
+    timeout: 5
 
-/Arch Linux
- protocol: linux
- path: boot():/vmlinuz-linux
- cmdline: root=UUID={device-UUID} rw quiet iommu=pt nvme_core.default_ps_max_latency_us=0
- module_path: boot():/initramfs-linux.img
+    /Arch Linux
+     protocol: linux
+     path: boot():/vmlinuz-linux
+     cmdline: root=UUID={device-UUID} rw quiet iommu=pt nvme_core.default_ps_max_latency_us=0
+     module_path: boot():/initramfs-linux.img
 
-/Arch Linux (Fallback)
- protocol: linux
- path: boot():/vmlinuz-linux
- cmdline: root=UUID={device-UUID} rw iommu=pt nvme_core.default_ps_max_latency_us=0
- module_path: boot():/initramfs-linux-fallback.img
+    /Arch Linux (Fallback)
+     protocol: linux
+     path: boot():/vmlinuz-linux
+     cmdline: root=UUID={device-UUID} rw iommu=pt nvme_core.default_ps_max_latency_us=0
+     module_path: boot():/initramfs-linux-fallback.img
 ```
 
 ## Reboot for setting to reflect
@@ -191,33 +191,38 @@ timeout: 5
 ## Adding crucial packages
 
 ```bash
-## Fonts
-yay -S noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-jetbrains-mono
-## Wifi
-yay -S nmgui-bin
-## Bluetooth
-yay -S bluez bluez-utils blueman
-## Media/Audio
-yay -S pipewire pipewire-alsa pipewire-pulse pipewire-audio pipewire-jack wireplumber
-yay -S playerctl mpv
-yay -S pavucontrol  
-yay -S easyeffects gst-plugin-pipewire calf lsp-plugins zam-plugins-lv2 mda.lv2 yelp
-yay -S brightnessctl
-## Screenshot
-yay -S grim slurp satty
-## GUI Apps
-yay -S ghostty onlyoffice-bin spotify swaync zennotes firefox
-## Hyprland related
-yay -S hypridle hyprlock hyprpaper waybar wlogout
-## Terminal Essentials
-yay -S yazi 7zip unzip fish eza fish fzf imv jq lazygit neovim ripgrep starship tmux zoxide
-## AI
-yay -S pi-coding-agent
-## Coding Language Version manaer
-asdf-vm
-## etc.
-yay -S power-profiles-daemon tree-sitter-cli matugen-bin
+    ## Fonts
+    yay -S noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-jetbrains-mono
+    ## Wifi
+    yay -S nmgui-bin
+    ## Bluetooth
+    yay -S bluez bluez-utils blueman
+    ## Media/Audio
+    yay -S pipewire pipewire-alsa pipewire-pulse pipewire-audio pipewire-jack wireplumber
+    yay -S playerctl mpv
+    yay -S pavucontrol  
+    yay -S easyeffects gst-plugin-pipewire calf lsp-plugins zam-plugins-lv2 mda.lv2 yelp
+    yay -S brightnessctl
+    ## Screenshot
+    yay -S grim slurp satty
+    ## GUI Apps
+    yay -S ghostty onlyoffice-bin spotify swaync zennotes firefox
+    ## Hyprland related
+    yay -S hypridle hyprlock hyprpaper waybar wlogout
+    ## Terminal Essentials
+    yay -S yazi 7zip unzip fish eza fish fzf imv jq lazygit neovim ripgrep starship tmux zoxide
+    ## AI
+    yay -S pi-coding-agent
+    ## Coding Language Version manaer
+    asdf-vm
+    ## etc.
+    yay -S power-profiles-daemon tree-sitter-cli matugen-bin
+```
 
+# Make Fish default shell
+```bash
+    sudo tee -a /etc/shells
+    chsh -s /usr/sbin/fish
 ```
 
 # Reference
