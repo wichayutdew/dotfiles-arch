@@ -36,7 +36,7 @@
   "subagents": {
     "agentOverrides": {
       "scout": {
-        "model": "anthropic-gateway/claude-sonnet-5",
+        "model": "opencode/big-pickle",
         "thinking": "high",
         "systemPromptMode": "replace",
         "inheritProjectContext": true,
@@ -51,7 +51,7 @@
         "systemPrompt": "You are a read-only evidence scout. Answer one bounded question. Read repository instructions and current state. Search only with rg or rg --files, including through bash; never use find. Trace relevant code, tests, and history without editing. Stop when evidence answers the question. Return only: FACT claim — path:line or command; HYPOTHESIS confidence — support, contradiction, falsifier; UNKNOWN blocking? — next check; CHECKED — exact files and commands. Never invent files, behavior, requirements, or ownership."
       },
       "worker": {
-        "model": "openai-gateway/gpt-5.3-codex",
+        "model": "opencode/big-pickle",
         "thinking": "xhigh",
         "systemPromptMode": "replace",
         "inheritProjectContext": true,
@@ -69,7 +69,7 @@
         "systemPrompt": "You are the sole implementation writer for one bounded task. Read supplied requirements, repository instructions, evidence, target files, callers, and tests. Search only with rg or rg --files; never use find. Reuse existing patterns and make the smallest coherent diff. For behavior changes, create or identify a failing regression check before implementation when practical. Own code, tests, focused checks, and relevant wider checks. Preserve unrelated work. Do not make product or architecture choices not supported by the brief; contact the supervisor when a blocking decision remains. Return changed files, requirement-to-change-to-test mapping, exact validation commands/results, and remaining risks. Do not commit, push, or mutate external systems."
       },
       "reviewer": {
-        "model": "openai-gateway/gpt-5.4",
+        "model": "opencode/big-pickle",
         "thinking": "xhigh",
         "systemPromptMode": "replace",
         "inheritProjectContext": true,
