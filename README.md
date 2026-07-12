@@ -180,7 +180,7 @@
     reboot
 ```
 
-## Install yay
+## Install yay and Add crucial packages
 
 ```bash
     git clone https://aur.archlinux.org/yay-bin.git
@@ -188,35 +188,10 @@
     makepkg -si
     cd
     rm -rf yay-bin
+    cd .config
+    ./install-packages.sh
 ```
 
-## Adding crucial packages
-
-```bash
-    ## Fonts
-    yay -S noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-jetbrains-mono
-    ## Bluetooth
-    yay -S bluez bluez-utils
-    ## Media/Audio
-    yay -S pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber
-    yay -S easyeffects gst-plugin-pipewire calf lsp-plugins zam-plugins-lv2 mda.lv2
-    yay -S playerctl mpv
-    yay -S brightnessctl
-    ## Screenshot
-    yay -S grim slurp satty
-    ## GUI Apps
-    yay -S ghostty onlyoffice-bin spotify zennotes firefox
-    ## Hyprland related
-    yay -S hypridle hyprlock hyprpaper waybar
-    ## Terminal Essentials
-    yay -S yazi 7zip unzip fish eza fzf jq lazygit neovim ripgrep starship tmux zoxide
-    ## AI
-    yay -S pi-coding-agent
-    ## Coding Language Version manaer
-    yay -S mise
-    ## etc.
-    yay -S power-profiles-daemon tree-sitter-cli matugen-bin swaync trash-cli
-```
 
 # Make Fish default shell
 
