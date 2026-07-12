@@ -215,7 +215,7 @@
     ## Coding Language Version manaer
     yay -S mise
     ## etc.
-    yay -S power-profiles-daemon tree-sitter-cli matugen-bin swaync 
+    yay -S power-profiles-daemon tree-sitter-cli matugen-bin swaync trash-cli
 ```
 
 # Make Fish default shell
