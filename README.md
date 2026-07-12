@@ -183,9 +183,11 @@
 ## Install yay
 
 ```bash
-    git clone https://aur.archlinux.org/yay.git
-    cd yay
+    git clone https://aur.archlinux.org/yay-bin.git
+    cd yay-bin
     makepkg -si
+    cd
+    rm -rf yay-bin
 ```
 
 ## Adding crucial packages
@@ -193,30 +195,27 @@
 ```bash
     ## Fonts
     yay -S noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-jetbrains-mono
-    ## Wifi
-    yay -S nmgui-bin
     ## Bluetooth
-    yay -S bluez bluez-utils blueman
+    yay -S bluez bluez-utils
     ## Media/Audio
-    yay -S pipewire pipewire-alsa pipewire-pulse pipewire-audio pipewire-jack wireplumber
+    yay -S pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber
+    yay -S easyeffects gst-plugin-pipewire calf lsp-plugins zam-plugins-lv2 mda.lv2
     yay -S playerctl mpv
-    yay -S pavucontrol  
-    yay -S easyeffects gst-plugin-pipewire calf lsp-plugins zam-plugins-lv2 mda.lv2 yelp
     yay -S brightnessctl
     ## Screenshot
     yay -S grim slurp satty
     ## GUI Apps
-    yay -S ghostty onlyoffice-bin spotify swaync zennotes firefox
+    yay -S ghostty onlyoffice-bin spotify zennotes firefox
     ## Hyprland related
-    yay -S hypridle hyprlock hyprpaper waybar wlogout
+    yay -S hypridle hyprlock hyprpaper waybar
     ## Terminal Essentials
-    yay -S yazi 7zip unzip fish eza fish fzf imv jq lazygit neovim ripgrep starship tmux zoxide
+    yay -S yazi 7zip unzip fish eza fzf jq lazygit neovim ripgrep starship tmux zoxide
     ## AI
     yay -S pi-coding-agent
     ## Coding Language Version manaer
-    asdf-vm
+    yay -S mise
     ## etc.
-    yay -S power-profiles-daemon tree-sitter-cli matugen-bin
+    yay -S power-profiles-daemon tree-sitter-cli matugen-bin swaync 
 ```
 
 # Make Fish default shell

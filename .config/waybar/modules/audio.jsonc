@@ -12,7 +12,6 @@
         ""
       ]
     },
-    "on-click": "pavucontrol",
     "tooltip-format": "Output: {volume}%"
   },
   "pulseaudio#microphone": {

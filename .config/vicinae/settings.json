@@ -11,17 +11,18 @@
 {
    "$schema": "https://vicinae.com/schemas/config.json",
    "pop_to_root_on_close": true,
-   "escape_key_behavior": "close_window",
+   "escape_key_behavior": "",
+   "favicon_service": "twenty",
    "font": {
       "normal": {
-         "family": "JetBrainsMono Nerd Font",
+         "family": "JetBrainsMono Nerd Font Propo",
          "size": 10
       }
    },
    "theme": {
       "dark": {
-         "name": "zenwritten-dark",
-         "icon_theme": "Adwaita"
+         "name": "gruvbox-dark",
+         "icon_theme": "Breeze"
       }
    },
    "launcher_window": {
@@ -30,6 +31,11 @@
       }
    },
    "providers": {
+      "@Gelei/store.vicinae.bluetooth": {
+         "preferences": {
+            "connectionToggleable": true
+         }
+      },
       "clipboard": {
          "entrypoints": {
             "clear": {
