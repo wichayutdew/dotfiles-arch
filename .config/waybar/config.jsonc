@@ -15,6 +15,7 @@
     "./modules/workspace.jsonc",
     "./modules/idle-ihibitor.jsonc",
     "./modules/audio.jsonc",
+    "./modules/mpris.jsonc",
     "./modules/connections.jsonc",
     "./modules/battery.jsonc",
     "./modules/clock.jsonc",
@@ -24,7 +25,8 @@
   "modules-left": [
     "group/distro-group",
     "group/storage",
-    "group/system"
+    "group/system",
+    "mpris"
   ],
   "modules-center": [
     "power-profiles-daemon",

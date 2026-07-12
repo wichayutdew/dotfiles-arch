@@ -1,0 +1,18 @@
+{
+  "mpris": {
+    "format": "{player_icon} {artist} - {title}",
+    "format-icons": {
+      "spotify": "󰓇",
+      "firefox": "",
+      "default": "󰎆"
+    },
+    "player-icons": {
+      "default": "󰎆"
+    },
+    "max-length": 45,
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl next",
+    "on-click-middle": "playerctl previous",
+    "tooltip-format": "{title}\n{artist}\n{album}"
+  }
+}
