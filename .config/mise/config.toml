@@ -2,3 +2,4 @@
 java = "latest"
 node = "latest"
 rust = "latest"
+usage = "latest"
