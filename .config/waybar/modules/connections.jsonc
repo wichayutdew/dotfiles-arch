@@ -17,8 +17,7 @@
     "tooltip-format-wifi": "󱄙  {essid} ({signalStrength}%)\n\n󰐻  Freq: {frequency}GHz\n  {bandwidthDownBytes}   {bandwidthUpBytes}",
     "tooltip-format-ethernet": "󰈀  {ifname} (Connected)\n  {bandwidthDownBytes}   {bandwidthUpBytes}",
     "tooltip-format-linked": "󱘖 {ifname}: No IP Address",
-    "on-scroll-up": "nmcli radio wifi on",
-    "on-scroll-down": "nmcli radio wifi off"
+    "on-click-right": "bash -c 'if [ \"$(nmcli radio wifi)\" = \"enabled\" ]; then nmcli radio wifi off; else nmcli radio wifi on; fi'"
   },
   "bluetooth": {
     "format": "󰂯",
