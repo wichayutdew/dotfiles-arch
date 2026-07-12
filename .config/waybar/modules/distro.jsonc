@@ -8,21 +8,16 @@
     "on-click": "ghostty",
     "tooltip": false
   },
-  // "custom/code": {
-  //   "format": "󰨞",
-  //   "on-click": "code",
-  //   "tooltip": false
-  // },
   "custom/notes": {
     "format": "󰹕",
     "on-click": "zennotes",
     "tooltip": false
   },
-  // "custom/office": {
-  //   "format": "󰏆",
-  //   "on-click": "onlyoffice-desktopeditors",
-  //   "tooltip": false
-  // },
+  "custom/office": {
+    "format": "󰏆",
+    "on-click": "onlyoffice-desktopeditors",
+    "tooltip": false
+  },
   "custom/files": {
     "format": "",
     "on-click": "nemo",

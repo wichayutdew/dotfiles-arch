@@ -8,9 +8,8 @@
     "modules": [
       "custom/distro",
       "custom/terminal",
-      // "custom/code",
       "custom/notes",
-      // "custom/office",
+      "custom/office",
       "custom/files",
       "custom/spotify",
       "custom/browser"
