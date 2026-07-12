@@ -219,9 +219,31 @@
 ```
 
 # Make Fish default shell
+
 ```bash
     sudo tee -a /etc/shells
     chsh -s /usr/sbin/fish
+```
+
+# Vimium Keymap
+
+```
+unmap J
+unmap K
+map J nextTab
+map K previousTab
+unmap <c-e>
+unmap <c-y>
+unmap d
+unmap u
+map <c-d> scrollPageDown
+map <c-u> scrollPageUp
+unmap x
+map d removeTab
+unmap gt
+unmap gT
+unmap b
+unmap B
 ```
 
 # Reference
