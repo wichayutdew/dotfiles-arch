@@ -1,0 +1,47 @@
+# Satty Configuration
+[general]
+# Resize mode
+resize = { mode = "smart" }
+floating-hack = true
+
+# Save filename with timestamp — Ctrl+S saves here
+output-filename = "~/Pictures/Screenshots/%Y-%m-%d_%H:%M:%S.png"
+
+# Copy command for clipboard
+copy-command = "wl-copy"
+
+# Esc: save to clipboard, then exit
+actions-on-escape = ["save-to-clipboard", "exit"]
+
+# Enter: save to clipboard, then exit
+actions-on-enter = ["save-to-clipboard", "exit"]
+
+# Exit after save-to-file (Ctrl+S) but NOT after copy
+early-exit = ["save", "save-as"]
+
+# Default tool
+initial-tool = "brush"
+
+# Annotation size
+annotation-size-factor = 2
+
+no-window-decoration = false
+
+# Font for text annotations
+[font]
+family = "Sans"
+style = "Regular"
+
+# Tool selection shortcuts
+[keybinds]
+pointer = "p"
+crop = "c"
+brush = "b"
+line = "i"
+arrow = "z"
+rectangle = "r"
+ellipse = "e"
+text = "t"
+marker = "m"
+blur = "u"
+highlight = "g"

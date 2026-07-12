@@ -2,7 +2,6 @@
 ---------------------
 ---- KEYBINDINGS ----
 ---------------------
-
 ---- APPS ----
 local spotlight = "vicinae toggle"
 local terminal = "ghostty"
@@ -19,6 +18,15 @@ hl.bind(cmd .. " + Q", hl.dsp.window.close())
 hl.bind(cmd .. " + W", hl.dsp.window.close())
 hl.bind(cmd .. " + Space", hl.dsp.exec_cmd(spotlight))
 hl.bind(cmd .. " + grave", hl.dsp.exec_cmd("hyprctl switchxkblayout all next")) -- language switch
+
+---- SCREENSHOT ----
+local script = os.getenv("HOME") .. "/.config/hypr/script"
+-- Full screen capture
+hl.bind(cmd .. " + SHIFT + H", hl.dsp.exec_cmd(script .. "/screenshot.sh full"))
+-- Region selection + annotate
+hl.bind(cmd .. " + SHIFT + F", hl.dsp.exec_cmd(script .. "/screenshot.sh region"))
+-- Focused window capture
+hl.bind(cmd .. " + SHIFT + G", hl.dsp.exec_cmd(script .. "/screenshot.sh window"))
 
 ---- SCREEN LOCK ----
 hl.bind("CTRL + ALT + Q", hl.dsp.exec_cmd("sh -c 'hyprlock --immediate-render'"))
@@ -99,3 +107,4 @@ hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
+hl.bind("F7", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
