@@ -1,4 +1,5 @@
 [tools]
+bun = "latest"
 java = "latest"
 node = "latest"
 rust = "latest"
