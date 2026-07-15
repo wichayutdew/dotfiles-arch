@@ -168,5 +168,7 @@
   "editorPaddingX": 1,
   "autocompleteMaxVisible": 5,
   "transport": "auto",
-  "quietStartup": false
+  "quietStartup": false,
+  "defaultProvider": "opencode",
+  "defaultModel": "big-pickle"
 }
