@@ -179,6 +179,9 @@
                "enabled": false
             },
             "lock": {
+               "enabled": true
+            },
+            "sleep": {
                "enabled": false
             },
             "suspend": {
