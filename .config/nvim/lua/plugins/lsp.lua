@@ -15,6 +15,9 @@ return function()
 			"ktfmt",
 			"kotlin-debug-adapter",
 			"detekt",
+			"typescript-language-server",
+			"prettier",
+			"eslint-lsp",
 		},
 	})
 
@@ -68,6 +71,17 @@ return function()
 				"pom.xml",
 			},
 		},
+		ts_ls = {
+			cmd = { "typescript-language-server", "--stdio" },
+			capabilities = lsp_capabilities,
+			filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
+			root_markers = { "tsconfig.json", "jsconfig.json", "package.json" },
+		},
+		eslint = {
+			cmd = { "vscode-eslint-language-server", "--stdio" },
+			capabilities = lsp_capabilities,
+			filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact", "json" },
+		},
 	}
 
 	for server, config in pairs(servers) do
@@ -80,6 +94,8 @@ return function()
 		"marksman",
 		"jsonls",
 		"kotlin_lsp",
+		"ts_ls",
+		"eslint",
 	})
 
 	---------------------- Treesitter ---------------------
@@ -93,6 +109,8 @@ return function()
 				"json",
 				"kotlin",
 				"html",
+				"typescript",
+				"tsx",
 			})
 		end,
 	})
@@ -117,12 +135,20 @@ return function()
 			json = { "jq" },
 			cucumber = { "reformat-gherkin" },
 			kotlin = { "ktfmt" },
+			typescript = { "prettier" },
+			typescriptreact = { "prettier" },
+			javascript = { "prettier" },
+			javascriptreact = { "prettier" },
 		},
 	})
 
 	---------------------- Linter ---------------------
 	require("lint").linters_by_ft = {
 		kotlin = { "detekt" },
+		typescript = { "eslint" },
+		typescriptreact = { "eslint" },
+		javascript = { "eslint" },
+		javascriptreact = { "eslint" },
 	}
 
 	---------------------- Diagnostic Signs ---------------------
