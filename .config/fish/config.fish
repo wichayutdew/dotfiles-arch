@@ -23,6 +23,7 @@ alias leet 'nvim leetcode.nvim'
 alias cfg 'nvim ~/.config/fish/config.fish'
 alias so 'source ~/.config/fish/config.fish'
 alias cl 'clear'
+alias update-mirrorlist "sudo reflector --country TH,SG,JP,TW --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist"
 
 # ---- SHORT_HAND_ALIASES ----
 alias v 'nvim'

@@ -86,7 +86,7 @@
 
 ```bash
     pacman -S reflector ## if needed
-    reflector --latest --country {TH} --protocol http,https --sort rate --save /etc/pacman.d/mirrorlist
+    reflector --latest --country {TH} --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 ```
 
 ## Adding crucial packages and Preparing to enter Arch system
