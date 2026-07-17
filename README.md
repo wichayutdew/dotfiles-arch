@@ -227,15 +227,6 @@ Add `auth sufficient pam_howdy.so` to PAM files. Line placement matters — it m
 sudo sed -i '/^auth.*pam_faillock.so preauth$/a auth       sufficient                  pam_howdy.so' /etc/pam.d/system-auth
 ```
 
-## 1Password / Polkit Integration
-
-1Password uses polkit for unlock. `hyprpolkitagent` must be running in Hyprland session.
-
-```lua
--- Add to ~/.config/hypr/config/auto_start.lua
-hl.exec_cmd("/usr/lib/hyprpolkitagent/hyprpolkitagent")
-```
-
 ## Howdy Config
 
 Edit `/etc/howdy/config.ini`:
@@ -255,7 +246,7 @@ systemctl --user enable bluetooth.service
 systemctl --user enable NetworkManager
 systemctl --user enable power-profiles-daemon
 sudo systemctl enable linux-enable-ir-emitter
-systemctl --user enable hyprpolkitagent
+systemctl --user enable hyprpolkitagent-git
 ```
 
 # Vimium Keymap
