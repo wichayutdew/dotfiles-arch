@@ -192,12 +192,70 @@
     ./install-packages.sh
 ```
 
-
 # Make Fish default shell
 
 ```bash
     sudo tee -a /etc/shells
     chsh -s /usr/sbin/fish
+```
+
+# Howdy Face Authentication (Windows Hello equivalent)
+>
+> Hardware: requires IR camera (`/dev/video2` — verify with `v4l2-ctl --list-devices`)
+
+## Install & Setup
+
+```bash
+# Packages are in install-packages.sh (howdy-next, linux-enable-ir-emitter-bin)
+# After install, add user to video group
+sudo usermod -aG video $(whoami)
+# Log out and back in
+
+# Download models and enroll face
+sudo howdy download-models
+sudo howdy add
+```
+
+## PAM Configuration
+
+Add `auth sufficient pam_howdy.so` to PAM files. Line placement matters — it must come **before** the `include` or `pam_unix` lines.
+
+### system-wide
+
+```bash
+# /etc/pam.d/system-auth — insert after pam_faillock.so preauth
+sudo sed -i '/^auth.*pam_faillock.so preauth$/a auth       sufficient                  pam_howdy.so' /etc/pam.d/system-auth
+```
+
+## 1Password / Polkit Integration
+
+1Password uses polkit for unlock. `hyprpolkitagent` must be running in Hyprland session.
+
+```lua
+-- Add to ~/.config/hypr/config/auto_start.lua
+hl.exec_cmd("/usr/lib/hyprpolkitagent/hyprpolkitagent")
+```
+
+## Howdy Config
+
+Edit `/etc/howdy/config.ini`:
+
+```ini
+[video]
+device_path = /dev/video2       # IR camera path
+
+[face]
+sface_threshold = 0.55          # Lower = more permissive (default 0.6942)
+```
+
+## Systemctl Enable List
+
+``` bash
+systemctl --user enable bluetooth.service
+systemctl --user enable NetworkManager
+systemctl --user enable power-profiles-daemon
+sudo systemctl enable linux-enable-ir-emitter
+systemctl --user enable hyprpolkitagent
 ```
 
 # Vimium Keymap
@@ -227,3 +285,4 @@ unmap B
 - [Dualbooting Windows/Arch](https://youtu.be/9DO0MI2VtsE?si=_PuN-55sfGSMMFSu)
 - [Manually installing Arch without `archinstall`](https://youtu.be/TS1ghG3c3xI?si=EmsyB7bO_77lltoz)
 - [Installing Limine Bootloader}](https://gist.github.com/yovko/512326b904d120f3280c163abfbcb787)
+- [Howdy (Arch Wiki)](https://wiki.archlinux.org/title/Howdy)

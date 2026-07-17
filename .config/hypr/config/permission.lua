@@ -11,3 +11,4 @@ hl.config({
 
 hl.permission("/usr/(bin|local/bin)/grim", "screencopy", "allow")
 hl.permission("/usr/(lib|libexec|lib64)/xdg-desktop-portal-hyprland", "screencopy", "allow")
+hl.permission({ binary = "/usr/bin/hyprlock", type = "screencopy", mode = "allow" })

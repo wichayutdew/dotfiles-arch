@@ -55,6 +55,10 @@ PACKAGES=(
   hyprpaper
   waybar
 
+  # Face Authentication
+  howdy-next
+  linux-enable-ir-emitter-bin
+
   # Terminal Essentials
   yazi
   7zip
