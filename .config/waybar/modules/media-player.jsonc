@@ -3,7 +3,7 @@
     "format": "{player_icon} {artist} - {title}",
     "format-icons": {
       "spotify": "󰓇",
-      "firefox": "",
+      "zen": "",
       "default": "󰎆"
     },
     "player-icons": {

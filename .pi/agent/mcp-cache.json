@@ -2,7 +2,7 @@
   "version": 1,
   "servers": {
     "context7": {
-      "configHash": "27f88bc557510a4e237cf8d381ccd20ee83d3b5c9c5e7a8751a63949dcfecc38",
+      "configHash": "27c8f0f98532b3ed5eff141c9b6293fbbbe3edfeff0e6326c4f04fbbda651ddb",
       "tools": [
         {
           "name": "resolve-library-id",
@@ -50,7 +50,7 @@
         }
       ],
       "resources": [],
-      "cachedAt": 1783695982451
+      "cachedAt": 1784315195220
     },
     "gh_grep": {
       "configHash": "d2ba2a8172f1780f2dcc5f121b4d12bafb3cd4f00693285a3cc5a4c51858d4d7",
@@ -105,7 +105,7 @@
         }
       ],
       "resources": [],
-      "cachedAt": 1783695982450
+      "cachedAt": 1784315193588
     }
   }
 }
