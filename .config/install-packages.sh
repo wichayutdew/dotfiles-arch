@@ -83,6 +83,7 @@ PACKAGES=(
   swaync
   trash-cli
   openssh
+	darkman
 )
 
 echo "Installing ${#PACKAGES[@]} packages..."
