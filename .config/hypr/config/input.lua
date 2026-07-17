@@ -18,6 +18,18 @@ hl.config({
 	},
 })
 
+-- Target ONLY the laptop hardware for the custom triangular bindings
+local laptop_keyboard = "at-translated-set-2-keyboard"
+hl.device({
+	name = laptop_keyboard,
+	kb_options = "caps:backspace",
+})
+hl.bind(
+	"Backspace",
+	hl.dsp.send_shortcut({ mods = "", key = "Escape" }),
+	{ device = { inclusive = true, list = { laptop_keyboard } } }
+)
+
 hl.gesture({
 	fingers = 3,
 	direction = "horizontal",
