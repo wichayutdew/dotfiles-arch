@@ -5,7 +5,7 @@
 ---- APPS ----
 local spotlight = "vicinae toggle"
 local terminal = "ghostty"
-local browser = "firefox"
+local browser = "zen-browser"
 local pwdManager = "1password"
 local notes = "zennotes"
 local music = "spotify"
@@ -15,22 +15,20 @@ local opt = "SUPER"
 
 ---- BASIC COMMAND ----
 hl.bind(cmd .. " + Q", hl.dsp.window.close())
-hl.bind(cmd .. " + W", hl.dsp.window.close())
 hl.bind(cmd .. " + Space", hl.dsp.exec_cmd(spotlight))
 hl.bind(cmd .. " + grave", hl.dsp.exec_cmd("hyprctl switchxkblayout all next")) -- language switch
 
 ---- SCREENSHOT ----
 local script = os.getenv("HOME") .. "/.config/hypr/script"
--- Full screen capture
-hl.bind(cmd .. " + SHIFT + H", hl.dsp.exec_cmd(script .. "/screenshot.sh full"))
 -- Region selection + annotate
 hl.bind(cmd .. " + SHIFT + F", hl.dsp.exec_cmd(script .. "/screenshot.sh region"))
 -- Focused window capture
 hl.bind(cmd .. " + SHIFT + G", hl.dsp.exec_cmd(script .. "/screenshot.sh window"))
+-- Full screen capture
+hl.bind(cmd .. " + SHIFT + H", hl.dsp.exec_cmd(script .. "/screenshot.sh full"))
 
 ---- SCREEN LOCK ----
 hl.bind("CTRL + ALT + Q", hl.dsp.exec_cmd("sh -c 'hyprlock --immediate-render'"))
-hl.bind("CTRL + ALT + SHIFT + Q", hl.dsp.exec_cmd("wlogout -b 4"))
 hl.bind(
 	"switch:on:Lid Switch",
 	hl.dsp.exec_cmd("sh -c 'hyprlock --immediate-render & sleep 1 && systemctl suspend'"),
@@ -54,6 +52,7 @@ hl.define_submap("🪟", function()
 	hl.bind("L", hl.dsp.focus({ direction = "right" }))
 	hl.bind("K", hl.dsp.focus({ direction = "up" }))
 	hl.bind("J", hl.dsp.focus({ direction = "down" }))
+	hl.bind("Tab", hl.dsp.window.cycle_next())
 	hl.bind("SHIFT + H", hl.dsp.window.move({ direction = "left" }))
 	hl.bind("SHIFT + L", hl.dsp.window.move({ direction = "right" }))
 	hl.bind("SHIFT + K", hl.dsp.window.move({ direction = "up" }))

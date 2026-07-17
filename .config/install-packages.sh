@@ -47,7 +47,7 @@ PACKAGES=(
   onlyoffice-bin
   spotify
   zennotes
-  firefox
+  zen-browser-bin
 
   # Hyprland
   hypridle
