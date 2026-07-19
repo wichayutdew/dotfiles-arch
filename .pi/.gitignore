@@ -1,1 +1,7 @@
 node_modules/
+agent/auth.json
+agent/models-store.json
+agent/mcp-cache.json
+agent/mcp-oauth/
+agent/sessions/
+
