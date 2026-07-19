@@ -38,6 +38,7 @@ scroll_off = 0  # vim scrolloff — lines kept above/below the cursor (0 = off)
 time_format = "24h"  # clock format for the @time macro (12h or 24h)
 preview_max_width = 920  # max reading width for the preview (px)
 editor_max_width = 920  # max width of the editor column (px)
+completed_task_style = "none"  # none | strikethrough | gray | gray-strikethrough — style checked-task text
 line_number_mode = "relative"  # off | absolute | relative
 line_number_position = "text"  # text | edge
 word_wrap = true  # wrap long lines vs. scroll horizontally
