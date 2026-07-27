@@ -25,7 +25,7 @@ steps:
         block: "*"
     workspace:
       bindOn: [ready]
-      allowedRoots: ["../../worktrees"]
+      allowedRoots: ["../worktrees"]
     permissions:
       tools: [read, ls, bash]
       skills: [caveman, coding-standards, using-git-worktrees]
