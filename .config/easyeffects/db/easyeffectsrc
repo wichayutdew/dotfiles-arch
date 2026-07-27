@@ -8,5 +8,10 @@ inputDevice=alsa_input.pci-0000_c1_00.6.HiFi__Mic1__source
 mostUsedPresets=easyeffects_eq
 outputDevice=alsa_output.pci-0000_c1_00.6.HiFi__Speaker__sink
 plugins=equalizer#0
-usedPresets=easyeffects_eq:1
+usedPresets=easyeffects_eq:2
+visiblePage=pluginsPage
 visiblePlugin=equalizer#0
+
+[Window]
+height=841
+width=704
