@@ -1,9 +1,13 @@
 {
   "toolDescriptionMode": "compact",
-  "globalConcurrencyLimit": 3,
-  "maxSubagentSpawnsPerSession": 12,
+  "fleetView": false,
+  "asyncWidget": false,
+  "artifactDir": "session",
+  "worktreeBaseDir": "/Users/wphongphanpa/repositories/worktrees",
+  "globalConcurrencyLimit": 4,
+  "maxSubagentSpawnsPerSession": 100,
   "parallel": {
-    "maxTasks": 4,
-    "concurrency": 3
+    "maxTasks": 8,
+    "concurrency": 4
   }
 }

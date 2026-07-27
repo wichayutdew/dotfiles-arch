@@ -1,0 +1,56 @@
+{
+  "colorSources": {
+    "starship": "terminal",
+    "editor": "terminal",
+    "userMessages": "terminal"
+  },
+  "features": {
+    "copyFriendly": true,
+    "editor": true,
+    "statusLine": true
+  },
+  "fixedEditor": {
+    "enabled": true,
+    "copyNotice": true,
+    "mouseScroll": true
+  },
+  "contextStyle": "text+gauge",
+  "separator": "chevron",
+  "pathDisplay": {
+    "mode": "full",
+    "depth": 5
+  },
+  "gitBranch": {
+    "maxLength": "full"
+  },
+  "icons": {
+    "mode": "nerd"
+  },
+  "footerSegments": {
+    "gitCounts": true,
+    "sessionDuration": true,
+    "username": false,
+    "time": false,
+    "cwd": true,
+    "gitBranch": true,
+    "os": true,
+    "runtime": true,
+    "context": true,
+    "tokens": true,
+    "cost": true,
+    "packageVersion": true,
+    "gitCommit": true,
+    "gitMetrics": true,
+    "gitStatus": true
+  },
+  "extensionStatuses": {
+    "placements": {
+      "mcp": "middle",
+      "plannotator": "middle"
+    },
+    "colorModes": {
+      "mcp": "zentui",
+      "plannotator": "zentui"
+    }
+  }
+}

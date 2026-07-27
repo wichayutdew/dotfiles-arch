@@ -1,0 +1,203 @@
+# yaml-language-server: $schema=/Users/wphongphanpa/repositories/personal/pi-workflows/schemas/workflow.schema.json
+version: 1
+id: mr-review
+command: mr-review
+description: Fetch, approve, publish, and verify one hosted code review
+start: fetch
+maxStepVisits: 10
+summaryMaxChars: 50000
+steps:
+  fetch:
+    title: Fetch complete hosted-review evidence
+    prompt:
+      file: steps/mr-review/fetch.md
+    subagent:
+      agent: scout
+      context: fresh
+      timeoutMs: 1800000
+      retryToolFailures: true
+      turnBudget:
+        maxTurns: 40
+        graceTurns: 3
+      toolBudget:
+        soft: 100
+        hard: 180
+        block: "*"
+    permissions:
+      tools: [read, ls, bash]
+      mcp: &review-mcp
+        - gitlab/gitlab_get_merge_request
+        - gitlab/gitlab_get_merge_request_commits
+        - gitlab/gitlab_get_merge_request_diffs
+        - gitlab/gitlab_get_merge_request_pipelines
+        - gitlab/gitlab_get_pipeline_jobs
+        - gitlab/gitlab_get_merge_request_conflicts
+        - gitlab/gitlab_search
+        - context7/resolve-library-id
+        - context7/query-docs
+        - sourcegraph/code_finder
+        - sourcegraph/commit_search
+        - sourcegraph/diff_search
+        - sourcegraph/keyword_search
+        - sourcegraph/list_files
+        - sourcegraph/list_repos
+        - sourcegraph/nls_search
+        - sourcegraph/read_file
+        - gh_grep/searchGitHub
+      extensions: [pi-web-tools]
+      skills:
+        &review-fetch-skills [
+          caveman,
+          coding-standards,
+          caveman-review,
+          brainstorming,
+        ]
+      bash:
+        mode: allow-list
+        allow: &review-inspection-bash
+          - executable: grep
+          - executable: head
+          - executable: ls
+          - executable: pwd
+          - executable: rg
+          - executable: stat
+          - executable: tail
+          - executable: wc
+          - executable: git
+            argsPrefixes:
+              [
+                [status],
+                [diff],
+                [grep],
+                [log],
+                [ls-files],
+                [remote, -v],
+                [remote, get-url],
+                [rev-parse],
+                [show],
+              ]
+          - executable: gh
+            argsPrefixes: [[pr, view], [pr, diff], [pr, checks], [api]]
+          - executable: glab
+            argsPrefixes: [[mr, view], [mr, diff], [api]]
+    requires:
+      tools: [read, ls, bash]
+      skills: *review-fetch-skills
+    transitions:
+      fetched: review
+      blocked: $pause
+  review:
+    title: Produce and approve the complete hosted review
+    prompt:
+      file: steps/mr-review/review-for-approval.md
+    subagent:
+      agent: reviewer
+      context: fresh
+      timeoutMs: 1800000
+      retryToolFailures: true
+      turnBudget:
+        maxTurns: 40
+        graceTurns: 3
+      toolBudget:
+        soft: 100
+        hard: 180
+        block: "*"
+    permissions:
+      tools: [read, ls, bash]
+      mcp: *review-mcp
+      extensions: [pi-web-tools]
+      skills:
+        &review-skills [
+          caveman,
+          coding-standards,
+          caveman-review,
+          systematic-debugging,
+          verification-before-completion,
+        ]
+      bash:
+        mode: allow-list
+        allow: *review-inspection-bash
+    requires:
+      tools: [read, ls, bash]
+      skills: *review-skills
+    gate:
+      provider: plannotator
+      submitOutcome: submit
+      approvedOutcome: approved
+      rejectedOutcome: changes-requested
+      timeoutMs: 30000
+    transitions:
+      approved: publish
+      changes-requested: review
+      blocked: $pause
+  publish:
+    title: Publish the approved hosted review
+    prompt:
+      file: steps/mr-review/publish-approved.md
+    subagent:
+      agent: worker
+      context: fresh
+      timeoutMs: 900000
+      retryToolFailures: true
+      turnBudget:
+        maxTurns: 20
+        graceTurns: 2
+      toolBudget:
+        soft: 40
+        hard: 70
+        block: "*"
+    permissions:
+      tools: [bash]
+      skills:
+        &publish-skills [
+          caveman,
+          caveman-review,
+          verification-before-completion,
+        ]
+      bash:
+        mode: allow-list
+        allow:
+          - executable: gh
+            argsPrefixes: [[pr, view], [api]]
+          - executable: glab
+            argsPrefixes: [[mr, view], [api]]
+    requires:
+      tools: [bash]
+      skills: *publish-skills
+    transitions:
+      published: verify
+      blocked: $pause
+  verify:
+    title: Verify or return the approved review for publication repair
+    prompt:
+      file: steps/mr-review/verify-published.md
+    subagent:
+      agent: reviewer
+      context: fresh
+      timeoutMs: 900000
+      retryToolFailures: true
+      turnBudget:
+        maxTurns: 20
+        graceTurns: 2
+      toolBudget:
+        soft: 40
+        hard: 70
+        block: "*"
+    permissions:
+      tools: [bash]
+      skills: *publish-skills
+      bash:
+        mode: allow-list
+        allow:
+          - executable: gh
+            argsPrefixes: [[pr, view], [api]]
+          - executable: glab
+            argsPrefixes: [[mr, view], [api]]
+    requires:
+      tools: [bash]
+      skills: *publish-skills
+    transitions:
+      verified: $done
+      failed: publish
+      retry: verify
+      blocked: $pause

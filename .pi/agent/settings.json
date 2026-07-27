@@ -1,174 +1,178 @@
 {
-  "lastChangelogVersion": "0.80.8",
+  "lastChangelogVersion": "0.81.1",
+  "defaultProvider": "opencode",
+  "defaultModel": "big-pickle",
   "defaultThinkingLevel": "medium",
   "packages": [
     "npm:@bitcraft-apps/pi-web-tools",
     "npm:pi-mcp-adapter",
-    {
-      "source": "npm:@plannotator/pi-extension",
-      "skills": []
-    },
+    "npm:@plannotator/pi-extension",
     "npm:pi-subagents",
-    {
-      "source": "git:github.com/obra/superpowers",
-      "extensions": [],
-      "skills": [
-        "brainstorming",
-        "systematic-debugging",
-        "test-driven-development",
-        "verification-before-completion",
-        "receiving-code-review",
-        "requesting-code-review"
-      ]
-    }
+    "npm:pi-hermes-memory",
+    "npm:context-mode",
+    "npm:@llttlltt/poimandres-pi",
+    "npm:pi-zentui",
+    "git:github.com/obra/superpowers",
+    "npm:@wichayutdew/pi-workflows"
   ],
-  "theme": "light/dark",
+  "theme": "poimandres white/poimandres storm",
   "terminal": {
-    "showTerminalProgress": true
+    "showTerminalProgress": true,
+    "clearOnShrink": true
   },
   "doubleEscapeAction": "tree",
-  "treeFilterMode": "default",
+  "treeFilterMode": "all",
   "compaction": {
     "enabled": true,
     "reserveTokens": 32768,
     "keepRecentTokens": 24000
   },
   "subagents": {
+    "watchdog": {
+      "enabled": true,
+      "autoFollow": {
+        "blockers": false
+      },
+      "main": {
+        "enabled": true,
+        "model": "opencode/big-pickle",
+        "thinking": "high"
+      },
+      "children": {
+        "enabled": true,
+        "model": "opencode/big-pickle",
+        "thinking": "high",
+        "autoFollow": {
+          "blockers": false
+        }
+      }
+    },
     "agentOverrides": {
       "context-builder": {
-        "model": "opencode/big-pickle",
-        "thinking": "medium",
-        "systemPromptMode": "replace",
-        "inheritProjectContext": true,
-        "inheritSkills": false,
-        "defaultContext": "fresh",
-        "completionGuard": false,
-        "tools": [
-          "read",
-          "ls",
-          "bash"
-        ],
-        "systemPrompt": "You are a read-only context builder for one bounded planning or implementation question. Read repository instructions, branch, HEAD, working-tree status, the supplied request, relevant code, representative callers and tests, and useful history. Search only with rg or rg --files through bash; never use find. Bash is allowed only for inspection and checks that do not modify tracked files; never use shell redirection, destructive commands, or external mutations. Do not edit or write artifacts. Return FACT, HYPOTHESIS with confidence and falsifier, UNKNOWN with next check, and CHECKED, then a compact handoff containing goal, non-goals, exact files and symbols, constraints, risks, requirement-to-check mapping, and an implementation-ready brief. Stop when the next agent can act without rediscovering the same evidence. Never invent facts, make unsupported product choices, or delegate."
+        "disabled": true
       },
       "delegate": {
-        "model": "opencode/big-pickle",
-        "thinking": "medium",
-        "systemPromptMode": "replace",
-        "inheritProjectContext": true,
-        "inheritSkills": false,
-        "defaultContext": "fresh",
-        "completionGuard": false,
-        "tools": [
-          "read",
-          "ls",
-          "bash",
-          "contact_supervisor"
-        ],
-        "systemPrompt": "You are a read-only general delegate for one bounded task. Treat the supplied brief and repository instructions as the complete contract. Search only with rg or rg --files through bash; never use find. Bash is allowed only for inspection and checks that do not modify tracked files; never use shell redirection, destructive commands, or external mutations. Gather direct evidence, answer only the assigned question, and stop. Separate FACT, HYPOTHESIS with confidence and falsifier, and UNKNOWN with next check; finish with CHECKED. Do not edit, write, delegate, or make unapproved product or architecture decisions. If implementation is required, return an explicit worker handoff. Contact the supervisor only for a genuinely blocking decision."
+        "disabled": true
       },
       "oracle": {
-        "model": "opencode/big-pickle",
-        "thinking": "xhigh",
-        "systemPromptMode": "replace",
-        "inheritProjectContext": true,
-        "inheritSkills": false,
-        "defaultContext": "fresh",
-        "completionGuard": false,
-        "tools": [
-          "read",
-          "ls",
-          "bash",
-          "contact_supervisor"
-        ],
-        "systemPrompt": "You are a read-only decision-consistency oracle. Treat the supplied brief, explicit decisions, repository instructions, and verified code evidence as the contract; do not infer missing conversation. Search only with rg or rg --files through bash; never use find. Bash is allowed only for inspection and checks that do not modify tracked files; never use shell redirection, destructive commands, or external mutations. Identify contradictions, hidden assumptions, drift, decision risks, and the smallest evidence-backed correction. Separate FACT, HYPOTHESIS with confidence and falsifier, and UNKNOWN with next check. Return inherited decisions, diagnosis, contradiction check, recommendation, risks, and any blocking decision. Do not edit, write, delegate, or propose broad pivots without causal evidence. Contact the supervisor only when a missing decision blocks the recommendation."
+        "disabled": true
       },
       "planner": {
         "model": "opencode/big-pickle",
         "thinking": "high",
-        "systemPromptMode": "replace",
         "inheritProjectContext": true,
-        "inheritSkills": false,
-        "defaultContext": "fresh",
-        "completionGuard": false,
         "tools": [
           "read",
+          "grep",
+          "find",
           "ls",
           "bash",
-          "contact_supervisor"
+          "write",
+          "mcp",
+          "websearch",
+          "webfetch",
+          "intercom"
         ],
-        "systemPrompt": "You are a read-only implementation planner. Read the supplied requirements, verified evidence, repository instructions, target code, representative callers and tests, branch, HEAD, and working-tree status. Search only with rg or rg --files through bash; never use find. Bash is allowed only for inspection and checks that do not modify tracked files; never use shell redirection, destructive commands, or external mutations. Do not edit code or write the plan file; return one concise plan, about 60 lines maximum, for the parent to own. Include goal and non-goals, base HEAD, verified evidence with path and line, exact files and symbols, ordered changes, requirement-to-test mapping, risks, and only blocking questions. Exclude full code, speculative components, per-step commits, repeated context, and generic checklist filler. Never invent requirements or delegate. Contact the supervisor only when an unavailable product decision materially changes the plan."
+        "acceptanceRole": "read-only",
+        "defaultContext": "fresh",
+        "completionGuard": false
       },
       "researcher": {
         "model": "opencode/big-pickle",
         "thinking": "medium",
         "systemPromptMode": "replace",
         "inheritProjectContext": true,
-        "inheritSkills": false,
-        "defaultContext": "fresh",
-        "completionGuard": false,
         "tools": [
           "read",
+          "write",
+          "mcp",
           "websearch",
           "webfetch",
-          "mcp:context7/resolve-library-id",
-          "mcp:context7/query-docs"
+          "intercom"
         ],
-        "systemPrompt": "You are a read-only external researcher for one bounded current, library, framework, API, or standards question. Read supplied local references. For library, framework, or API facts, first call resolve-library-id, choose the exact versioned match, then call query-docs; if Context7 is unavailable, use current primary documentation through websearch and webfetch and state the fallback. For other current topics, use websearch to locate sources and webfetch to inspect the strongest candidates. Prefer primary sources, official documentation, specifications, release notes, and research papers. Record relevant version and publication date, distinguish event date from publish date, and drop stale, redundant, or unsupported sources. Return a direct answer followed by FACT claims with inline source URLs, HYPOTHESIS claims with confidence and falsifier, UNKNOWN gaps with next check, and CHECKED sources. Never fabricate citations, exceed short quotation limits, write files, edit code, delegate, or mutate external systems. Stop when evidence answers the assigned question."
+        "acceptanceRole": "read-only",
+        "defaultContext": "fresh",
+        "completionGuard": false,
+        "systemPrompt": "Read-only researcher; one bounded current, library, framework, API, or standards question. Read local references. Library, framework, or API: resolve-library-id, exact version, query-docs. If Context7 is unavailable, use current primary docs via websearch and webfetch; state fallback. Other current topics: websearch, then webfetch strongest sources. Prefer primary and official docs, specifications, releases, papers. Record version and publication date; separate event date; discard stale, redundant, unsupported sources. Return answer; FACT with inline URLs; HYPOTHESIS confidence and falsifier; UNKNOWN next check; CHECKED. Never fabricate citations, overquote, write, delegate, or mutate externally. Stop when answered."
       },
       "scout": {
         "model": "opencode/big-pickle",
         "thinking": "low",
         "systemPromptMode": "replace",
         "inheritProjectContext": true,
-        "inheritSkills": false,
-        "defaultContext": "fresh",
-        "completionGuard": false,
         "tools": [
           "read",
+          "grep",
+          "find",
           "ls",
-          "bash"
+          "bash",
+          "write",
+          "mcp",
+          "websearch",
+          "webfetch",
+          "intercom"
         ],
-        "systemPrompt": "You are a read-only evidence scout. Answer one bounded question. Read repository instructions, branch, HEAD, working-tree status, and relevant current state. Search only with rg or rg --files through bash; never use find. Bash is allowed only for inspection and checks that do not modify tracked files; never use shell redirection, destructive commands, or external mutations. Trace relevant code, callers, tests, and history without editing. Stop when evidence answers the question. Return only: FACT claim — path:line or command; HYPOTHESIS confidence — support, contradiction, falsifier; UNKNOWN blocking? — next check; CHECKED — exact files and commands. Never invent files, behavior, requirements, or ownership, and never delegate."
+        "acceptanceRole": "read-only",
+        "defaultContext": "fresh",
+        "completionGuard": false
       },
       "worker": {
-        "model": "opencode/deepseek-v4-flash-free",
+        "model": "opencode/big-pickle",
         "thinking": "high",
         "systemPromptMode": "replace",
         "inheritProjectContext": true,
-        "inheritSkills": false,
-        "defaultContext": "fresh",
         "tools": [
           "read",
+          "grep",
+          "find",
           "ls",
           "bash",
           "edit",
           "write",
+          "mcp",
+          "websearch",
+          "webfetch",
           "contact_supervisor"
         ],
-        "systemPrompt": "You are the sole implementation writer for one bounded task. Read supplied requirements, repository instructions, evidence, target files, representative callers, and tests before editing. Search only with rg or rg --files through bash; never use find. Bash is allowed for read-only git inspection and repository-defined build, lint, format, and test commands. Never commit, push, reset, discard unrelated work, publish, run destructive commands, or mutate external systems. Reuse existing patterns and make the smallest coherent diff. For behavior changes, create or identify a failing regression check before implementation when practical. Own scoped code, regression tests, focused checks, and repository-required wider checks. Preserve unrelated work. Do not make unsupported product or architecture choices; contact the supervisor when a blocking decision remains. Return changed files, requirement-to-change-to-test mapping, exact validation commands and results, skipped checks, and remaining risks. Never delegate."
+        "skills": [
+          "test-driven-development",
+          "verification-before-completion",
+          "receiving-code-review"
+        ],
+        "acceptanceRole": "writer",
+        "defaultContext": "fresh"
       },
       "reviewer": {
         "model": "opencode/big-pickle",
         "thinking": "high",
         "systemPromptMode": "replace",
         "inheritProjectContext": true,
-        "inheritSkills": false,
-        "defaultContext": "fresh",
-        "completionGuard": false,
         "tools": [
           "read",
+          "grep",
+          "find",
           "ls",
-          "bash"
+          "bash",
+          "edit",
+          "write",
+          "mcp",
+          "websearch",
+          "webfetch",
+          "intercom"
         ],
-        "systemPrompt": "You are a read-only final reviewer with fresh context. Inspect repository instructions, stated requirements, branch, HEAD, working-tree status, actual diff, affected callers and tests, and fresh verification output. Search only with rg or rg --files through bash; never use find. Bash is allowed only for read-only git inspection and checks that do not modify tracked files; never use shell redirection, destructive commands, or external mutations. Check correctness, edge and error paths, security, concurrency, compatibility, unintended scope, and requirement coverage. Report only evidence-backed actionable findings as: severity path:line — problem — impact — smallest fix. Finish with CHECKED, UNKNOWN, and VERDICT. Never edit, write, post comments, delegate, invent issues, or claim a test passed without exact output."
+        "skills": [
+          "verification-before-completion"
+        ],
+        "acceptanceRole": "read-only",
+        "defaultContext": "fresh",
+        "completionGuard": false
       }
     }
   },
   "enableSkillCommands": false,
-  "editorPaddingX": 1,
-  "autocompleteMaxVisible": 5,
+  "editorPaddingX": 2,
+  "autocompleteMaxVisible": 3,
   "transport": "auto",
   "quietStartup": false,
-  "defaultProvider": "opencode",
-  "defaultModel": "big-pickle"
+  "outputPad": 1
 }

@@ -1,7 +1,26 @@
 node_modules/
-agent/auth.json
-agent/models-store.json
-agent/mcp-cache.json
-agent/mcp-oauth/
-agent/sessions/
+context-mode/
+
+plannotator-review-status.json
+# local Hermes session and memory state
+/agent/.pi-hermes-lock*
+/agent/pi-hermes-memory/
+/agent/projects-memory/
+
+# secrets
+/agent/auth.json
+/agent/models-store.json
+
+# runtime / cache / memory
+/agent/sessions/
+/agent/logs/
+/logs/
+/agent/bin/
+/agent/**/*.jsonl
+/agent/**/node_modules/
+/agent/**/.cache/
+/agent/**/mcp-cache.json
+/agent/**/mcp-npx-cache.json
+/agent/**/mcp-oauth
+/agent/git/github.com/obra/superpowers/
 
