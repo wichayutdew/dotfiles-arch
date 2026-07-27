@@ -15,6 +15,7 @@
 /.config/spotify
 /.config/ZenNotes
 /.config/zen
+/.config/obs-studio
 
 # except these directories
 !/.config
