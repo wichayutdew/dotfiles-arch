@@ -13,7 +13,8 @@ hl.config({
 		sensitivity = 0, -- -1.0 - 1.0, 0 means no modification.
 		touchpad = {
 			natural_scroll = true,
-			scroll_factor = 0.5,
+			scroll_factor = 1.0,
+			disable_while_typing = true,
 		},
 	},
 })
@@ -37,7 +38,17 @@ hl.gesture({
 })
 
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Devices/ for more
--- hl.device({
--- 	name = "epic-mouse-v1",
--- 	sensitivity = -0.5,
--- })
+-- Logitech MX Master 3S — snappy acceleration + boosted sensitivity
+hl.device({
+	name = "logitech-mx-master-3s",
+	sensitivity = 0.15,
+	scroll_factor = 1.5,
+	accel_profile = "adaptive",
+})
+
+-- Catch-all for bluetooth / other mice — adaptive accel for snappy feel
+hl.device({
+	name = ".*",
+	accel_profile = "adaptive",
+	sensitivity = 0.1,
+})
