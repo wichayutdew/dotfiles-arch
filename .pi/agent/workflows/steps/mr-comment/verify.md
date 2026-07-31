@@ -11,7 +11,7 @@ Immutable approved plan:
 Approval feedback:
 {{reviewed.feedback}}
 
-Implementation ledger:
+Implementation ledger or blocked recovery handoff:
 {{last.summary}}
 
 Re-fetch the same-host review head and comments read-only. Verify the current
@@ -25,7 +25,9 @@ unavailable, timed-out, blocked, or failing required check is non-passing.
 Verify that every planned reply is accurate for the resulting code and still
 targets the same unresolved comment/anchor. Verify each remote action is
 same-host, non-force, idempotently observable, and limited to the approved push
-and public comment replies. Never execute one here.
+and public comment replies. When a code fix was committed, require its matching
+non-force push action before the replies. A valid unresolved review comment
+requires its approved public reply action. Never execute one here.
 
 Call `structured_output` alone:
 
@@ -37,7 +39,12 @@ Call `structured_output` alone:
 - `blocked` for stale head/branch/anchor/scope/authority or exhausted recovery.
 
 For `ready`, repeat complete evidence and the exact approved fenced JSON
-appendix in `summary` so the publisher receives the reviewed actions unchanged.
+appendix in `summary` so the publisher automatically receives and executes the
+reviewed actions unchanged. Do not ask the user to push or post a reply.
 For `failed`, include the smallest corrective implementation handoff and the
 unchanged appendix. Never push, post, resolve, approve, merge, close, delete, or
 force-push. Do not ask a terminal question.
+On a retry after `blocked`, re-check the blocked source or reconciliation issue
+and use any remaining safe relevant alternative;
+do not repeat an exhausted attempt without a changed precondition. Do not ask a
+terminal question.

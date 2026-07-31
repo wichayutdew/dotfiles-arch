@@ -96,8 +96,8 @@ steps:
       timeoutMs: 1800000
       retryToolFailures: true
       turnBudget:
-        maxTurns: 40
-        graceTurns: 3
+        maxTurns: 90
+        graceTurns: 5
       toolBudget:
         soft: 100
         hard: 180
@@ -200,4 +200,4 @@ steps:
       verified: $done
       failed: publish
       retry: verify
-      blocked: $pause
+      blocked: verify

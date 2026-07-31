@@ -175,7 +175,7 @@ steps:
       timeoutMs: 3600000
       retryToolFailures: true
       turnBudget:
-        maxTurns: 45
+        maxTurns: 60
         graceTurns: 3
       toolBudget:
         soft: 140
@@ -203,7 +203,7 @@ steps:
       no-actions: $done
       failed: implement
       retry: verify
-      blocked: $pause
+      blocked: verify
   deliver:
     title: Push the verified commit and reply to review comments
     prompt:

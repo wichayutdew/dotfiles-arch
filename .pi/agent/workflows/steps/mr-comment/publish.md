@@ -19,7 +19,9 @@ when the exact push SHA or exact reply by the current user is already present.
 Then execute each remaining action once, in approved order, using its exact
 configured MCP, `git`, `glab`, `gh`, or authenticated cURL input. Publish the
 non-force branch update before replies that describe the fix. Require a
-successful, same-host, target-correlated result. Never alter reply meaning,
+successful, same-host, target-correlated result. This stage automatically
+performs every approved required push and reply; never ask the user to perform
+one. Never alter reply meaning,
 target another comment, expose credentials, force-push, approve, merge, resolve
 a thread, close, delete, or perform an unlisted mutation.
 

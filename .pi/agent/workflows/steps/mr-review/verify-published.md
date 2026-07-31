@@ -8,7 +8,7 @@ Original workflow input:
 Plannotator-approved review artifact:
 {{reviewed.artifact}}
 
-Publication ledger:
+Publication ledger or blocked recovery handoff:
 {{last.summary}}
 
 Parse the approved non-empty Publication contract and refresh the same review
@@ -33,4 +33,6 @@ Call `structured_output` alone with:
 
 For `verified` and `failed`, report the canonical review URL, current head,
 verified or missing remote identifiers/URLs and anchors, action count, and
-final verdict. Do not mutate state yourself.
+final verdict. On a retry after `blocked`, refresh the exact blocked
+coordinates and remote result; return `verified` or `failed` when the evidence
+is now conclusive, and do not mutate state yourself.

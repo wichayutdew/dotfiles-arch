@@ -83,6 +83,8 @@ Produce the artifact in this order:
 6. `## Risks` — only material risks, each with a safeguard or rollback signal.
 7. `## Execution appendix (machine-readable)` — exact repository metadata and
    commands, kept out of the main narrative.
+8. `## Publication contract` — reviewed authority to publish the verified
+   branch and create its GitLab merge request.
 
 The first six sections must stand alone without decoding JSON, hashes, raw tool
 output, internal evidence labels, or a command catalog. Use checkboxes only for
@@ -110,6 +112,46 @@ subcommand's exact syntax before submission. Derive dependency-installation
 commands and lockfile constraints from repository documentation and scripts. A
 read-only investigation uses exactly `Not applicable - read-only plan.`.
 
+For code work, the same top-level JSON object also contains exactly one
+`publication` object with `provider`, `remote`, `sourceBranch`, `targetBranch`,
+`project`, `title`, `description`, and `ticketKey`, all resolved from current
+repository and ticket evidence. The `title` must use this Conventional Commit
+format exactly: `fix: [<JiraId>] <brief summary of the changes>`. The
+`description` must use this Markdown format exactly, replacing placeholders
+with current evidence and omitting the Experiment ID line when none exists:
+
+```md
+- Jira ID : {JiraId}
+- Experiment ID : {ExperimentId, if any}
+
+## Proposed changes
+- {changes}
+
+## Test added in this MR
+  - **Unit test**
+     - {test cases}
+  - **Functional test (If need)**
+     - {test cases}
+  - **Integration test (If need)**
+     - {test cases}
+
+ ## Tested scenarios with screenshots
+  | Scenario   | Production            | This branch  |
+  | ---        | ---                   | ---          |
+  | Scenario 1 | paste screenshot here | paste screenshot here |
+  | Scenario 2 | paste screenshot here | paste screenshot here |
+
+/assign me
+```
+
+It authorizes the verifier only to non-force push its verified current HEAD to
+`sourceBranch` on `remote`, then create one GitLab merge request to
+`targetBranch`. It must not authorize force pushes, setting upstream, wildcard
+refspecs, another branch or remote, merging, approvals, closing, deletion,
+Jira mutation, arbitrary shell commands, or any other external change. If
+those fields cannot be established safely, return `blocked`; do not defer the
+publishing decision to verification.
+
 Before submission, validate unfamiliar executables, subcommands, flags, and cwd
 handling with repository scripts or authoritative documentation, and with
 installed `--help` when read-only Bash permits it. During execution, an agent
@@ -132,7 +174,7 @@ plan in `artifact`. Put a self-contained execution handoff in `summary`,
 including authoritative ticket facts, every criterion, the repository
 contract, exact commands, and risks. Include the exact fenced `json` contract
 unchanged in the summary so the next child receives only the reviewed Bash
-commands. If a recoverable tool or environment failure needs fresh context
+commands and Publication contract. If a recoverable tool or environment failure needs fresh context
 after safe alternatives were attempted, use `retry` with the exact failed call,
 error, attempts, current state, and next safe alternative. Use
 `workspace-refresh` only for the exact clean source-ancestry condition above;
