@@ -1,21 +1,16 @@
 {
   "lastChangelogVersion": "0.81.1",
-  "defaultProvider": "opencode",
-  "defaultModel": "big-pickle",
   "defaultThinkingLevel": "medium",
+  "shellPath": "/opt/homebrew/bin/fish",
   "packages": [
     "npm:@bitcraft-apps/pi-web-tools",
     "npm:pi-mcp-adapter",
     "npm:@plannotator/pi-extension",
     "npm:pi-subagents",
-    "npm:pi-hermes-memory",
-    "npm:context-mode",
-    "npm:@llttlltt/poimandres-pi",
     "npm:pi-zentui",
     "git:github.com/obra/superpowers",
     "npm:@wichayutdew/pi-workflows"
   ],
-  "theme": "poimandres white/poimandres storm",
   "terminal": {
     "showTerminalProgress": true,
     "clearOnShrink": true
@@ -39,133 +34,73 @@
         "thinking": "high"
       },
       "children": {
-        "enabled": true,
-        "model": "opencode/big-pickle",
-        "thinking": "high",
-        "autoFollow": {
-          "blockers": false
-        }
+        "enabled": false
       }
     },
     "agentOverrides": {
       "context-builder": {
-        "disabled": true
+        "tools": false,
+        "inheritProjectContext": true,
+        "inheritSkills": true
       },
       "delegate": {
-        "disabled": true
+        "tools": false,
+        "inheritProjectContext": true,
+        "inheritSkills": true
       },
       "oracle": {
-        "disabled": true
+        "tools": false,
+        "inheritProjectContext": true,
+        "inheritSkills": true
       },
       "planner": {
         "model": "opencode/big-pickle",
         "thinking": "high",
-        "inheritProjectContext": true,
-        "tools": [
-          "read",
-          "grep",
-          "find",
-          "ls",
-          "bash",
-          "write",
-          "mcp",
-          "websearch",
-          "webfetch",
-          "intercom"
-        ],
+        "tools": false,
         "acceptanceRole": "read-only",
-        "defaultContext": "fresh",
-        "completionGuard": false
+        "completionGuard": false,
+        "inheritProjectContext": true,
+        "inheritSkills": true,
+        "defaultContext": "fresh"
       },
       "researcher": {
         "model": "opencode/big-pickle",
         "thinking": "medium",
-        "systemPromptMode": "replace",
-        "inheritProjectContext": true,
-        "tools": [
-          "read",
-          "write",
-          "mcp",
-          "websearch",
-          "webfetch",
-          "intercom"
-        ],
+        "tools": false,
         "acceptanceRole": "read-only",
-        "defaultContext": "fresh",
         "completionGuard": false,
-        "systemPrompt": "Read-only researcher; one bounded current, library, framework, API, or standards question. Read local references. Library, framework, or API: resolve-library-id, exact version, query-docs. If Context7 is unavailable, use current primary docs via websearch and webfetch; state fallback. Other current topics: websearch, then webfetch strongest sources. Prefer primary and official docs, specifications, releases, papers. Record version and publication date; separate event date; discard stale, redundant, unsupported sources. Return answer; FACT with inline URLs; HYPOTHESIS confidence and falsifier; UNKNOWN next check; CHECKED. Never fabricate citations, overquote, write, delegate, or mutate externally. Stop when answered."
+        "inheritProjectContext": true,
+        "inheritSkills": true,
+        "defaultContext": "fresh"
       },
       "scout": {
         "model": "opencode/big-pickle",
         "thinking": "low",
-        "systemPromptMode": "replace",
-        "inheritProjectContext": true,
-        "tools": [
-          "read",
-          "grep",
-          "find",
-          "ls",
-          "bash",
-          "write",
-          "mcp",
-          "websearch",
-          "webfetch",
-          "intercom"
-        ],
+        "tools": false,
         "acceptanceRole": "read-only",
-        "defaultContext": "fresh",
-        "completionGuard": false
+        "completionGuard": false,
+        "inheritProjectContext": true,
+        "inheritSkills": true,
+        "defaultContext": "fresh"
       },
       "worker": {
         "model": "opencode/big-pickle",
         "thinking": "high",
-        "systemPromptMode": "replace",
-        "inheritProjectContext": true,
-        "tools": [
-          "read",
-          "grep",
-          "find",
-          "ls",
-          "bash",
-          "edit",
-          "write",
-          "mcp",
-          "websearch",
-          "webfetch",
-          "contact_supervisor"
-        ],
-        "skills": [
-          "test-driven-development",
-          "verification-before-completion",
-          "receiving-code-review"
-        ],
+        "tools": false,
         "acceptanceRole": "writer",
+        "inheritProjectContext": true,
+        "inheritSkills": true,
         "defaultContext": "fresh"
       },
       "reviewer": {
         "model": "opencode/big-pickle",
         "thinking": "high",
-        "systemPromptMode": "replace",
-        "inheritProjectContext": true,
-        "tools": [
-          "read",
-          "grep",
-          "find",
-          "ls",
-          "bash",
-          "edit",
-          "write",
-          "mcp",
-          "websearch",
-          "webfetch",
-          "intercom"
-        ],
-        "skills": [
-          "verification-before-completion"
-        ],
+        "tools": false,
         "acceptanceRole": "read-only",
-        "defaultContext": "fresh",
-        "completionGuard": false
+        "completionGuard": false,
+        "inheritProjectContext": true,
+        "inheritSkills": true,
+        "defaultContext": "fresh"
       }
     }
   },
@@ -174,5 +109,6 @@
   "autocompleteMaxVisible": 3,
   "transport": "auto",
   "quietStartup": false,
-  "outputPad": 1
+  "outputPad": 1,
+  "theme": "light"
 }

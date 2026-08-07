@@ -24,17 +24,29 @@ and broaden only as the claim requires. Restrict every MCP call to a read
 operation; never call a mutation-capable tool. Distinguish supported facts,
 plausible hypotheses, unsupported claims, and contradictions.
 
-If all material claims have sufficient support and the report accurately states
-its uncertainty, call `structured_output` alone with outcome `approved`. Include
-the report path, validated claims and sources, validation limits, and a concise
-approval basis in the summary.
+After evidence validation, perform a `reader-clarity` gap-closure review. Flag
+descriptions that are verbose, repetitive, dense, or hard to scan, while
+retaining every material fact, qualification, source limit, and stated
+uncertainty. Prefer tighter prose for one point and bullets or numbered lists
+for separable points. Request a Mermaid diagram only when it makes a long
+relationship, flow, or timeline clearer than prose; diagrams are optional and
+never decorative.
+
+If all material claims have sufficient support, the report accurately states
+its uncertainty, and it passes the reader-clarity review, call
+`structured_output` alone with outcome `approved`. Include the report path,
+validated claims and sources, validation limits, and a concise approval basis
+in the summary.
 
 If a material claim is contradicted, unsupported, stale, missing a source, or
-outside approved scope, call `structured_output` alone with outcome `gaps` so
-investigation can correct the report. The summary must be a concrete gap report
-with each affected report claim or section, the fresh evidence or missing
-source, why it conflicts or is insufficient, and the smallest required
-correction. Do not silently approve a doubtful report.
+outside approved scope, or the reader-clarity review finds a problem, call
+`structured_output` alone with outcome `gaps` so investigation can correct the
+report. The summary must be a concrete gap report with each affected report
+claim or section, the fresh evidence or missing source, why it conflicts or is
+insufficient, and the smallest required correction. For each reader-clarity
+gap, name the affected report section, state the specific clarity problem,
+identify the preferred concise form, and require the smallest safe correction.
+Do not silently approve a doubtful report.
 
 If evidence cannot be obtained or reconciled after safe relevant read-only
 attempts, call `structured_output` alone with outcome `blocked`. Include the

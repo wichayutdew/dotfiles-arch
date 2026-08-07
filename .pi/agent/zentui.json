@@ -1,8 +1,8 @@
 {
   "colorSources": {
-    "starship": "terminal",
-    "editor": "terminal",
-    "userMessages": "terminal"
+    "starship": "theme",
+    "editor": "theme",
+    "userMessages": "theme"
   },
   "features": {
     "copyFriendly": true,
@@ -52,5 +52,8 @@
       "mcp": "zentui",
       "plannotator": "zentui"
     }
+  },
+  "gitMetrics": {
+    "ignoreSubmodules": false
   }
 }

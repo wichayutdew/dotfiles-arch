@@ -75,10 +75,12 @@ body says no actionable findings and includes the reviewed head SHA.
 ```
 
 Every command and effect value must occur literally and completely in the
-artifact. Commands must use only configured `glab api` or `gh api`, be
-standalone, target the same review and current head, and contain no shell
-operators, substitutions, redirection, glob expansion, environment assignment,
-wrapper shell, credentials, or placeholders. Each body must end with a stable
+artifact. Commands must use only configured `glab api` or `gh api`, target the
+same review and current head, and contain no redirection, glob expansion,
+wrapper shell, credentials, or placeholders. GitHub commands must be a single
+shell-free `gh api` invocation. A GitLab inline-discussion command may instead
+be the required Fish `begin … end` block below, containing only the body
+assignment and one `glab api` invocation. Each body must end with a stable
 unique marker derived from the workflow, head SHA, path, and line so publish
 and verify stages can prove idempotence.
 
@@ -93,7 +95,35 @@ successful read-only
 inline comments must POST to that same `/discussions` collection with `body`
 and current `position[base_sha]`, `position[start_sha]`,
 `position[head_sha]`, `position[position_type]`, `position[old_path]`,
-`position[new_path]`, and the applicable old or new line.
+`position[new_path]`, and the applicable old or new line. The contract command
+for a GitLab discussion must be Fish-compatible and preserve multiline bodies:
+wrap the exact body assignment and discussion request in `begin` and `end`.
+Inside the block, assign the body with `set body '<body>'`, escaping every
+embedded apostrophe as `\''`, then invoke `glab --hostname <host> api
+--method POST projects/<project-id>/merge_requests/<iid>/discussions --form
+"body=$body"` followed by one `--form` per required position field. Keep the
+entire block as the exact approved command snippet; do not replace `begin …
+end` or `set` with POSIX syntax, inline the body into `--form`, or collapse
+its newlines. For example:
+
+```fish
+begin
+    set body 'Exact comment line one
+Exact comment line two with an apostrophe: two'\''s-complement.
+[stable-marker]'
+    glab --hostname gitlab.example.com api \
+        --method POST \
+        projects/123/merge_requests/4/discussions \
+        --form "body=$body" \
+        --form "position[base_sha]=30a497e7c99866d41224c4ab3720eb67fea3b115" \
+        --form "position[start_sha]=30a497e7c99866d41224c4ab3720eb67fea3b115" \
+        --form "position[head_sha]=c416579b65a63a93b378da32eae01d4dba5c8100" \
+        --form "position[position_type]=text" \
+        --form "position[old_path]=app/src/test/kotlin/org/example/AppTest.kt" \
+        --form "position[new_path]=app/src/test/kotlin/org/example/AppTest.kt" \
+        --form "position[new_line]=20"
+end
+```
 
 For GitHub, first prove the authenticated review-comments listing endpoint with
 a successful read-only `gh api` call. Public inline comments must POST to the

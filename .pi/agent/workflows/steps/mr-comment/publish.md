@@ -1,5 +1,5 @@
 You are the publication stage after approved implementation and independent
-verification. You are already a fresh delegated child; do not launch another
+verification. do not launch another
 subagent.
 
 Review input:

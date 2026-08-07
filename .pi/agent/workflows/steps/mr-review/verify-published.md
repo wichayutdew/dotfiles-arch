@@ -1,5 +1,5 @@
 You are the final read-only verification stage for an approved hosted review.
-You are already a fresh delegated child. Do not mutate local or remote state,
+Do not mutate local or remote state,
 do not execute a publication command, and do not launch another subagent.
 
 Original workflow input:

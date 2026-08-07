@@ -1,26 +1,26 @@
 version: 1
-id: mr-review
-command: mr-review
-description: Fetch, approve, publish, and verify one hosted code review
-start: fetch
-maxStepVisits: 10
-summaryMaxChars: 50000
+id: jira
+command: jira
+description: Draft, approve, and create a Jira Epic with ordered Stories
+start: draft
+maxStepVisits: 12
+summaryMaxChars: 30000
 steps:
-  fetch:
-    title: Fetch complete hosted-review evidence
+  draft:
+    title: Normalize Epic and Story input
     prompt:
-      file: steps/mr-review/fetch.md
+      file: steps/jira/draft.md
     subagent:
       agent: scout
       context: fresh
-      timeoutMs: 1800000
+      timeoutMs: 1200000
       retryToolFailures: true
       turnBudget:
-        maxTurns: 40
+        maxTurns: 30
         graceTurns: 3
       toolBudget:
-        soft: 100
-        hard: 180
+        soft: 60
+        hard: 100
         block: "*"
     permissions: &a1
       tools:
@@ -81,23 +81,24 @@ steps:
       bash:
         mode: unrestricted
     transitions:
-      fetched: review
+      ready: plan
+      retry: draft
       blocked: $pause
-  review:
-    title: Produce and approve the complete hosted review
+  plan:
+    title: Validate Jira schema and approve Epic and Story plan
     prompt:
-      file: steps/mr-review/review-for-approval.md
+      file: steps/jira/plan.md
     subagent:
-      agent: reviewer
+      agent: planner
       context: fresh
       timeoutMs: 1800000
       retryToolFailures: true
       turnBudget:
-        maxTurns: 90
-        graceTurns: 5
+        maxTurns: 45
+        graceTurns: 3
       toolBudget:
-        soft: 100
-        hard: 180
+        soft: 120
+        hard: 200
         block: "*"
     permissions: *a1
     gate:
@@ -107,48 +108,28 @@ steps:
       rejectedOutcome: changes-requested
       timeoutMs: 30000
     transitions:
-      approved: publish
-      changes-requested: review
+      approved: create
+      changes-requested: plan
+      retry: plan
       blocked: $pause
-  publish:
-    title: Publish the approved hosted review
+  create:
+    title: Create approved Jira Epic and Stories
     prompt:
-      file: steps/mr-review/publish-approved.md
+      file: steps/jira/create.md
     subagent:
       agent: worker
       context: fresh
-      timeoutMs: 900000
+      timeoutMs: 1800000
       retryToolFailures: true
       turnBudget:
-        maxTurns: 20
-        graceTurns: 2
+        maxTurns: 45
+        graceTurns: 3
       toolBudget:
-        soft: 40
-        hard: 70
+        soft: 100
+        hard: 170
         block: "*"
     permissions: *a1
     transitions:
-      published: verify
+      ready: $done
+      retry: create
       blocked: $pause
-  verify:
-    title: Verify or return the approved review for publication repair
-    prompt:
-      file: steps/mr-review/verify-published.md
-    subagent:
-      agent: reviewer
-      context: fresh
-      timeoutMs: 900000
-      retryToolFailures: true
-      turnBudget:
-        maxTurns: 20
-        graceTurns: 2
-      toolBudget:
-        soft: 40
-        hard: 70
-        block: "*"
-    permissions: *a1
-    transitions:
-      verified: $done
-      failed: publish
-      retry: verify
-      blocked: verify

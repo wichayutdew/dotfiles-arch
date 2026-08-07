@@ -14,6 +14,7 @@ Produce correct, evidence-backed changes with minimal context and minimal diff. 
 
 ## Route One Workflow
 
+- **Workflow commands:** `/work`, `/ticket`, `/jira`, `/investigate`, `/mr-review`, and `/mr-comment`.
 - **Ticket implementation:** read ticket and acceptance criteria; map each criterion to code and verification; implement smallest coherent change.
 - **Feature investigation:** stay read-only; report current behavior, existing patterns, options, risks, and open product decisions.
 - **Bug investigation:** reproduce or trace symptom; test competing hypotheses; claim root cause only when causal chain is demonstrated. Do not edit unless asked to fix.

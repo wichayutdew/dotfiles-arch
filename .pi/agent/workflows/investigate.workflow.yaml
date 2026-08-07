@@ -1,8 +1,8 @@
-# yaml-language-server: $schema=/Users/wphongphanpa/repositories/personal/pi-workflows/schemas/workflow.schema.json
 version: 1
 id: investigate
 command: investigate
-description: Derive, approve, investigate, and independently validate an evidence-backed finding
+description: Derive, approve, investigate, and independently validate an
+  evidence-backed finding
 start: retrieve
 maxStepVisits: 12
 summaryMaxChars: 30000
@@ -23,43 +23,64 @@ steps:
         soft: 90
         hard: 150
         block: "*"
-    permissions:
-      tools: [read, ls, bash]
-      mcp: &jira-read-mcp
-        - atlassian/atlassian_getAccessibleAtlassianResources
-        - atlassian/atlassian_getJiraIssue
-        - atlassian/atlassian_getJiraIssueRemoteIssueLinks
-        - atlassian/atlassian_searchJiraIssuesUsingJql
-      extensions: [pi-web-tools]
-      skills: &retrieve-skills [caveman, coding-standards, brainstorming]
+    permissions: &a1
+      tools:
+        - read
+        - ls
+        - bash
+        - edit
+        - write
+        - mcp
+      mcp:
+        - context7
+        - atlassian
+        - gitlab
+        - figma
+        - agoda_skills
+        - glean
+        - sourcegraph
+        - grafana
+        - slack
+        - gh_grep
+        - superset
+      extensions:
+        - /
+      skills:
+        - brainstorming
+        - cavecrew
+        - caveman
+        - caveman-commit
+        - caveman-compress
+        - caveman-help
+        - caveman-review
+        - caveman-stats
+        - coding-standards
+        - commit-format
+        - dispatching-parallel-agents
+        - doc-templates
+        - executing-plans
+        - finishing-a-development-branch
+        - grafana-logs
+        - jira-ticket
+        - lint-commands
+        - plannotator-compound
+        - plannotator-setup-goal
+        - plannotator-visual-explainer
+        - receiving-code-review
+        - requesting-code-review
+        - search-code-sourcegraph
+        - start-on-call
+        - start-triage
+        - subagent-driven-development
+        - systematic-debugging
+        - test-driven-development
+        - using-git-worktrees
+        - using-superpowers
+        - verification-before-completion
+        - writing-plans
+        - writing-skills
       bash:
-        mode: allow-list
-        allow: &inspection-bash
-          - executable: grep
-          - executable: head
-          - executable: ls
-          - executable: pwd
-          - executable: rg
-          - executable: stat
-          - executable: tail
-          - executable: wc
-          - executable: git
-            argsPrefixes:
-              [
-                [status],
-                [diff],
-                [grep],
-                [log],
-                [ls-files],
-                [rev-parse],
-                [show],
-                [merge-base],
-                [rev-list],
-                [worktree, list],
-              ]
-    requires:
-      tools: [read, ls, bash]
-      skills: *retrieve-skills
+        mode: unrestricted
     gate:
       provider: plannotator
       submitOutcome: submit
@@ -88,24 +109,7 @@ steps:
         soft: 180
         hard: 300
         block: "*"
-    permissions:
-      tools: [read, ls, bash, edit, write]
-      mcp: &investigation-mcp
-        - atlassian
-        - gitlab
-        - glean
-        - superset
-        - sourcegraph
-        - context7/resolve-library-id
-        - context7/query-docs
-        - gh_grep/searchGitHub
-      extensions: [pi-web-tools]
-      skills: &investigation-skills [caveman, coding-standards]
-      bash:
-        mode: unrestricted
-    requires:
-      tools: [read, ls, bash, edit, write]
-      skills: *investigation-skills
+    permissions: *a1
     transitions:
       ready: validate
       retry: investigate
@@ -126,16 +130,7 @@ steps:
         soft: 150
         hard: 250
         block: "*"
-    permissions:
-      tools: [read, ls, bash]
-      mcp: *investigation-mcp
-      extensions: [pi-web-tools]
-      skills: &validation-skills [caveman, coding-standards, systematic-debugging, verification-before-completion]
-      bash:
-        mode: unrestricted
-    requires:
-      tools: [read, ls, bash]
-      skills: *validation-skills
+    permissions: *a1
     transitions:
       approved: $done
       gaps: investigate

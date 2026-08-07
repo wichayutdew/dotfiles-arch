@@ -1,4 +1,3 @@
-# yaml-language-server: $schema=/Users/wphongphanpa/repositories/personal/pi-workflows/schemas/workflow.schema.json
 version: 1
 id: work
 command: work
@@ -24,16 +23,68 @@ steps:
         hard: 90
         block: "*"
     workspace:
-      bindOn: [ready]
-      allowedRoots: ["~/repositories/worktrees"]
-    permissions:
-      tools: [read, ls, bash]
-      skills: [caveman, coding-standards, using-git-worktrees]
+      bindOn:
+        - ready
+      allowedRoots:
+        - ~/repositories/worktrees
+    permissions: &a1
+      tools:
+        - read
+        - ls
+        - bash
+        - edit
+        - write
+        - mcp
+      mcp:
+        - context7
+        - atlassian
+        - gitlab
+        - figma
+        - agoda_skills
+        - glean
+        - sourcegraph
+        - grafana
+        - slack
+        - gh_grep
+        - superset
+      extensions:
+        - /
+      skills:
+        - brainstorming
+        - cavecrew
+        - caveman
+        - caveman-commit
+        - caveman-compress
+        - caveman-help
+        - caveman-review
+        - caveman-stats
+        - coding-standards
+        - commit-format
+        - dispatching-parallel-agents
+        - doc-templates
+        - executing-plans
+        - finishing-a-development-branch
+        - grafana-logs
+        - jira-ticket
+        - lint-commands
+        - plannotator-compound
+        - plannotator-setup-goal
+        - plannotator-visual-explainer
+        - receiving-code-review
+        - requesting-code-review
+        - search-code-sourcegraph
+        - start-on-call
+        - start-triage
+        - subagent-driven-development
+        - systematic-debugging
+        - test-driven-development
+        - using-git-worktrees
+        - using-superpowers
+        - verification-before-completion
+        - writing-plans
+        - writing-skills
       bash:
         mode: unrestricted
-    requires:
-      tools: [read, ls, bash]
-      skills: [caveman, coding-standards, using-git-worktrees]
     transitions:
       ready: plan
       retry: prepare-workspace
@@ -54,50 +105,7 @@ steps:
         soft: 60
         hard: 100
         block: "*"
-    permissions:
-      tools: [read, ls, bash]
-      mcp: &work-mcp
-        - context7/resolve-library-id
-        - context7/query-docs
-        - sourcegraph/code_finder
-        - sourcegraph/commit_search
-        - sourcegraph/diff_search
-        - sourcegraph/keyword_search
-        - sourcegraph/list_files
-        - sourcegraph/list_repos
-        - sourcegraph/nls_search
-        - sourcegraph/read_file
-        - gh_grep/searchGitHub
-      extensions: [pi-web-tools]
-      skills: &work-plan-skills [caveman, brainstorming, coding-standards]
-      bash:
-        mode: allow-list
-        allow: &work-inspection-bash
-          - executable: grep
-          - executable: head
-          - executable: ls
-          - executable: pwd
-          - executable: rg
-          - executable: stat
-          - executable: tail
-          - executable: wc
-          - executable: git
-            argsPrefixes:
-              [
-                [status],
-                [diff],
-                [grep],
-                [log],
-                [ls-files],
-                [rev-parse],
-                [show],
-                [merge-base],
-                [rev-list],
-                [worktree, list],
-              ]
-    requires:
-      tools: [read, ls, bash]
-      skills: *work-plan-skills
+    permissions: *a1
     gate:
       provider: plannotator
       submitOutcome: submit
@@ -127,23 +135,7 @@ steps:
         soft: 240
         hard: 400
         block: "*"
-    permissions:
-      tools: [read, ls, bash, edit, write]
-      mcp: *work-mcp
-      skills:
-        &work-implement-skills [
-          caveman,
-          coding-standards,
-          systematic-debugging,
-          test-driven-development,
-          verification-before-completion,
-          receiving-code-review,
-        ]
-      bash:
-        mode: unrestricted
-    requires:
-      tools: [read, ls, bash, edit, write]
-      skills: *work-implement-skills
+    permissions: *a1
     transitions:
       ready: verify
       retry: implement
@@ -164,20 +156,7 @@ steps:
         soft: 120
         hard: 200
         block: "*"
-    permissions:
-      tools: [read, ls, bash]
-      mcp: *work-mcp
-      skills:
-        &work-verify-skills [
-          caveman,
-          coding-standards,
-          verification-before-completion,
-        ]
-      bash:
-        mode: unrestricted
-    requires:
-      tools: [read, ls, bash]
-      skills: *work-verify-skills
+    permissions: *a1
     transitions:
       passed: $done
       failed: implement
