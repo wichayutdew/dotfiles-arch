@@ -29,7 +29,7 @@ alias update-mirrorlist "sudo reflector --country TH,SG,JP,TW --age 12 --protoco
 alias v 'nvim'
 alias l 'eza --color=always --long --git --icons=always --no-time --no-user'
 alias g 'lazygit'
-alias t 'tmux'
+alias t 'herdr'
 alias ci 'zi'
 alias c 'z'
 alias y 'yazi'

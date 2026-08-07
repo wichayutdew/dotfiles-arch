@@ -71,7 +71,7 @@ PACKAGES=(
   neovim
   ripgrep
   starship
-  tmux
+  herdr
   zoxide
 
   # AI
