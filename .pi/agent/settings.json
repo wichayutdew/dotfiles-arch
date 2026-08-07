@@ -110,5 +110,7 @@
   "transport": "auto",
   "quietStartup": false,
   "outputPad": 1,
-  "theme": "light"
+  "theme": "light/dark",
+  "defaultProvider": "opencode",
+  "defaultModel": "deepseek-v4-flash-free"
 }
