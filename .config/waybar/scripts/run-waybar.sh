@@ -14,12 +14,32 @@ RT="${XDG_RUNTIME_DIR:-/run/user/$(id -u)}"
 LOG="${WAYBAR_LOG:-/tmp/waybar.log}"
 last_sig=""
 
+# Wait until the Hyprland instance serves valid IPC JSON. Waybar permanently
+# disables its hyprland/workspaces module if its startup query returns empty
+# (the IPC socket exists before the compositor is ready to answer).
+wait_ready() {
+    local sig="$1" i
+    for i in $(seq 1 60); do
+        if HYPRLAND_INSTANCE_SIGNATURE="$sig" hyprctl -j workspaces 2>/dev/null | jq -e . >/dev/null 2>&1; then
+            return 0
+        fi
+        sleep 0.5
+    done
+    return 1
+}
+
 while true; do
     sig="$(ls -1 "$RT/hypr" 2>/dev/null | sort | tail -n 1 || true)"
 
     if [ -n "$sig" ] && [ -S "$RT/hypr/$sig/.socket.sock" ]; then
         # (re)start when the instance changed or when the bar is missing (crash)
         if [ "$sig" != "$last_sig" ] || ! pgrep -x waybar >/dev/null 2>&1; then
+            if ! wait_ready "$sig"; then
+                echo "[run-waybar] instance $sig not serving IPC yet, retrying" >> "$LOG"
+                last_sig=""
+                sleep 2
+                continue
+            fi
             pkill -x waybar 2>/dev/null
             sleep 1
             last_sig="$sig"
