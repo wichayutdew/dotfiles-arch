@@ -98,6 +98,24 @@ apply_layout() {
     fi
 }
 
+# Detect workspaces stranded on a removed/fallback monitor (hyprland parks them
+# on "?" / FALLBACK when their output unplugs, which makes them unreachable
+# from binds). Fix by reloading the config, which re-registers the persistent
+# workspace rules and moves those workspaces back onto the real monitor.
+repair_workspaces() {
+    local reals stray
+    reals="$(get_monitors | jq -r --argjson ex '["FALLBACK","?"]' '[ .[] | select(.disabled == false) | select((.mirrorOf | tostring) == "none" or .mirrorOf == null) | select((.name as $n | $ex | index($n) | not)) | .name ] | .' 2>/dev/null)"
+    local n
+    n=$(printf %s "$reals" | jq -r 'length' 2>/dev/null || echo 0)
+    [ "$n" -gt 0 ] || return 0
+
+    stray="$("$HYPRCTL" -j workspaces 2>/dev/null | jq -r --argjson reals "$reals" '[ .[] | select(.monitor != null and .monitor != "") | select((.monitor as $m | $reals | index($m)) | not) ] | length')"
+    [ "${stray:-0}" -gt 0 ] || return 0
+    log "$stray stranded workspace(s) on removed monitors, reloading to rehome them"
+    "$HYPRCTL" reload >/dev/null 2>&1
+}
+
+
 cmd_dry_run() {
     printf "monitors reported:\n%s\n" "$(current_state)"
 }
@@ -122,6 +140,7 @@ cmd_watch() {
         fi
         failures=0
         apply_layout || true
+        repair_workspaces || true
         sleep "$POLL"
     done
 }
