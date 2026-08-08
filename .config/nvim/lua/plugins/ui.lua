@@ -51,6 +51,8 @@ return function()
 	---------------------- Render Markdown ---------------------
 	require("render-markdown").setup({
 		completions = { lsp = { enabled = true } },
+		-- mermaid fences are rendered as images by snacks.image
+		code = { disable = { "mermaid" } },
 	})
 
 	--------------------- INDENT BLANKLINE ---------------------
