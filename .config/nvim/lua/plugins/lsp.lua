@@ -106,7 +106,6 @@ return function()
 				"lua",
 				"rust",
 				"markdown",
-				"mermaid",
 				"json",
 				"kotlin",
 				"html",

@@ -88,17 +88,9 @@ PACKAGES=(
   trash-cli
   openssh
 	darkman
-
-  # Mermaid rendering
-  mmdr-bin
 )
 
 echo "Installing ${#PACKAGES[@]} packages..."
 yay -S --needed --noconfirm "${PACKAGES[@]}"
-
-# Mermaid diagrams: snacks.image hardcodes the `mmdc` binary; bridge it to mmdr
-# (~/.cargo/bin is on PATH and user-writable; needed until the package ships /usr/bin/mmdr)
-mkdir -p "$HOME/.cargo/bin"
-ln -sfn /usr/bin/mmdr "$HOME/.cargo/bin/mmdc" || ln -sfn "$HOME/.cargo/bin/mmdr" "$HOME/.cargo/bin/mmdc"
 
 echo "Done."

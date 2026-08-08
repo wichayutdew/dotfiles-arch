@@ -77,7 +77,6 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-mini/mini.jump2d" },
 	--------------------- UI ---------------------
 	{ src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" }, -- render markdown
-	{ src = "https://github.com/folke/snacks.nvim" }, -- snacks.image: inline mermaid & markdown images
 	{ src = "https://github.com/tomasky/bookmarks.nvim" },
 	{ src = "https://github.com/f4z3r/gruvbox-material.nvim" },
 	{ src = "https://github.com/folke/noice.nvim" }, -- Better command line and messages
@@ -96,4 +95,3 @@ require("plugins.telescope")()
 require("plugins.mini")()
 require("plugins.ui")()
 require("plugins.extra")()
-require("plugins.image")()
