@@ -61,9 +61,14 @@ apply_layout() {
     state="$(current_state)"
 
     if [ "$state" = "$desired" ]; then
-        log "layout up to date (internal=$int external=${ext:-<none>} mode=$LAPTOP_MODE)"
+        if [ "${LAST_UP_TO_DATE:-0}" != "1" ]; then
+            log "layout up to date (internal=$int external=${ext:-<none>} mode=$LAPTOP_MODE)"
+            LAST_UP_TO_DATE=1
+        fi
         return 0
     fi
+
+    LAST_UP_TO_DATE=0
 
     log "applying layout: internal=$int external=${ext:-<none>} mode=$LAPTOP_MODE"
     if [ -z "$ext" ]; then
