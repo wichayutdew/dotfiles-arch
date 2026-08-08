@@ -55,6 +55,9 @@ PACKAGES=(
   hyprpaper
   waybar
 
+  # GPU / Vulkan (required by the zink hyprlock wrapper: ~/.config/hypr/script/lock.sh)
+  vulkan-radeon
+
   # Face Authentication
   howdy-next
   linux-enable-ir-emitter-bin
