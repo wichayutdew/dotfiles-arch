@@ -86,8 +86,11 @@ apply_layout() {
     if [ -z "$ext" ]; then
         "$HYPRCTL" eval "hl.monitor({ output = \"$int\", mode = \"preferred\", position = \"0x0\", scale = \"auto\", mirror = \"\" })"
     elif [ "$LAPTOP_MODE" = "mirror" ]; then
-        "$HYPRCTL" eval "hl.monitor({ output = \"$ext\", mode = \"preferred\", position = \"0x0\", scale = \"auto\" })"
+        # Order matters: mirror eDP-1 FIRST so it leaves the layout before DP-1
+        # moves to 0x0. Doing it the other way around briefly puts both monitors
+        # at 0x0 (two layout monitors overlapping) -> hyprland overlap warning.
         "$HYPRCTL" eval "hl.monitor({ output = \"$int\", mode = \"preferred\", position = \"0x0\", scale = \"auto\", mirror = \"$ext\" })"
+        "$HYPRCTL" eval "hl.monitor({ output = \"$ext\", mode = \"preferred\", position = \"0x0\", scale = \"auto\" })"
         "$HYPRCTL" eval "hl.dsp.focus({ monitor = \"$ext\" })"
     else
         "$HYPRCTL" eval "hl.monitor({ output = \"$ext\", mode = \"preferred\", position = \"0x0\", scale = \"auto\" })"
