@@ -3,7 +3,7 @@
     "format": "{icon} {windows}",
     "on-click": "activate",
     "persistent-workspaces": {
-      "*": 4
+      "*": [1, 2, 3, 4]
     },
     "window-rewrite-default": "󰊠",
     "window-rewrite": {

@@ -28,7 +28,19 @@ LAPTOP_MODE="${HYPR_MONITOR_LAPTOP_MODE:-mirror}"
 POLL="${HYPR_MONITOR_POLL_INTERVAL_SECS:-1}"
 HYPRCTL="${HYPRCTL:-hyprctl}"
 
-log() { printf "[monitor_layout] %s\n" "$*" >&2; }
+log() { printf "[monitor_layout] %s %s\n" "$(date +%H:%M:%S)" "$*" >&2; }
+
+# Re-bind to the newest live Hyprland instance socket so this daemon
+# survives compositor restarts (the env signature at spawn goes stale).
+refresh_sig() {
+    local dir="${XDG_RUNTIME_DIR:-/run/user/$(id -u)}/hypr" sig
+    sig="$(ls -1 "$dir" 2>/dev/null | sort | tail -n 1 || true)"
+    if [ -n "$sig" ] && [ -S "$dir/$sig/.socket.sock" ]; then
+        export HYPRLAND_INSTANCE_SIGNATURE="$sig"
+        return 0
+    fi
+    return 1
+}
 get_monitors() { "$HYPRCTL" -j monitors all 2>/dev/null; }
 
 # enabled monitors as "name=mirrorName" lines, sorted
@@ -92,19 +104,28 @@ cmd_watch() {
     lock="${TMPDIR:-/tmp}/monitor_layout_${UID}.lock"
     exec 9>"$lock" || return 1
     flock -n 9 || { log "another watch instance is running"; return 1; }
+    local failures=0
     while :; do
-        if ! get_monitors >/dev/null 2>&1; then
-            log "Hyprland session ended, exiting"
-            exit 0
+        if ! refresh_sig || ! get_monitors >/dev/null 2>&1; then
+            failures=$((failures + 1))
+            if [ "$failures" -ge 30 ]; then
+                log "no live Hyprland instance for 30s, exiting"
+                exit 0
+            fi
+            [ "$failures" -eq 1 ] && log "Hyprland unreachable, retrying"
+            LAST_UP_TO_DATE=0
+            sleep "$POLL"
+            continue
         fi
+        failures=0
         apply_layout || true
         sleep "$POLL"
     done
 }
 
 case "${1:-}" in
-    apply)   apply_layout ;;
-    dry-run) cmd_dry_run ;;
+    apply)   refresh_sig && apply_layout ;;
+    dry-run) refresh_sig && cmd_dry_run ;;
     watch)   cmd_watch ;;
     *) printf "usage: %s {watch|apply|dry-run}\n" "$0" >&2; exit 64 ;;
 esac
