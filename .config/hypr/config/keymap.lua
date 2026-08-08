@@ -29,11 +29,6 @@ hl.bind(cmd .. " + SHIFT + H", hl.dsp.exec_cmd(script .. "/screenshot.sh full"))
 
 ---- SCREEN LOCK ----
 hl.bind("CTRL + ALT + Q", hl.dsp.exec_cmd("sh -c 'hyprlock --immediate-render'"))
-hl.bind(
-	"switch:on:Lid Switch",
-	hl.dsp.exec_cmd("sh -c 'hyprlock --immediate-render & sleep 1 && systemctl suspend'"),
-	{ locked = true }
-)
 
 ---- APP LAUNCHER ----
 hl.define_submap("🚀", function()
