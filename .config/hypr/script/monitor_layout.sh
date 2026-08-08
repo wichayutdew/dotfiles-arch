@@ -29,7 +29,7 @@ POLL="${HYPR_MONITOR_POLL_INTERVAL_SECS:-1}"
 HYPRCTL="${HYPRCTL:-hyprctl}"
 
 log() { printf "[monitor_layout] %s\n" "$*" >&2; }
-get_monitors() { "$HYPRCTL" -j monitors 2>/dev/null; }
+get_monitors() { "$HYPRCTL" -j monitors all 2>/dev/null; }
 
 # enabled monitors as "name=mirrorName" lines, sorted
 current_state() {
@@ -72,14 +72,14 @@ apply_layout() {
 
     log "applying layout: internal=$int external=${ext:-<none>} mode=$LAPTOP_MODE"
     if [ -z "$ext" ]; then
-        "$HYPRCTL" keyword monitor "$int,preferred,0x0,auto"
+        "$HYPRCTL" eval "hl.monitor({ output = \"$int\", mode = \"preferred\", position = \"0x0\", scale = \"auto\", mirror = \"\" })"
     elif [ "$LAPTOP_MODE" = "mirror" ]; then
-        "$HYPRCTL" keyword monitor "$ext,preferred,0x0,auto"
-        "$HYPRCTL" keyword monitor "$int,preferred,0x0,auto,mirror,$ext"
-        "$HYPRCTL" dispatch focusmonitor "$ext"
+        "$HYPRCTL" eval "hl.monitor({ output = \"$ext\", mode = \"preferred\", position = \"0x0\", scale = \"auto\" })"
+        "$HYPRCTL" eval "hl.monitor({ output = \"$int\", mode = \"preferred\", position = \"0x0\", scale = \"auto\", mirror = \"$ext\" })"
+        "$HYPRCTL" eval "hl.dsp.focus({ monitor = \"$ext\" })"
     else
-        "$HYPRCTL" keyword monitor "$ext,preferred,0x0,auto"
-        "$HYPRCTL" keyword monitor "$int,disabled"
+        "$HYPRCTL" eval "hl.monitor({ output = \"$ext\", mode = \"preferred\", position = \"0x0\", scale = \"auto\" })"
+        "$HYPRCTL" eval "hl.monitor({ output = \"$int\", disabled = true })"
     fi
 }
 
