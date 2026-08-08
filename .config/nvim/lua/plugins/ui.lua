@@ -48,10 +48,15 @@ return function()
 	-- Keymaps
 	vim.keymap.set("n", "<leader>S", ":Telescope bookmarks list<CR>", { desc = "List all bookmarks" })
 
-	---------------------- Render Markdown ---------------------
-	require("render-markdown").setup({
-		completions = { lsp = { enabled = true } },
-	})
+	---------------------- Markdown Preview ----------------------
+	-- Browser preview: <leader>mp to preview the current .md, <leader>ms to stop.
+	vim.g.mkdp_auto_start = 0
+	vim.g.mkdp_auto_close = 1
+	vim.g.mkdp_theme = "dark"
+	vim.g.mkdp_filetypes = { "markdown" }
+	vim.g.mkdp_port = "8238"
+	vim.keymap.set("n", "<leader>mp", "<cmd>MarkdownPreview<CR>", { desc = "Preview markdown in browser" })
+	vim.keymap.set("n", "<leader>ms", "<cmd>MarkdownPreviewStop<CR>", { desc = "Stop markdown preview" })
 
 	--------------------- INDENT BLANKLINE ---------------------
 	require("ibl").setup({})
