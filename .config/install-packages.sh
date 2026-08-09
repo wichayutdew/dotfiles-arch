@@ -51,11 +51,11 @@ PACKAGES=(
 
   # Hyprland
   hypridle
-  hyprlock
+  swaylock      # lockscreen (2026-08-09: migrated from hyprlock)
   hyprpaper
   waybar
 
-  # GPU / Vulkan (required by the zink hyprlock wrapper: ~/.config/hypr/script/lock.sh)
+  # GPU / Vulkan (driver stack required by the desktop)
   vulkan-radeon
 
   # Face Authentication

@@ -1,0 +1,30 @@
+image=/home/wichayutdew/Pictures/lockscreen.jpg
+scaling=fill
+color=00000000
+
+# --- Password field (the center indicator ring) ---
+# The ring is always visible (indicator-idle-visible). While you type:
+#   - pressed keys highlight segments on the ring (key-hl-color)
+#   - dots appear on the inner "line" (line-color)
+#   - the inside flashes (inside-wrong-color) on a wrong password
+font=JetBrainsMono Nerd Font
+indicator-idle-visible
+indicator-radius=110
+indicator-thickness=10
+
+# Ring / field colors — clearly visible on the wallpaper
+ring-color=ffffff55
+ring-ver-color=ffffffcc
+ring-wrong-color=ff0000cc
+inside-color=00000000
+inside-ver-color=00000088
+inside-wrong-color=ff000044
+line-color=ffffff
+line-ver-color=ffffff
+line-wrong-color=ff0000
+key-hl-color=ffffff
+bs-hl-color=ffffff88
+separator-color=00000000
+layout-bg-color=00000000
+layout-border-color=00000000
+layout-text-color=ffffff

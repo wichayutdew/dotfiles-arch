@@ -28,7 +28,7 @@ hl.bind(cmd .. " + SHIFT + G", hl.dsp.exec_cmd(script .. "/screenshot.sh window"
 hl.bind(cmd .. " + SHIFT + H", hl.dsp.exec_cmd(script .. "/screenshot.sh full"))
 
 ---- SCREEN LOCK ----
-hl.bind("CTRL + ALT + Q", hl.dsp.exec_cmd(script .. "/lock.sh"))
+hl.bind("CTRL + ALT + Q", hl.dsp.exec_cmd("swaylock"))
 
 ---- APP LAUNCHER ----
 hl.define_submap("🚀", function()
