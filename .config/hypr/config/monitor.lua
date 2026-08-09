@@ -11,6 +11,14 @@ hl.monitor({
 	scale = "auto",
 })
 
+-- Workspaces 1-4 are pinned to the built-in so a docking output can never
+-- claim them (an external that connects only as a mirror would otherwise grab
+-- the first free workspace name "1" and shadow it, making SUPER+1 unreachable).
+hl.workspace_rule({ workspace = "1", monitor = "eDP-1" })
+hl.workspace_rule({ workspace = "2", monitor = "eDP-1" })
+hl.workspace_rule({ workspace = "3", monitor = "eDP-1" })
+hl.workspace_rule({ workspace = "4", monitor = "eDP-1" })
+
 -- External displays: become the MAIN monitor when connected. The built-in is
 -- switched to a mirror of the external by script/monitor_layout.sh (a static
 -- `mirror` rule cannot work here because the external connects AFTER eDP-1
