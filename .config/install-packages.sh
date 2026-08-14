@@ -51,7 +51,7 @@ PACKAGES=(
 
   # Hyprland
   hypridle
-  swaylock      # lockscreen (2026-08-09: migrated from hyprlock)
+  swaylock
   hyprpaper
   waybar
 

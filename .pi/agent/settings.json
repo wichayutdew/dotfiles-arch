@@ -3,7 +3,7 @@
   "defaultProvider": "opencode",
   "defaultModel": "deepseek-v4-flash-free",
   "defaultThinkingLevel": "medium",
-  "shellPath": "/opt/homebrew/bin/fish",
+  "shellPath": "/usr/sbin/fish",
   "packages": [
     "npm:@bitcraft-apps/pi-web-tools",
     "npm:pi-mcp-adapter",
