@@ -1,12 +1,13 @@
 {
   "lastChangelogVersion": "0.81.1",
+  "defaultProvider": "opencode",
+  "defaultModel": "deepseek-v4-flash-free",
   "defaultThinkingLevel": "medium",
-  "shellPath": "/usr/sbin/fish",
+  "shellPath": "/opt/homebrew/bin/fish",
   "packages": [
     "npm:@bitcraft-apps/pi-web-tools",
     "npm:pi-mcp-adapter",
     "npm:@plannotator/pi-extension",
-    "npm:pi-subagents",
     "npm:pi-zentui",
     "git:github.com/obra/superpowers",
     "npm:@wichayutdew/pi-workflows"
@@ -22,95 +23,11 @@
     "reserveTokens": 32768,
     "keepRecentTokens": 24000
   },
-  "subagents": {
-    "watchdog": {
-      "enabled": true,
-      "autoFollow": {
-        "blockers": false
-      },
-      "main": {
-        "enabled": true,
-        "model": "opencode/big-pickle",
-        "thinking": "high"
-      },
-      "children": {
-        "enabled": false
-      }
-    },
-    "agentOverrides": {
-      "context-builder": {
-        "tools": false,
-        "inheritProjectContext": true,
-        "inheritSkills": true
-      },
-      "delegate": {
-        "tools": false,
-        "inheritProjectContext": true,
-        "inheritSkills": true
-      },
-      "oracle": {
-        "tools": false,
-        "inheritProjectContext": true,
-        "inheritSkills": true
-      },
-      "planner": {
-        "model": "opencode/big-pickle",
-        "thinking": "high",
-        "tools": false,
-        "acceptanceRole": "read-only",
-        "completionGuard": false,
-        "inheritProjectContext": true,
-        "inheritSkills": true,
-        "defaultContext": "fresh"
-      },
-      "researcher": {
-        "model": "opencode/big-pickle",
-        "thinking": "medium",
-        "tools": false,
-        "acceptanceRole": "read-only",
-        "completionGuard": false,
-        "inheritProjectContext": true,
-        "inheritSkills": true,
-        "defaultContext": "fresh"
-      },
-      "scout": {
-        "model": "opencode/big-pickle",
-        "thinking": "low",
-        "tools": false,
-        "acceptanceRole": "read-only",
-        "completionGuard": false,
-        "inheritProjectContext": true,
-        "inheritSkills": true,
-        "defaultContext": "fresh"
-      },
-      "worker": {
-        "model": "opencode/big-pickle",
-        "thinking": "high",
-        "tools": false,
-        "acceptanceRole": "writer",
-        "inheritProjectContext": true,
-        "inheritSkills": true,
-        "defaultContext": "fresh"
-      },
-      "reviewer": {
-        "model": "opencode/big-pickle",
-        "thinking": "high",
-        "tools": false,
-        "acceptanceRole": "read-only",
-        "completionGuard": false,
-        "inheritProjectContext": true,
-        "inheritSkills": true,
-        "defaultContext": "fresh"
-      }
-    }
-  },
   "enableSkillCommands": false,
   "editorPaddingX": 2,
   "autocompleteMaxVisible": 3,
   "transport": "auto",
   "quietStartup": false,
   "outputPad": 1,
-  "theme": "light/dark",
-  "defaultProvider": "opencode",
-  "defaultModel": "deepseek-v4-flash-free"
+  "theme": "light/dark"
 }
