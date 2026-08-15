@@ -76,6 +76,10 @@ PACKAGES=(
   starship
   herdr
   zoxide
+	docker
+	docker-compose
+	docker-buildx
+	iptables-nft
 
   # AI
   pi-coding-agent

@@ -242,11 +242,13 @@ sface_threshold = 0.55          # Lower = more permissive (default 0.6942)
 ## Systemctl Enable List
 
 ``` bash
+sudo usermod -aG docker $USER
 systemctl --user enable bluetooth.service
 systemctl --user enable NetworkManager
 systemctl --user enable power-profiles-daemon
 sudo systemctl enable linux-enable-ir-emitter
 systemctl --user enable hyprpolkitagent-git
+sudo systemctl enable docker
 ```
 
 # Vimium Keymap
