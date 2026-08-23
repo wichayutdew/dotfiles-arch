@@ -1,7 +1,7 @@
 version: 1
 id: jira
 command: jira
-description: Draft, approve, and create a Jira Epic with ordered Stories
+description: "Draft, approve, and create a Jira Epic with ordered Stories. Example: /jira ACTB Implement multi-region failover for pricing service"
 start: draft
 maxStepVisits: 12
 summaryMaxChars: 30000
@@ -11,62 +11,11 @@ steps:
     prompt:
       file: steps/jira/draft.md
     agent: scout
-    permissions: &a1
-      tools:
-        - read
-        - ls
-        - bash
-        - edit
-        - write
-        - mcp
-      mcp:
-        - context7
-        - atlassian
-        - gitlab
-        - figma
-        - agoda_skills
-        - glean
-        - sourcegraph
-        - grafana
-        - slack
-        - gh_grep
-        - superset
-      extensions:
-        - /
-      skills:
-        - brainstorming
-        - cavecrew
-        - caveman
-        - caveman-commit
-        - caveman-compress
-        - caveman-help
-        - caveman-review
-        - caveman-stats
-        - coding-standards
-        - commit-format
-        - dispatching-parallel-agents
-        - doc-templates
-        - executing-plans
-        - finishing-a-development-branch
-        - grafana-logs
-        - jira-ticket
-        - lint-commands
-        - plannotator-compound
-        - plannotator-setup-goal
-        - plannotator-visual-explainer
-        - receiving-code-review
-        - requesting-code-review
-        - search-code-sourcegraph
-        - start-on-call
-        - start-triage
-        - subagent-driven-development
-        - systematic-debugging
-        - test-driven-development
-        - using-git-worktrees
-        - using-superpowers
-        - verification-before-completion
-        - writing-plans
-        - writing-skills
+    permissions:
+      tools: [read, ls, bash]
+      mcp: []
+      extensions: [/]
+      skills: [using-superpowers, caveman]
       bash:
         mode: unrestricted
     transitions:
@@ -78,13 +27,31 @@ steps:
     prompt:
       file: steps/jira/plan.md
     agent: planner
-    permissions: *a1
+    permissions:
+      tools: [read, ls, bash, mcp]
+      mcp: [atlassian]
+      extensions: [/]
+      skills: [using-superpowers, caveman]
+      bash:
+        mode: unrestricted
     gate:
       provider: plannotator
       submitOutcome: submit
       approvedOutcome: approved
       rejectedOutcome: changes-requested
       timeoutMs: 30000
+      artifactContract:
+        maxChars: 16000
+        requiredSubstrings:
+          - "# Create Jira Epic and Stories"
+          - "## Jira field contract"
+          - "## Epic"
+          - "## Ordered Stories"
+          - "## Creation sequence"
+          - "## Safety limits"
+        forbiddenSubstrings:
+          - "The complete gate artifact is the exact Markdown saved at"
+        onValidationFailure: retry
     transitions:
       approved: create
       changes-requested: plan
@@ -95,7 +62,13 @@ steps:
     prompt:
       file: steps/jira/create.md
     agent: worker
-    permissions: *a1
+    permissions:
+      tools: [read, ls, bash, mcp]
+      mcp: [atlassian]
+      extensions: [/]
+      skills: [using-superpowers, caveman]
+      bash:
+        mode: unrestricted
     transitions:
       ready: $done
       retry: create

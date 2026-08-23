@@ -1,8 +1,7 @@
 version: 1
 id: investigate
 command: investigate
-description: Derive, approve, investigate, and independently validate an
-  evidence-backed finding
+description: "Derive, approve, investigate, and independently validate an evidence-backed finding. Example: /investigate PROJ-123 Root cause of elevated 500 error rates in checkout service"
 start: retrieve
 maxStepVisits: 12
 summaryMaxChars: 30000
@@ -12,62 +11,11 @@ steps:
     prompt:
       file: steps/investigate/retrieve.md
     agent: scout
-    permissions: &a1
-      tools:
-        - read
-        - ls
-        - bash
-        - edit
-        - write
-        - mcp
-      mcp:
-        - context7
-        - atlassian
-        - gitlab
-        - figma
-        - agoda_skills
-        - glean
-        - sourcegraph
-        - grafana
-        - slack
-        - gh_grep
-        - superset
-      extensions:
-        - /
-      skills:
-        - brainstorming
-        - cavecrew
-        - caveman
-        - caveman-commit
-        - caveman-compress
-        - caveman-help
-        - caveman-review
-        - caveman-stats
-        - coding-standards
-        - commit-format
-        - dispatching-parallel-agents
-        - doc-templates
-        - executing-plans
-        - finishing-a-development-branch
-        - grafana-logs
-        - jira-ticket
-        - lint-commands
-        - plannotator-compound
-        - plannotator-setup-goal
-        - plannotator-visual-explainer
-        - receiving-code-review
-        - requesting-code-review
-        - search-code-sourcegraph
-        - start-on-call
-        - start-triage
-        - subagent-driven-development
-        - systematic-debugging
-        - test-driven-development
-        - using-git-worktrees
-        - using-superpowers
-        - verification-before-completion
-        - writing-plans
-        - writing-skills
+    permissions:
+      tools: [read, ls, bash, mcp]
+      mcp: [atlassian, context7, sourcegraph, glean, gh_grep, grafana, slack, superset, query-writer]
+      extensions: [/]
+      skills: [using-superpowers, caveman]
       bash:
         mode: unrestricted
     gate:
@@ -76,6 +24,18 @@ steps:
       approvedOutcome: approved
       rejectedOutcome: changes-requested
       timeoutMs: 30000
+      artifactContract:
+        maxChars: 6000
+        requiredSubstrings:
+          - "## Brief description"
+          - "## Goals"
+          - "## Boundaries"
+          - "## Evidence & sources"
+          - "## Report destination"
+          - "## Open evidence gaps"
+        forbiddenSubstrings:
+          - "The complete gate artifact is the exact Markdown saved at"
+        onValidationFailure: retry
     transitions:
       approved: investigate
       changes-requested: retrieve
@@ -86,7 +46,13 @@ steps:
     prompt:
       file: steps/investigate/investigate.md
     agent: worker
-    permissions: *a1
+    permissions:
+      tools: [read, ls, bash, write, mcp]
+      mcp: [atlassian, context7, sourcegraph, glean, gh_grep, grafana, slack, gitlab, superset, query-writer]
+      extensions: [/]
+      skills: [using-superpowers, caveman, systematic-debugging, grafana-logs]
+      bash:
+        mode: unrestricted
     transitions:
       ready: validate
       retry: investigate
@@ -96,7 +62,13 @@ steps:
     prompt:
       file: steps/investigate/validate.md
     agent: reviewer
-    permissions: *a1
+    permissions:
+      tools: [read, ls, bash, mcp]
+      mcp: [atlassian, sourcegraph, glean, grafana, slack, gitlab, superset, query-writer]
+      extensions: [/]
+      skills: [using-superpowers, caveman, verification-before-completion]
+      bash:
+        mode: unrestricted
     transitions:
       approved: $done
       gaps: investigate

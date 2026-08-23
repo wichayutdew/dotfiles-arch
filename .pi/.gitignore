@@ -1,15 +1,9 @@
 node_modules/
-context-mode/
-
+*cache*
+*cache*/
 plannotator-review-status.json
-# local Hermes session and memory state
-/agent/.pi-hermes-lock*
-/agent/pi-hermes-memory/
-/agent/projects-memory/
-
 # secrets
 /agent/auth.json
-/agent/models-store.json
 
 # runtime / cache / memory
 /agent/sessions/
@@ -19,8 +13,5 @@ plannotator-review-status.json
 /agent/**/*.jsonl
 /agent/**/node_modules/
 /agent/**/.cache/
-/agent/**/mcp-cache.json
-/agent/**/mcp-npx-cache.json
 /agent/**/mcp-oauth
-/agent/git/github.com/obra/superpowers/
 

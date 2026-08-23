@@ -88,8 +88,8 @@
     },
     "userMessages": {
       "enabled": true,
-      "style": "framed-copy-friendly",
-      "colorSource": "theme",
+      "style": "labeled",
+      "colorSource": "terminal",
       "styles": {
         "framed": {},
         "framed-copy-friendly": {},
@@ -97,14 +97,51 @@
         "labeled": {}
       }
     },
+    "workingLine": {
+      "enabled": true,
+      "turnSummary": true,
+      "spinner": "pulse",
+      "spinnerIntervalMs": 160,
+      "animateSpinnerColor": true,
+      "textIntervalMs": 40,
+      "textAnimation": "disabled",
+      "colorSource": "terminal",
+      "messages": {
+        "custom": true,
+        "values": [
+          "Sautéing…",
+          "Cooking…",
+          "Ionizing…",
+          "Zigzagging…",
+          "Razzle-dazzling…",
+          "Photosynthesizing…",
+          "Nucleating…",
+          "Brewing…",
+          "Combobulating…",
+          "Boogieing…",
+          "Befuddling…",
+          "Alchemizing…",
+          "Conjuring…",
+          "Baking…",
+          "Simmering…",
+          "Blanching…"
+        ]
+      },
+      "segments": {
+        "tool": true,
+        "elapsed": true,
+        "thought": true,
+        "tokens": true
+      }
+    },
     "selectorBorders": {
       "enabled": true,
       "style": "zentui",
-      "colorSource": "theme"
+      "colorSource": "terminal"
     },
     "footer": {
       "style": "starship",
-      "colorSource": "theme",
+      "colorSource": "terminal",
       "modelLabel": "id",
       "styles": {
         "starship": {
@@ -119,21 +156,21 @@
             "error": 90
           },
           "pathDisplay": {
-            "mode": "basename",
+            "mode": "full",
             "depth": 5
           },
           "segments": {
             "cwd": true,
             "sessionName": true,
             "gitBranch": true,
-            "gitStatus": true,
+            "gitStatus": false,
             "gitCounts": true,
             "gitCommit": true,
             "gitMetrics": true,
             "runtime": true,
             "modelInfo": false,
             "context": true,
-            "tokens": true,
+            "tokens": false,
             "cost": true,
             "sessionDuration": true,
             "username": false,
@@ -160,7 +197,7 @@
               "plannotator": "middle"
             },
             "colorModes": {
-              "mcp": "zentui",
+              "mcp": "original",
               "plannotator": "zentui"
             }
           }

@@ -1,8 +1,7 @@
 version: 1
 id: mr-comment
 command: mr-comment
-description: Fetch unresolved MR or PR comments, approve a fix plan, implement,
-  verify, push, and reply
+description: "Fetch unresolved MR or PR comments, approve a fix plan, implement, verify, push, and reply. Example: /mr-comment https://gitlab.com/org/repo/-/merge_requests/123"
 start: fetch
 maxStepVisits: 10
 summaryMaxChars: 30000
@@ -12,62 +11,11 @@ steps:
     prompt:
       file: steps/mr-comment/fetch.md
     agent: scout
-    permissions: &a1
-      tools:
-        - read
-        - ls
-        - bash
-        - edit
-        - write
-        - mcp
-      mcp:
-        - context7
-        - atlassian
-        - gitlab
-        - figma
-        - agoda_skills
-        - glean
-        - sourcegraph
-        - grafana
-        - slack
-        - gh_grep
-        - superset
-      extensions:
-        - /
-      skills:
-        - brainstorming
-        - cavecrew
-        - caveman
-        - caveman-commit
-        - caveman-compress
-        - caveman-help
-        - caveman-review
-        - caveman-stats
-        - coding-standards
-        - commit-format
-        - dispatching-parallel-agents
-        - doc-templates
-        - executing-plans
-        - finishing-a-development-branch
-        - grafana-logs
-        - jira-ticket
-        - lint-commands
-        - plannotator-compound
-        - plannotator-setup-goal
-        - plannotator-visual-explainer
-        - receiving-code-review
-        - requesting-code-review
-        - search-code-sourcegraph
-        - start-on-call
-        - start-triage
-        - subagent-driven-development
-        - systematic-debugging
-        - test-driven-development
-        - using-git-worktrees
-        - using-superpowers
-        - verification-before-completion
-        - writing-plans
-        - writing-skills
+    permissions:
+      tools: [read, ls, bash, mcp]
+      mcp: [gitlab, context7]
+      extensions: [/]
+      skills: [using-superpowers, caveman]
       bash:
         mode: unrestricted
     transitions:
@@ -85,7 +33,13 @@ steps:
       allowedRoots:
         - ~/repositories/worktrees
         - .
-    permissions: *a1
+    permissions:
+      tools: [read, ls, bash]
+      mcp: []
+      extensions: [/]
+      skills: [using-superpowers, using-git-worktrees, caveman]
+      bash:
+        mode: unrestricted
     transitions:
       ready: plan
       retry: checkout-source
@@ -95,13 +49,32 @@ steps:
     prompt:
       file: steps/mr-comment/plan.md
     agent: planner
-    permissions: *a1
+    permissions:
+      tools: [read, ls, bash, mcp]
+      mcp: [gitlab, sourcegraph, context7]
+      extensions: [/]
+      skills: [using-superpowers, caveman, receiving-code-review, ponytail]
+      bash:
+        mode: unrestricted
     gate:
       provider: plannotator
       submitOutcome: submit
       approvedOutcome: approved
       rejectedOutcome: changes-requested
       timeoutMs: 30000
+      artifactContract:
+        maxChars: 10000
+        requiredSubstrings:
+          - "## Review summary"
+          - "## Comment decisions"
+          - "## Implementation plan"
+          - "## Validation"
+          - "## Replies and remote actions"
+          - "## Risks"
+          - "## Execution appendix (machine-readable)"
+        forbiddenSubstrings:
+          - "The complete gate artifact is the exact Markdown saved at"
+        onValidationFailure: retry
     transitions:
       approved: implement
       changes-requested: plan
@@ -112,7 +85,13 @@ steps:
     prompt:
       file: steps/mr-comment/implement.md
     agent: worker
-    permissions: *a1
+    permissions:
+      tools: [read, ls, bash, edit, write, mcp]
+      mcp: [context7]
+      extensions: [/]
+      skills: [using-superpowers, caveman, test-driven-development, systematic-debugging]
+      bash:
+        mode: unrestricted
     transitions:
       ready: verify
       retry: implement
@@ -122,7 +101,13 @@ steps:
     prompt:
       file: steps/mr-comment/verify.md
     agent: reviewer
-    permissions: *a1
+    permissions:
+      tools: [read, ls, bash]
+      mcp: []
+      extensions: [/]
+      skills: [using-superpowers, caveman, verification-before-completion, caveman-review, ponytail-review]
+      bash:
+        mode: unrestricted
     transitions:
       ready: deliver
       no-actions: $done
@@ -134,7 +119,13 @@ steps:
     prompt:
       file: steps/mr-comment/publish.md
     agent: worker
-    permissions: *a1
+    permissions:
+      tools: [read, ls, bash, mcp]
+      mcp: [gitlab]
+      extensions: [/]
+      skills: [using-superpowers, caveman, caveman-commit]
+      bash:
+        mode: unrestricted
     transitions:
       published: $done
       no-actions: $done

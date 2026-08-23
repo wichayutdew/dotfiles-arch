@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=/Users/wphongphanpa/repositories/personal/pi-workflows/schemas/settings.schema.json
+# yaml-language-server: $schema=https://raw.githubusercontent.com/wichayutdew/pi-workflows/main/schemas/settings.schema.json
 version: 1
 allowProjectWorkflows: false
 statusShortcut: ctrl+alt+c

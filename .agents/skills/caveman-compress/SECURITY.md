@@ -8,18 +8,7 @@
 
 1. **subprocess usage**: The skill calls the `claude` CLI via `subprocess.run()` as a fallback when `ANTHROPIC_API_KEY` is not set. The subprocess call uses a fixed argument list — no shell interpolation occurs. User file content is passed via stdin, not as a shell argument.
 
-2. **File read/write**: The skill reads the file the user explicitly points it at, compresses it, and writes the result back to the same path. A `.original.md` backup is saved alongside it. No files outside the user-specified path are read or written.
-
-### Required preflight
-
-Before running the script, the agent must:
-
-1. State that the complete file will be sent to Anthropic through the API or Claude CLI.
-2. Obtain explicit transmission consent unless already given in the same request.
-3. Scan for likely secrets and sensitive personal data without printing values.
-4. Stop on a match and request a redacted copy.
-
-The script itself does not provide a local/offline compression path. Do not describe it as local processing.
+2. **File read/write**: The skill reads the file the user explicitly points it at, compresses it, and writes the result back to the same path. A `.original.md` backup is saved to an out-of-tree data dir (`$XDG_DATA_HOME/caveman-compress/backups/<parent-dir-name>/`, or `%LOCALAPPDATA%\caveman-compress\backups\<parent-dir-name>\` on Windows). Beyond the target file and that backup location, no files are read or written.
 
 ### What the skill does NOT do
 

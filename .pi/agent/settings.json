@@ -5,16 +5,17 @@
   "defaultThinkingLevel": "medium",
   "shellPath": "/usr/sbin/fish",
   "packages": [
-    "npm:@bitcraft-apps/pi-web-tools",
-    "npm:pi-mcp-adapter",
-    "npm:@plannotator/pi-extension",
     "npm:pi-zentui",
-    "git:github.com/obra/superpowers",
-    "npm:@wichayutdew/pi-workflows"
+    "npm:@plannotator/pi-extension",
+    "npm:pi-mcp-adapter",
+    "npm:pi-web-access",
+    "npm:@wichayutdew/pi-workflows",
+    "npm:@tintinweb/pi-subagents"
   ],
   "terminal": {
     "showTerminalProgress": true,
-    "clearOnShrink": true
+    "clearOnShrink": true,
+    "imageWidthCells": 60
   },
   "doubleEscapeAction": "tree",
   "treeFilterMode": "all",
