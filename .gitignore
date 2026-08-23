@@ -16,6 +16,7 @@
 /.config/ZenNotes
 /.config/zen
 /.config/obs-studio
+/.config/Postman
 
 # except these directories
 !/.config
