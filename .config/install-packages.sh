@@ -48,19 +48,24 @@ PACKAGES=(
   spotify
   zennotes
   zen-browser-bin
+	1password
 
   # Hyprland
   hypridle
   swaylock
   hyprpaper
   waybar
+	hyprpolkitagent-git
+  hyprtoolkit-git
+  hyprland-qt-support-git
 
   # GPU / Vulkan (driver stack required by the desktop)
   vulkan-radeon
 
-  # Face Authentication
+  # Face Authentication and key storage
   howdy-next
   linux-enable-ir-emitter-bin
+	gnome-keyring
 
   # Terminal Essentials
   yazi
