@@ -1,5 +1,5 @@
 ---
-model: gateway/grok-4.6
+model: opencode/x-preview-f-free
 thinking: high
 ---
 

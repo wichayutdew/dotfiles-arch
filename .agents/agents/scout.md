@@ -1,5 +1,5 @@
 ---
-model: gateway/gemini-3.7-flash
+model: opencode/deepseek-v4-flash-free
 thinking: medium
 ---
 

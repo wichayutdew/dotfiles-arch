@@ -1,5 +1,5 @@
 ---
-model: gateway/kimi-k2.7-code
+model: opencode/x-preview-f-free
 thinking: high
 ---
 

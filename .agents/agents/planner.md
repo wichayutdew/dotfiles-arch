@@ -1,5 +1,5 @@
 ---
-model: gateway/gpt-5.6-terra
+model: opencode/x-preview-f-free
 thinking: high
 ---
 
