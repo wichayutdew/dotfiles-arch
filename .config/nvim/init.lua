@@ -1,4 +1,5 @@
 --------------------- PATH ---------------------
+vim.env.PATH = "/opt/homebrew/bin:" .. vim.env.PATH
 
 --------------------- EDITOR SETTINGS ---------------------
 vim.g.mapleader = " "
@@ -37,10 +38,32 @@ vim.keymap.set("n", "//", ":noh<CR>")
 vim.keymap.set("n", "<leader>wv", ":vsplit<CR>", { desc = "Split vertically" })
 vim.keymap.set("n", "<leader>wh", ":split<CR>", { desc = "Split horizontally" })
 
+--------------------- CUSTOM SHORTCUTS ---------------------
+require("shortcut")()
+
 --------------------- AUTOCMDS ---------------------
 vim.api.nvim_create_autocmd("TextYankPost", {
 	callback = function()
 		vim.highlight.on_yank()
+	end,
+})
+
+-- Build telescope-fzf-native.nvim when installed/updated via vim.pack
+vim.api.nvim_create_autocmd("PackChanged", {
+	callback = function(ev)
+		if ev.data.spec.name ~= "telescope-fzf-native.nvim" then
+			return
+		end
+		if ev.data.kind ~= "install" and ev.data.kind ~= "update" then
+			return
+		end
+		local obj = vim.system({ "make" }, { cwd = ev.data.path }):wait()
+		if obj.code ~= 0 then
+			vim.notify(
+				"failed to build telescope-fzf-native.nvim: " .. (obj.stderr or ""),
+				vim.log.levels.ERROR
+			)
+		end
 	end,
 })
 
@@ -63,6 +86,7 @@ vim.pack.add({
 	{ src = "https://github.com/theHamsta/nvim-dap-virtual-text" },
 	--------------------- TELESCOPE(FZF) ---------------------
 	{ src = "https://github.com/nvim-telescope/telescope.nvim" },
+	{ src = "https://github.com/nvim-telescope/telescope-fzf-native.nvim" },
 	{ src = "https://github.com/nvim-telescope/telescope-dap.nvim" },
 	--------------------- MINI ---------------------
 	{ src = "https://github.com/nvim-mini/mini.icons" }, -- add icons
@@ -76,7 +100,9 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-mini/mini.jump" },
 	{ src = "https://github.com/nvim-mini/mini.jump2d" },
 	--------------------- UI ---------------------
-	{ src = "https://github.com/iamcco/markdown-preview.nvim" }, -- markdown preview in browser
+	{ src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" }, -- render markdown
+	{ src = "https://github.com/selimacerbas/live-server.nvim" }, -- required by markdown-preview.nvim
+	{ src = "https://github.com/selimacerbas/markdown-preview.nvim" }, -- preview Markdown and Mermaid
 	{ src = "https://github.com/tomasky/bookmarks.nvim" },
 	{ src = "https://github.com/f4z3r/gruvbox-material.nvim" },
 	{ src = "https://github.com/folke/noice.nvim" }, -- Better command line and messages

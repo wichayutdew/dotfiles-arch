@@ -1,44 +1,45 @@
 # Global Agent Rules
 
-Produce minimal-diff, evidence-backed changes adhering to local repository conventions.
+Produce minimal-diff, evidence-backed changes that follow local repository conventions.
 
-## Core Guiding Principles
+## Search
 
-### 1. Grounding & Evidence
-- **Grounding**: Always capture branch, `HEAD`, and `git status --short`. Preserve unrelated checkouts and changes.
-- **Claims Taxonomy**:
-  - `FACT`: Direct source cited (`path:line` or tool output + timestamp).
-  - `HYPOTHESIS`: Confidence level + explicit falsifier.
-  - `UNKNOWN`: Next check required to verify.
-- **Search**: Use `rg` or `rg --files` (never `find`). For versioned APIs/libraries, use Context7 (`resolve-library-id` -> `query-docs`).
-- **URLs & generated prose**: Before emitting any URL in any workflow output, validate its syntax and that it resolves to the intended observed resource; never infer a URL from text, line references, IDs, or labels. Omit an unverified link and state that it could not be verified. Write comments and replies as concise, natural, context-specific human prose—never placeholders, fabricated wording, or mechanical templates.
+Always use `rg` or `rg --files` via Bash.
 
-### 2. Planning (Read-Only)
-- **Drafting Location**: Draft plans to `~/.plannotator/plans/` (or `./PLAN.md`).
-- **Plannotator Gate Protocol**:
-  - Submit the **complete Markdown text content** directly into the `artifact` parameter on `submit`. Never submit just a file path string.
-  - Keep plans under 60 lines unless detailed schema/diff appendices are required: goals, non-goals, verified files/symbols, test mapping, and risks.
-  - Never edit code before Plannotator approval.
+Never use `grep`. Never use `find`. Never use the `grep` or `find` tools.
+Do not fall back to `grep`/`find` because a skill, subagent default, or example says so.
 
-### 3. Implementation & Verification
-- **One Writer**: Implement the smallest coherent change using TDD (prove red -> green).
-- **Independent Verification**: Run focused checks first, then required test/lint suites. Report exact command outputs.
-- **Safety**: Never push, commit, merge, or mutate external services without explicit user authorization. Never print secrets.
+## Grounding
 
-### 4. Communication
-- **Chat**: Ultra-terse, caveman style (exact technical terms, zero filler).
-- **Plans, Contracts, & Warnings**: Full, unambiguous professional language.
+- Capture branch, `HEAD`, and `git status --short` before mutating a repo. Preserve unrelated checkouts.
+- Claims: `FACT` with `path:line` or tool output; `HYPOTHESIS` with a falsifier; `UNKNOWN` with the next check.
+- For versioned libraries, use Context7 (`resolve-library-id` then `query-docs`).
+- Never invent a URL. Validate syntax and that it resolves to the intended resource, or omit it.
 
-## Progressive Disclosure & Skills
+## Hosted reviews
 
-| Domain | Resource / Skill |
-|---|---|
-| Skill Orchestration | `using-superpowers` |
-| Worktree Isolation | `using-git-worktrees` |
-| Code Standards & TDD | `coding-standards`, `test-driven-development` |
-| Verification | `verification-before-completion`, `lint-commands` |
-| Jira & Tickets | `jira-ticket` |
-| Production & Incident Triage | `start-triage`, `start-on-call`, `grafana-logs` |
-| Subagents & Delegation | `cavecrew`, `subagent-driven-development` |
-| Concise Commits & Review | `commit-format` |
+- Prefer GitHub/GitLab MCP over `gh`/`glab`. Use CLI only when the matching MCP cannot do the job, and record why.
+- New PR/MR bodies must follow the repository or host description template. Fill only template fields. Never invent a free-form description.
+- If no repository or host template is verified, create the PR/MR without changing its description. Read back the created description; treat it as the template, then update only the workflow-owned marker region.
+- Existing PR/MR: title is immutable. Change only the workflow-owned marker region, or append one if markers are absent. Never replace the whole body.
+
+## Planning and gates
+
+- Always draft plans under `~/.plannotator/plans/`
+- Submit the complete Markdown text as the gate `artifact`. Never submit a path.
+- Do not edit product code before Plannotator approval.
+
+## Implementation
+
+- One writer. Smallest coherent change.
+- TDD only when the test has an assessable benefit. Never add a test solely to satisfy TDD.
+- Never push, merge, or mutate external services without the current step's authority. Never print secrets.
+
+## Workflow children
+
+- Do not launch subagents.
+- Do not open a skill file unless the step YAML lists that skill.
+- Format all human-facing output—including summaries, plans, reports, comments, and replies—for scanning: short headings, then one distinct fact, action, or metadata value per bullet or paragraph. Never pack unrelated values into one line or emit a dense prose wall.
+- When a schema needs several related fields, use a bullet list with one `field`: `value` per row. Put machine-readable data under `## Machine-readable handoff` in a fenced `json` block. It must be valid JSON with no prose inside it.
+- Chat: terse. Plans, contracts, and review replies: clear professional prose.
 

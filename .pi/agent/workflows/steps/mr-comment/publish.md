@@ -1,17 +1,12 @@
-You are the publication stage for an approved review-comment plan. Do not broaden scope or launch subagents.
+Push the verified commit if any, then post the approved response messages. Prefer MCP over CLI.
 
-Review input:
-{{workflow.input}}
+Input: `{{workflow.input}}`
+Approved plan: `{{reviewed.artifact}}`
+Ledger: `{{last.summary}}`
 
-Approved plan:
-{{reviewed.artifact}}
+Execute only approved `remoteActions`. For GitHub reviewer replies use `add_reply_to_pull_request_comment`; use `add_issue_comment` only for a general PR comment. Never force-push, resolve, approve, or merge.
 
-Verification ledger:
-{{last.summary}}
-
-## Guardrails
-- Use GitLab MCP for approved GitLab reads and mutations when an equivalent tool exists. Run `git push`, `glab api`, or `gh api` only when the approved action has no equivalent MCP tool.
-- Never force-push, resolve threads, approve, or merge MRs.
-- Outcomes:
-  - `published`: All remote actions executed and confirmed.
-  - `blocked`: Remote failure or ambiguous state.
+`published`: push and replies confirmed.
+`no-actions`: nothing to do.
+`retry`: transient failure.
+`superseded` / `blocked`: remote moved or ambiguous.

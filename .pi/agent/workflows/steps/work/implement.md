@@ -1,23 +1,12 @@
-You are the single implementation stage for the approved local-work plan. Stay in this delegated child; do not launch subagents.
+Implement the approved plan in the bound worktree.
 
-Original request:
-{{workflow.input}}
+Request: `{{workflow.input}}`
+Approved plan: `{{reviewed.artifact}}`
+Feedback: `{{reviewed.feedback}}`
+Ledger: `{{last.summary}}`
 
-Approved plan:
-{{reviewed.artifact}}
+Stay in `repositories[0].cwd`. Run only `worker` commands. Use TDD only for tests listed with an assessable benefit. Do not add tests to justify extra code. Leave pre-existing dirty files alone. Do not push, open reviews, or mutate Jira.
 
-Approval feedback:
-{{reviewed.feedback}}
-
-Latest ledger:
-{{last.summary}}
-
-## Rules & Guardrails
-
-1. **Workspace Integrity**: Operate strictly in `repositories[0].cwd`. Never switch branches, create workspaces, or touch unrelated files.
-2. **Execution Authority**: Run only commands listed in `worker` array. No unapproved commands or external pushes.
-3. **Resumable State**: If pre-existing dirty files were recorded in preparation, leave them intact; do not commit or stash them.
-4. **Outcomes**:
-   - `ready`: Implementation complete, RED/GREEN evidence logged, commit created. Pass unchanged `json` contract to reviewer.
-   - `retry`: Recoverable transient tool/environment issue.
-   - `blocked`: Contradictory requirements, missing command authority, or unrecoverable failures.
+`ready`: red/green evidence and a commit. Pass the JSON contract unchanged.
+`retry`: transient tool failure.
+`blocked`: missing authority or unrecoverable failure.

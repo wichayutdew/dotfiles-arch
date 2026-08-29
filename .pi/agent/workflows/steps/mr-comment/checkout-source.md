@@ -1,14 +1,10 @@
-You prepare the local checkout for resolving hosted MR comments. Do not delete worktrees, reset HEAD, or launch subagents.
+Check out the reviewed source branch. Mechanical only.
 
-Review input:
-{{workflow.input}}
+Input: `{{workflow.input}}`
+Evidence: `{{last.summary}}`
 
-Fetched review evidence:
-{{last.summary}}
+Never stash, reset, clean, or delete unrelated files.
 
-## Guardrails
-- **Preservation**: Never stash, reset, clean, or delete files.
-- **Outcomes**:
-  - `ready`: Source branch checked out/bound safely. Include `workspace: {cwd: "<path>"}`.
-  - `retry`: Transient fetch error.
-  - `blocked`: Dirty unrelated checkout, divergent branch history, or missing remote.
+`ready`: source branch bound. Include `workspace: {cwd: "<path>"}`.
+`retry`: transient fetch error.
+`blocked`: dirty unrelated checkout or missing remote.

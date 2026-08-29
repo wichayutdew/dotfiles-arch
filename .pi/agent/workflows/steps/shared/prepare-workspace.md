@@ -1,17 +1,10 @@
-You are the workspace-preparation stage for a user-owned Git workflow. Stay in this delegated child; do not launch subagents.
+Create or reuse the approved worktree and branch. Mechanical only.
 
-Workflow request:
-{{workflow.input}}
+Approved plan: `{{reviewed.artifact}}`
+Restart workspace: `{{restart.workspace}}`
 
-Stable workflow run ID:
-{{run.id}}
+Use `publication.sourceBranch` at `repositories[0].baseHead`. Branch is `<type>/<JIRA-KEY>` or `<type>/<semantic-kebab-summary>`. Never append the run id.
 
-## Rules & Invariants
+On restart, rebind that exact worktree and branch. Preserve unrelated work. If source HEAD moved past `baseHead`, return `workspace-refresh` with no mutation.
 
-1. **Idempotence**: Extract marker from `{{run.id}}`. Reuse existing run-owned worktree/branch if present; never create a duplicate.
-2. **Preservation**: Preserve all uncommitted user changes and existing branches. Never touch unrelated worktrees.
-3. **Rebase Safety**: Only rebase clean, run-owned local branches. Abort immediately on conflict and return `blocked`.
-4. **Output Contract**:
-   - `ready`: Include `workspace: {cwd: "<absolute path>"}` and manifest (source root, ref, HEAD; selected path, branch, HEAD, rebase status, initial/final status).
-   - `retry`: Transient tool failure with no state changes.
-   - `blocked`: Unsafe Git state, ambiguity, or conflict.
+`ready`: bound `workspace.cwd` plus manifest. `retry`: transient failure. `blocked`: unsafe state.

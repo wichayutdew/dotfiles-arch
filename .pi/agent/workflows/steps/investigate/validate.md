@@ -1,20 +1,12 @@
-You are the independent validation stage for an investigation report. Stay read-only; do not edit the report or launch subagents.
+Check the draft against the approved goal. Read-only. Do not write the report file.
 
-Original request:
-{{workflow.input}}
+Input: `{{workflow.input}}`
+Approved scope: `{{reviewed.artifact}}`
+Draft: `{{last.summary}}`
 
-Approved scope artifact:
-{{reviewed.artifact}}
+Re-check citations. Reject filler, missing stories, or claims that miss the goal.
 
-Investigation ledger:
-{{last.summary}}
-
-## Validation Rules & Review Criteria
-
-1. **Independent Verification**: Do not trust the prior claim ledger; verify citations, line numbers, and sources directly with read-only tools.
-2. **Reader-Clarity Review**: Ensure prose is concise, scannable, and free of filler. Recommend Mermaid diagrams only where complex flows or relationships warrant visual representation.
-3. **Outcomes**:
-   - `approved`: All material claims verified and clear.
-   - `gaps`: Actionable evidence gaps, contradictions, or clarity issues (returns to `investigate`).
-   - `retry`: Recoverable read-only tool failure.
-   - `blocked`: Irreconcilable evidence or missing sources after exhaustive attempts.
+`approved`: draft satisfies the goal.
+`gaps`: return to research with exact gaps.
+`retry`: transient read failure.
+`blocked`: irreconcilable evidence.

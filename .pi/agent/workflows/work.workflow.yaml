@@ -1,44 +1,32 @@
 version: 1
 id: work
 command: work
-description: "Prepare a dedicated workspace, plan, implement, and verify local work. Example: /work Add rate limiting to user registration endpoint"
-start: prepare-workspace
+description: "Jira or brief → plan → worktree → TDD → review → PR/MR."
+start: intake
 maxStepVisits: 20
 summaryMaxChars: 30000
 steps:
-  prepare-workspace:
-    title: Prepare dedicated branch and worktree
-    prompt:
-      file: steps/shared/prepare-workspace.md
-    agent: workspace-preparer
-    workspace:
-      bindOn:
-        - ready
-      allowedRoots:
-        - ~/repositories/worktrees
+  intake:
+    title: Pull Jira or normalize the brief
+    prompt: {file: steps/work/intake.md}
+    agent: scout
     permissions:
-      tools: [read, ls, bash]
-      mcp: []
-      extensions: [/]
-      skills: [using-superpowers, using-git-worktrees, caveman]
-      bash:
-        mode: unrestricted
-    transitions:
-      ready: plan
-      retry: prepare-workspace
-      blocked: $pause
+      tools: [read, ls, bash, mcp]
+      mcp: [atlassian]
+      extensions: []
+      skills: []
+      bash: {mode: unrestricted}
+    transitions: {ready: plan, retry: intake, blocked: $pause}
   plan:
-    title: Explore and plan local work
-    prompt:
-      file: steps/work/plan.md
+    title: Plan work for Plannotator
+    prompt: {file: steps/work/plan.md}
     agent: planner
     permissions:
       tools: [read, ls, bash, mcp]
-      mcp: [context7, sourcegraph, glean, gh_grep, github/get_file_contents, gitlab]
-      extensions: [/]
-      skills: [using-superpowers, caveman, ponytail]
-      bash:
-        mode: unrestricted
+      mcp: [atlassian, context7, sourcegraph, glean, gh_grep, github/get_file_contents, gitlab]
+      extensions: []
+      skills: []
+      bash: {mode: unrestricted}
     gate:
       provider: plannotator
       submitOutcome: submit
@@ -46,70 +34,63 @@ steps:
       rejectedOutcome: changes-requested
       timeoutMs: 30000
       artifactContract:
-        maxChars: 8000
+        maxChars: 10000
         requiredSubstrings:
-          - "## Review summary"
-          - "## Review focus"
-          - "## Proposed approach"
+          - "## Goal/Acceptance Criteria"
+          - "## Non Goal"
+          - "## Implementation Steps and Tests"
           - "## Validation"
-          - "## Risks"
+          - "## Risks/Decisions Needed"
+          - "## Publications Contract/Metadata"
           - "## Execution appendix (machine-readable)"
-          - "## Publication contract"
         forbiddenSubstrings:
           - "The complete gate artifact is the exact Markdown saved at"
         onValidationFailure: retry
-    transitions:
-      approved: implement
-      changes-requested: plan
-      workspace-refresh: prepare-workspace
-      retry: plan
-      blocked: $pause
+    transitions: {approved: prepare-workspace, changes-requested: plan, retry: plan, blocked: $pause}
+  prepare-workspace:
+    title: Create worktree and branch
+    prompt: {file: steps/shared/prepare-workspace.md}
+    agent: scout
+    workspace:
+      bindOn: [ready]
+      allowedRoots: [~/repositories/worktrees]
+    permissions:
+      tools: [read, ls, bash]
+      mcp: []
+      extensions: []
+      skills: [using-git-worktrees]
+      bash: {mode: unrestricted}
+    transitions: {ready: implement, workspace-refresh: plan, retry: prepare-workspace, blocked: $pause}
   implement:
-    title: Implement the approved local plan
-    prompt:
-      file: steps/work/implement.md
+    title: Implement approved plan with TDD
+    prompt: {file: steps/work/implement.md}
     agent: worker
     permissions:
       tools: [read, ls, bash, edit, write, mcp]
       mcp: [context7]
-      extensions: [/]
-      skills: [using-superpowers, caveman, test-driven-development, systematic-debugging]
-      bash:
-        mode: unrestricted
-    transitions:
-      ready: verify
-      retry: implement
-      blocked: $pause
+      extensions: []
+      skills: [test-driven-development]
+      bash: {mode: unrestricted}
+    transitions: {ready: verify, retry: implement, blocked: $pause}
   verify:
-    title: Independently verify local work
-    prompt:
-      file: steps/work/verify.md
+    title: Check goal and acceptance criteria
+    prompt: {file: steps/work/verify.md}
     agent: reviewer
     permissions:
       tools: [read, ls, bash]
       mcp: []
-      extensions: [/]
-      skills: [using-superpowers, caveman, verification-before-completion, caveman-review, ponytail-review]
-      bash:
-        mode: unrestricted
-    transitions:
-      passed: publish
-      failed: implement
-      retry: verify
-      blocked: verify
+      extensions: []
+      skills: [verification-before-completion]
+      bash: {mode: unrestricted}
+    transitions: {passed: publish, failed: implement, retry: verify, blocked: verify}
   publish:
-    title: Publish verified branch and open review
-    prompt:
-      file: steps/shared/publish-remote.md
-    agent: worker
+    title: Push and open or update PR/MR
+    prompt: {file: steps/work/publish-remote.md}
+    agent: scout
     permissions:
       tools: [read, ls, bash, mcp]
-      mcp: [gitlab, github/pull_request_read, github/create_pull_request]
-      extensions: [/]
-      skills: [using-superpowers, caveman, verification-before-completion]
-      bash:
-        mode: unrestricted
-    transitions:
-      published: $done
-      retry: publish
-      blocked: $pause
+      mcp: [gitlab, github/pull_request_read, github/create_pull_request, github/update_pull_request]
+      extensions: []
+      skills: []
+      bash: {mode: unrestricted}
+    transitions: {published: $done, retry: publish, blocked: $pause}

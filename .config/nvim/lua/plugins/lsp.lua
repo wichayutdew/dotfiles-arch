@@ -16,8 +16,8 @@ return function()
 			"kotlin-debug-adapter",
 			"detekt",
 			"typescript-language-server",
+			"eslint_d",
 			"prettier",
-			"eslint-lsp",
 		},
 	})
 
@@ -29,18 +29,6 @@ return function()
 			cmd = { "lua-language-server" },
 			capabilities = lsp_capabilities,
 			filetypes = { "lua" },
-			settings = {
-				Lua = {
-					diagnostics = {
-						globals = { "hl" },
-					},
-					workspace = {
-						library = {
-							"/usr/share/hypr/stubs",
-						},
-					},
-				},
-			},
 		},
 		rust_analyzer = {
 			cmd = { "rust-analyzer" },
@@ -74,13 +62,7 @@ return function()
 		ts_ls = {
 			cmd = { "typescript-language-server", "--stdio" },
 			capabilities = lsp_capabilities,
-			filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
-			root_markers = { "tsconfig.json", "jsconfig.json", "package.json" },
-		},
-		eslint = {
-			cmd = { "vscode-eslint-language-server", "--stdio" },
-			capabilities = lsp_capabilities,
-			filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact", "json" },
+			filetypes = { "typescript", "javascript", "typescriptreact", "javascriptreact" },
 		},
 	}
 
@@ -95,7 +77,6 @@ return function()
 		"jsonls",
 		"kotlin_lsp",
 		"ts_ls",
-		"eslint",
 	})
 
 	---------------------- Treesitter ---------------------
@@ -108,9 +89,9 @@ return function()
 				"markdown",
 				"json",
 				"kotlin",
-				"html",
 				"typescript",
-				"tsx",
+				"javascript",
+				"html",
 			})
 		end,
 	})
@@ -135,20 +116,30 @@ return function()
 			json = { "jq" },
 			cucumber = { "reformat-gherkin" },
 			kotlin = { "ktfmt" },
-			typescript = { "prettier" },
-			typescriptreact = { "prettier" },
 			javascript = { "prettier" },
+			typescript = { "prettier" },
 			javascriptreact = { "prettier" },
+			typescriptreact = { "prettier" },
+		},
+		formatters = {
+			spotless = {
+				command = "./gradlew",
+				args = { "spotlessApply" },
+				cwd = function()
+					return vim.fn.getcwd()
+				end,
+				stdin = false,
+			},
 		},
 	})
 
 	---------------------- Linter ---------------------
 	require("lint").linters_by_ft = {
+		javascript = { "eslint_d" },
+		typescript = { "eslint_d" },
+		javascriptreact = { "eslint_d" },
+		typescriptreact = { "eslint_d" },
 		kotlin = { "detekt" },
-		typescript = { "eslint" },
-		typescriptreact = { "eslint" },
-		javascript = { "eslint" },
-		javascriptreact = { "eslint" },
 	}
 
 	---------------------- Diagnostic Signs ---------------------
@@ -161,7 +152,9 @@ return function()
 				[vim.diagnostic.severity.INFO] = "»",
 			},
 		},
-		virtual_text = true,
+		virtual_text = {
+			virt_text_pos = "right_align",
+		},
 		severity_sort = true,
 		float = {
 			border = "rounded",

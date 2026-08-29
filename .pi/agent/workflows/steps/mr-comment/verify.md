@@ -1,16 +1,11 @@
-You are the independent verification stage for the approved review-comment fixes. Stay read-only for code; do not modify files or launch subagents.
+Check the local work against each approved verdict and the reviewer's intent. Read-only.
 
-Review input:
-{{workflow.input}}
+Input: `{{workflow.input}}`
+Approved plan: `{{reviewed.artifact}}`
+Ledger: `{{last.summary}}`
 
-Approved plan:
-{{reviewed.artifact}}
-
-Implementation ledger:
-{{last.summary}}
-
-## Outcomes
-- `passed`: All acceptance criteria, tests, and linters pass. Hands off approved `remoteActions` to publication stage.
-- `failed`: Local test failure or regression (returns to `implement`).
-- `retry`: Recoverable read-only environment failure.
-- `blocked`: Corrupted workspace or missing authority.
+`passed`: verdicts and checks hold; hand `remoteActions` to deliver.
+`no-actions`: nothing left to push or reply.
+`failed`: return to implement with the exact gap.
+`retry`: transient read-only failure.
+`blocked`: corrupted workspace.

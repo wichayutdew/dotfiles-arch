@@ -1,61 +1,46 @@
 version: 1
 id: mr-comment
 command: mr-comment
-description: "Fetch unresolved MR or PR comments, approve a fix plan, implement, verify, push, and reply. Example: /mr-comment https://gitlab.com/org/repo/-/merge_requests/123"
+description: "PR/MR URL → comments plan → fix → verify → push and reply."
 start: fetch
 maxStepVisits: 10
 summaryMaxChars: 30000
 steps:
   fetch:
-    title: Fetch merge-request or pull-request evidence
-    prompt:
-      file: steps/mr-comment/fetch.md
+    title: Fetch PR/MR evidence
+    prompt: {file: steps/mr-comment/fetch.md}
     agent: scout
     permissions:
       tools: [read, ls, bash, mcp]
-      mcp: [gitlab, context7]
-      extensions: [/]
-      skills: [using-superpowers, caveman]
-      bash:
-        mode: unrestricted
-    transitions:
-      ready: checkout-source
-      retry: fetch
-      blocked: $pause
+      mcp: [gitlab, github/pull_request_read, context7]
+      extensions: []
+      skills: []
+      bash: {mode: unrestricted}
+    transitions: {ready: checkout-source, retry: fetch, blocked: $pause}
   checkout-source:
-    title: Check out the reviewed source branch
-    prompt:
-      file: steps/mr-comment/checkout-source.md
-    agent: worker
+    title: Check out the source branch
+    prompt: {file: steps/mr-comment/checkout-source.md}
+    agent: scout
     workspace:
-      bindOn:
-        - ready
-      allowedRoots:
-        - ~/repositories/worktrees
-        - .
+      bindOn: [ready]
+      allowedRoots: [~/repositories/worktrees, .]
     permissions:
       tools: [read, ls, bash]
       mcp: []
-      extensions: [/]
-      skills: [using-superpowers, using-git-worktrees, caveman]
-      bash:
-        mode: unrestricted
-    transitions:
-      ready: plan
-      retry: checkout-source
-      blocked: $pause
+      extensions: []
+      skills: [using-git-worktrees]
+      bash: {mode: unrestricted}
+    transitions: {ready: plan, retry: checkout-source, blocked: $pause}
   plan:
-    title: Propose a complete review-comment fix plan
-    prompt:
-      file: steps/mr-comment/plan.md
+    title: Decide each review comment
+    prompt: {file: steps/mr-comment/plan.md}
     agent: planner
     permissions:
       tools: [read, ls, bash, mcp]
-      mcp: [gitlab, sourcegraph, context7]
-      extensions: [/]
-      skills: [using-superpowers, caveman, receiving-code-review, ponytail]
-      bash:
-        mode: unrestricted
+      mcp: [gitlab, github/pull_request_read, sourcegraph, context7]
+      extensions: []
+      skills: [receiving-code-review]
+      bash: {mode: unrestricted}
     gate:
       provider: plannotator
       submitOutcome: submit
@@ -65,70 +50,48 @@ steps:
       artifactContract:
         maxChars: 10000
         requiredSubstrings:
-          - "## Review summary"
-          - "## Comment decisions"
+          - "## Comments"
+          - "### Suggestion"
+          - "### Verdict"
+          - "### Response message"
+          - "### Metadata"
           - "## Implementation plan"
           - "## Validation"
-          - "## Replies and remote actions"
-          - "## Risks"
           - "## Execution appendix (machine-readable)"
         forbiddenSubstrings:
           - "The complete gate artifact is the exact Markdown saved at"
         onValidationFailure: retry
-    transitions:
-      approved: implement
-      changes-requested: plan
-      retry: plan
-      blocked: $pause
+    transitions: {approved: implement, changes-requested: plan, retry: plan, blocked: $pause}
   implement:
-    title: Implement approved review-comment fixes
-    prompt:
-      file: steps/mr-comment/implement.md
+    title: Apply approved comment fixes
+    prompt: {file: steps/mr-comment/implement.md}
     agent: worker
     permissions:
       tools: [read, ls, bash, edit, write, mcp]
       mcp: [context7]
-      extensions: [/]
-      skills: [using-superpowers, caveman, test-driven-development, systematic-debugging]
-      bash:
-        mode: unrestricted
-    transitions:
-      ready: verify
-      retry: implement
-      blocked: $pause
+      extensions: []
+      skills: [test-driven-development]
+      bash: {mode: unrestricted}
+    transitions: {ready: verify, retry: implement, blocked: $pause}
   verify:
-    title: Independently verify review-comment handling
-    prompt:
-      file: steps/mr-comment/verify.md
+    title: Check reviewer intent
+    prompt: {file: steps/mr-comment/verify.md}
     agent: reviewer
     permissions:
       tools: [read, ls, bash]
       mcp: []
-      extensions: [/]
-      skills: [using-superpowers, caveman, verification-before-completion, caveman-review, ponytail-review]
-      bash:
-        mode: unrestricted
-    transitions:
-      ready: deliver
-      no-actions: $done
-      failed: implement
-      retry: verify
-      blocked: verify
+      extensions: []
+      skills: [verification-before-completion]
+      bash: {mode: unrestricted}
+    transitions: {passed: deliver, no-actions: $done, failed: implement, retry: verify, blocked: verify}
   deliver:
-    title: Push the verified commit and reply to review comments
-    prompt:
-      file: steps/mr-comment/publish.md
-    agent: worker
+    title: Push and reply
+    prompt: {file: steps/mr-comment/publish.md}
+    agent: scout
     permissions:
       tools: [read, ls, bash, mcp]
-      mcp: [gitlab]
-      extensions: [/]
-      skills: [using-superpowers, caveman, caveman-commit]
-      bash:
-        mode: unrestricted
-    transitions:
-      published: $done
-      no-actions: $done
-      retry: deliver
-      superseded: $pause
-      blocked: $pause
+      mcp: [gitlab, github/pull_request_read, github/add_issue_comment, github/add_reply_to_pull_request_comment, github/add_comment_to_pending_review]
+      extensions: []
+      skills: []
+      bash: {mode: unrestricted}
+    transitions: {published: $done, no-actions: $done, retry: deliver, superseded: $pause, blocked: $pause}

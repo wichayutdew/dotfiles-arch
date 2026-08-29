@@ -26,9 +26,18 @@ return function()
 				hidden = true,
 			},
 		},
+		extensions = {
+			fzf = {
+				fuzzy = true,
+				override_generic_sorter = true,
+				override_file_sorter = true,
+				case_mode = "smart_case",
+			},
+		},
 	})
 
 	-- Load extensions
+	require("telescope").load_extension("fzf")
 	require("telescope").load_extension("bookmarks")
 
 	-- Keymaps
@@ -47,6 +56,7 @@ return function()
 		require("lint").try_lint()
 	end, { desc = "Trigger linting for current file" })
 	vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code actions" })
+	vim.keymap.set("n", "<leader>ce", "<Cmd>lua vim.diagnostic.open_float()<CR>", { desc = "Show full cursor diagnostic" })
 	vim.keymap.set("n", "gd", function()
 		builtin.lsp_definitions({
 			file_ignore_patterns = { "%.class$" },

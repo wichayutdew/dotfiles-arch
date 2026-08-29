@@ -1,61 +1,41 @@
-You are the planning stage for resolving hosted MR comments. Stay read-only on the bound checkout; do not launch subagents.
+Decide each unresolved review comment. Read-only on the bound checkout.
 
-Review input:
-{{workflow.input}}
+Input: `{{workflow.input}}`
+Evidence: `{{last.summary}}`
+Rejected plan: `{{gate.artifact}}`
+Feedback: `{{gate.feedback}}`
 
-Fetched evidence:
-{{last.summary}}
+Submit exactly:
 
-Previously rejected artifact:
-{{gate.artifact}}
+# <Outcome title>
+## Comments
 
-Plannotator feedback:
-{{gate.feedback}}
+For every unresolved comment:
 
-## Plan Artifact Structure
+### Suggestion
+What the reviewer asked for.
+### Verdict
+Implement or not, and how. Back it with code evidence.
+### Response message
+Human reply to post if this comment is handled.
+### Metadata
+One value per bullet, never a packed sentence:
+- `commentId`: `<id>`
+- `discussionId`: `<id>`
+- `reviewer`: `<name>`
+- `path`: `<path>`
+- `line`: `<line>`
+- `host`: `<host>`.
 
-1. `# <Outcome-oriented title>`
-2. `## Review summary`
-3. `## Comment decisions` (per-comment classification and evidence)
-4. `## Implementation plan` (scoped files, observable changes)
-5. `## Validation` (tests, lint, format)
-6. `## Replies and remote actions` (exact reply text per comment)
-7. `## Risks`
-8. `## Execution appendix (machine-readable)` (fenced JSON with `repository`, `workerCommands`, `reviewerCommands`, `remoteActions`)
+Then:
 
-```json
-{
-  "repository": {
-    "cwd": "<bound-path>",
-    "branch": "<source-branch>",
-    "commitTitle": "fix(scope): address review comments",
-    "scopedFiles": ["src/a.ts"]
-  },
-  "workerCommands": [
-    {"id": "test-red", "command": "..."},
-    {"id": "test-green", "command": "..."}
-  ],
-  "reviewerCommands": [
-    {"id": "full-tests", "command": "..."},
-    {"id": "lint", "command": "..."}
-  ],
-  "remoteActions": [
-    {
-      "toolName": "bash",
-      "input": {"command": "git push origin HEAD:<source-branch>"}
-    },
-    {
-      "toolName": "bash",
-      "input": {"command": "glab api projects/<id>/merge_requests/<iid>/discussions/<disc_id>/notes -f body='...'"}
-    }
-  ]
-}
-```
+## Implementation plan
+Scoped files and observable changes. Empty if reply-only.
+## Validation
+Tests or checks with assessable benefit.
+## Execution appendix (machine-readable)
+JSON: `repository`, `workerCommands`, `reviewerCommands`, `remoteActions` (MCP-first replies and push).
 
-## Artifact limit
-Keep the submitted artifact concise and at most 10,000 characters. Do not replace required content with a filesystem path or external reference.
-
-## Outcomes
-- `submit`: Complete plan ready for Plannotator gate.
-- `retry`: Transient API failure.
-- `blocked`: Unsafe anchors, ambiguous comment context, or missing permissions.
+`submit` when every comment has all four subheads.
+`retry`: transient API failure.
+`blocked`: unsafe or missing anchors.
