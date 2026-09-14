@@ -6,7 +6,7 @@
 local spotlight = "vicinae toggle"
 local terminal = "ghostty"
 local browser = "zen-browser"
-local pwdManager = "1password"
+local pwdManager = "bitwarden-desktop"
 local notes = "zennotes"
 local music = "spotify"
 

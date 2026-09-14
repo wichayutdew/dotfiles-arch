@@ -37,18 +37,9 @@ hl.gesture({
 	action = "workspace",
 })
 
--- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Devices/ for more
--- Logitech MX Master 3S — snappy acceleration + boosted sensitivity
-hl.device({
-	name = "logitech-mx-master-3s",
-	sensitivity = 0.15,
-	scroll_factor = 1.5,
-	accel_profile = "adaptive",
-})
-
 -- Catch-all for bluetooth / other mice — adaptive accel for snappy feel
 hl.device({
 	name = ".*",
 	accel_profile = "adaptive",
-	sensitivity = 0.1,
+	sensitivity = 0.05,
 })
