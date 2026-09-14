@@ -1,6 +1,7 @@
 # ignore everything
 /*
 /.config/1Password
+/.config/Bitwarden
 /.config/dconf
 /.config/mozilla
 /.config/BraveSoftware
