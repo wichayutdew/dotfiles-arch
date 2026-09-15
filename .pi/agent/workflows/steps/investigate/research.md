@@ -7,6 +7,8 @@ Prior draft: `{{last.summary}}`
 
 Use only resources justified in the scope (Sourcegraph, Glean, Grafana, Superset, Query Writer, Slack, GitLab, Bash). Search with `rg` via Bash.
 
+A parent recovery `handoff` is unconfirmed context, not proof that research was completed. Reconcile the approved scope, request, and prior draft before continuing; do not infer evidence, findings, or progress from it.
+
 Handoff a complete draft:
 
 # Brief description
@@ -24,5 +26,15 @@ Each story:
 ## Dependency
 
 `ready`: draft complete with cited evidence.
-`retry`: transient tool failure.
+`handoff`: transient tool failure.
 `blocked`: required evidence inaccessible.
+
+
+## Required ready response
+Put the complete research draft in `Completed`, including every required heading, story, citation, source identity, and unresolved evidence gap. On `handoff`, retain the complete partial draft and exact remaining research.
+
+# Completed
+<complete draft with cited evidence>
+
+# Remaining
+<exact remaining work, or None.>

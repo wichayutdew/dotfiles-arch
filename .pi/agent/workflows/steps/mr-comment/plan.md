@@ -5,37 +5,22 @@ Evidence: `{{last.summary}}`
 Rejected plan: `{{gate.artifact}}`
 Feedback: `{{gate.feedback}}`
 
-Submit exactly:
+Base each verdict on the current checkout and host evidence. Preserve every unresolved comment identity and anchor; do not plan an unapproved remote action or command.
 
-# <Outcome title>
-## Comments
+For every verdict, provide exactly one response message and exactly one execution-appendix `publication.replies` entry for its existing `discussionId`. An `implement` reply confirms the approved change was applied; a `decline` reply explains the evidence-based reason the suggestion was rejected. For every `implement` verdict, list scoped repository-relative paths and require one non-force push of the checked-out source branch. If any implementation verdict exists, provide one imperative Conventional Commit subject in `publication.commitSubject`. Return `blocked` when the host has no safe way to reply to the existing discussion identity.
 
-For every unresolved comment:
-
-### Suggestion
-What the reviewer asked for.
-### Verdict
-Implement or not, and how. Back it with code evidence.
-### Response message
-Human reply to post if this comment is handled.
-### Metadata
-One value per bullet, never a packed sentence:
-- `commentId`: `<id>`
-- `discussionId`: `<id>`
-- `reviewer`: `<name>`
-- `path`: `<path>`
-- `line`: `<line>`
-- `host`: `<host>`.
-
-Then:
-
-## Implementation plan
-Scoped files and observable changes. Empty if reply-only.
-## Validation
-Tests or checks with assessable benefit.
-## Execution appendix (machine-readable)
-JSON: `repository`, `workerCommands`, `reviewerCommands`, `remoteActions` (MCP-first replies and push).
-
-`submit` when every comment has all four subheads.
-`retry`: transient API failure.
+`ready`: every comment has the required artifact content and is ready for review.
+`handoff`: transient API failure.
 `blocked`: unsafe or missing anchors.
+
+
+## Required ready response
+On `ready` or `handoff`, put every unresolved comment identity, anchor, current verdict, required action, and missing-check fact in `Completed`.
+
+# Completed
+<complete verdict ledger>
+
+# Remaining
+<exact remaining work, or None.>
+
+When fetched Evidence is absent or incomplete, return `gaps` with exact missing fields so the workflow re-enters fetch.

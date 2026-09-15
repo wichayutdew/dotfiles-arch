@@ -10,61 +10,46 @@ steps:
     title: Fetch PR/MR evidence
     prompt: {file: steps/mr-review/fetch.md}
     agent: scout
+    maxToolCalls: 10
     permissions:
       tools: [read, ls, bash, mcp]
       mcp: [gitlab, github/pull_request_read, context7]
-      extensions: []
-      skills: []
       bash: {mode: unrestricted}
-    transitions: {fetched: review, blocked: $pause}
+    transitions: {ready: review, blocked: $pause, handoff: fetch}
   review:
     title: Find bugs, leaks, and design issues
     prompt: {file: steps/mr-review/findings.md}
     agent: reviewer
+    maxToolCalls: 60
     permissions:
       tools: [read, ls, bash, mcp]
       mcp: [gitlab, github/pull_request_read, sourcegraph, context7]
-      extensions: []
       skills: [caveman-review, ponytail-review]
       bash: {mode: unrestricted}
-    transitions: {ready: plan, retry: review, blocked: $pause}
+    transitions: {ready: plan, gaps: fetch, blocked: $pause, handoff: review}
   plan:
     title: Approve review comments
     prompt: {file: steps/mr-review/plan.md}
     agent: planner
+    maxToolCalls: 60
     permissions:
       tools: [read, ls, bash, mcp]
       mcp: [gitlab, github/pull_request_read, sourcegraph, context7]
-      extensions: []
-      skills: []
       bash: {mode: unrestricted}
     gate:
-      provider: plannotator
-      submitOutcome: submit
-      approvedOutcome: approved
-      rejectedOutcome: changes-requested
-      timeoutMs: 30000
       artifactContract:
-        maxChars: 8000
-        requiredSubstrings:
-          - "## Review "
-          - "- **Path / line:**"
-          - "- **Detailed suggestion:**"
-          - "- **Verdict:**"
-          - "- **Comment:**"
-          - "## Publication contract"
-        forbiddenSubstrings:
-          - "The complete gate artifact is the exact Markdown saved at"
-        onValidationFailure: retry
-    transitions: {approved: publish, changes-requested: plan, retry: plan, blocked: $pause}
+        maxChars: 30000
+        requiredHeadings:
+          - { level: 2, title: Reviews, guidance: "Repeat for every comment to publish, incrementing the review number. Include these exact bullets: **Path / line:** <path>:<line>; **Detailed suggestion:** <specific recommended change>; **Verdict:** <topic> — <why this should be improved>; and **Comment:** <exact human-sounding text to post>." }
+          - { level: 2, title: Publication contract, guidance: "Provide fenced JSON actions for GitLab MCP or GitHub pending-review MCP: create, one comment each, then submit_pending with COMMENT. Every GitLab action must include kind, body, marker, and an exact command with no placeholders. An inline-comment action must additionally include path, line, oldPath, current base/start/head SHAs, and an exact Fish-safe glab api POST /discussions command using --form=\"body=$body\" plus single-quoted --form='position[...]={value}' fields for base_sha, start_sha, head_sha, position_type, old_path, new_path, and new_line. Never use -f, -F, or --field for GitLab inline discussion positions. Use generic-comment only when inline is impossible and include its fallback reason and exact POST /notes command. Use each review's Comment value as published text. CLI is allowed only with mcpFallback. Do not approve, merge, close, resolve, or delete." }
+    transitions: {ready: publish, gaps: review, blocked: $pause, handoff: plan}
   publish:
     title: Publish approved review comments
     prompt: {file: steps/mr-review/publish-approved.md}
     agent: scout
+    maxToolCalls: 10
     permissions:
       tools: [read, ls, bash, mcp]
       mcp: [gitlab, github/pull_request_review_write, github/add_comment_to_pending_review]
-      extensions: []
-      skills: []
       bash: {mode: unrestricted}
-    transitions: {published: $done, retry: publish, blocked: $pause}
+    transitions: {ready: $done, blocked: $pause, handoff: publish}

@@ -152,7 +152,9 @@ return function()
 				[vim.diagnostic.severity.INFO] = "»",
 			},
 		},
-		virtual_text = true,
+		virtual_text = {
+			virt_text_pos = "right_align",
+		},
 		severity_sort = true,
 		float = {
 			border = "rounded",

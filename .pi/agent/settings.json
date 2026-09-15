@@ -9,8 +9,7 @@
     "npm:@plannotator/pi-extension",
     "npm:pi-mcp-adapter",
     "npm:pi-web-access",
-    "npm:@wichayutdew/pi-workflows",
-    "npm:@tintinweb/pi-subagents"
+    "npm:@wichayutdew/pi-workflows"
   ],
   "terminal": {
     "showTerminalProgress": true,
