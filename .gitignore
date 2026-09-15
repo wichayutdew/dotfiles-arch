@@ -1,6 +1,5 @@
 # ignore everything
 /*
-/.config/1Password
 /.config/Bitwarden
 /.config/dconf
 /.config/mozilla
@@ -14,14 +13,13 @@
 /.config/vivaldi
 /.config/pulse
 /.config/spotify
-/.config/ZenNotes
+/.config/obsidian
 /.config/zen
 /.config/obs-studio
 /.config/Postman
 
 # except these directories
 !/.config
-!/.1password
 !/.agents
 !AGENTS.md
 !easyeffects_eq.json

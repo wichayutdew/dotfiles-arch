@@ -46,9 +46,9 @@ PACKAGES=(
   ghostty
   onlyoffice-bin
   spotify
-  zennotes
   zen-browser-bin
-	1password
+	obsidian
+	bitwarden
 
   # Hyprland
   hypridle
