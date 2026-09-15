@@ -54,6 +54,34 @@
         }
       },
       {
+        "id": "claude-fable-5-1",
+        "name": "Claude Fable 5.1",
+        "api": "anthropic-messages",
+        "provider": "opencode",
+        "baseUrl": "https://opencode.ai/zen",
+        "reasoning": true,
+        "input": [
+          "text",
+          "image"
+        ],
+        "cost": {
+          "input": 10,
+          "output": 50,
+          "cacheRead": 0.25,
+          "cacheWrite": 12.5
+        },
+        "contextWindow": 1000000,
+        "maxTokens": 128000,
+        "thinkingLevelMap": {
+          "off": null,
+          "xhigh": "xhigh",
+          "max": "max"
+        },
+        "compat": {
+          "forceAdaptiveThinking": true
+        }
+      },
+      {
         "id": "claude-haiku-4-5",
         "name": "Claude Haiku 4.5",
         "api": "anthropic-messages",
@@ -332,6 +360,41 @@
         }
       },
       {
+        "id": "deepseek-v4-flash-vision-exp",
+        "name": "DeepSeek V4 Flash Vision Exp",
+        "api": "openai-completions",
+        "provider": "opencode",
+        "baseUrl": "https://opencode.ai/zen/v1",
+        "reasoning": true,
+        "input": [
+          "text",
+          "image"
+        ],
+        "cost": {
+          "input": 0.14,
+          "output": 0.28,
+          "cacheRead": 0.028,
+          "cacheWrite": 0
+        },
+        "compat": {
+          "supportsStore": false,
+          "supportsDeveloperRole": false,
+          "maxTokensField": "max_tokens",
+          "requiresReasoningContentOnAssistantMessages": true
+        },
+        "contextWindow": 1000000,
+        "maxTokens": 384000,
+        "thinkingLevelMap": {
+          "off": null,
+          "minimal": null,
+          "low": "low",
+          "medium": null,
+          "high": "high",
+          "xhigh": null,
+          "max": "max"
+        }
+      },
+      {
         "id": "deepseek-v4-pro",
         "name": "DeepSeek V4 Pro",
         "api": "openai-completions",
@@ -509,6 +572,29 @@
         }
       },
       {
+        "id": "gemini-3.8-flash",
+        "name": "Gemini 3.8 Flash",
+        "api": "google-generative-ai",
+        "provider": "opencode",
+        "baseUrl": "https://opencode.ai/zen/v1",
+        "reasoning": true,
+        "input": [
+          "text",
+          "image"
+        ],
+        "cost": {
+          "input": 1.5,
+          "output": 7.5,
+          "cacheRead": 0.15,
+          "cacheWrite": 0
+        },
+        "contextWindow": 1048576,
+        "maxTokens": 65536,
+        "thinkingLevelMap": {
+          "off": null
+        }
+      },
+      {
         "id": "glm-5",
         "name": "GLM-5",
         "api": "openai-completions",
@@ -583,6 +669,73 @@
           "off": null,
           "minimal": null,
           "low": null,
+          "medium": null,
+          "high": "high",
+          "xhigh": null,
+          "max": "max"
+        }
+      },
+      {
+        "id": "glm-5.3",
+        "name": "GLM-5.3",
+        "api": "openai-completions",
+        "provider": "opencode",
+        "baseUrl": "https://opencode.ai/zen/v1",
+        "reasoning": true,
+        "input": [
+          "text"
+        ],
+        "cost": {
+          "input": 1.4,
+          "output": 4.4,
+          "cacheRead": 0.26,
+          "cacheWrite": 0
+        },
+        "compat": {
+          "supportsStore": false,
+          "supportsDeveloperRole": false,
+          "maxTokensField": "max_tokens"
+        },
+        "contextWindow": 1000000,
+        "maxTokens": 131072,
+        "thinkingLevelMap": {
+          "off": null,
+          "minimal": null,
+          "low": "low",
+          "medium": null,
+          "high": "high",
+          "xhigh": null,
+          "max": "max"
+        }
+      },
+      {
+        "id": "glm-5.3-flash",
+        "name": "GLM-5.3-Flash",
+        "api": "openai-completions",
+        "provider": "opencode",
+        "baseUrl": "https://opencode.ai/zen/v1",
+        "reasoning": true,
+        "input": [
+          "text",
+          "image"
+        ],
+        "cost": {
+          "input": 0.15,
+          "output": 0.5,
+          "cacheRead": 0.03,
+          "cacheWrite": 0
+        },
+        "compat": {
+          "supportsStore": false,
+          "supportsDeveloperRole": false,
+          "maxTokensField": "max_tokens"
+        },
+        "contextWindow": 1000000,
+        "maxTokens": 131072,
+        "thinkingLevelMap": {
+          "off": null,
+          "minimal": null,
+          "low": "low",
           "medium": null,
           "high": "high",
           "xhigh": null,
@@ -1217,6 +1370,39 @@
         }
       },
       {
+        "id": "gpt-6-astra",
+        "name": "GPT-6 Astra",
+        "api": "openai-responses",
+        "provider": "opencode",
+        "baseUrl": "https://opencode.ai/zen/v1",
+        "reasoning": true,
+        "input": [
+          "text",
+          "image"
+        ],
+        "cost": {
+          "input": 10,
+          "output": 50,
+          "cacheRead": 1,
+          "cacheWrite": 12.5
+        },
+        "compat": {
+          "sessionAffinityFormat": "openai-nosession",
+          "supportsOpenAIGrammarTools": true
+        },
+        "contextWindow": 1050000,
+        "maxTokens": 128000,
+        "thinkingLevelMap": {
+          "off": null,
+          "minimal": null,
+          "low": "low",
+          "medium": "medium",
+          "high": "high",
+          "xhigh": "xhigh",
+          "max": "max"
+        }
+      },
+      {
         "id": "grok-4.5",
         "name": "Grok 4.5",
         "api": "openai-responses",
@@ -1308,39 +1494,6 @@
           "minimal": null,
           "low": null,
           "medium": null
-        }
-      },
-      {
-        "id": "hy3-free",
-        "name": "Hy3 Free",
-        "api": "openai-completions",
-        "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
-        "reasoning": true,
-        "input": [
-          "text"
-        ],
-        "cost": {
-          "input": 0,
-          "output": 0,
-          "cacheRead": 0,
-          "cacheWrite": 0
-        },
-        "compat": {
-          "supportsStore": false,
-          "supportsDeveloperRole": false,
-          "maxTokensField": "max_tokens"
-        },
-        "contextWindow": 190000,
-        "maxTokens": 64000,
-        "thinkingLevelMap": {
-          "off": null,
-          "minimal": null,
-          "low": "low",
-          "medium": "medium",
-          "high": "high",
-          "xhigh": null,
-          "max": null
         }
       },
       {
@@ -1455,6 +1608,30 @@
           "xhigh": null,
           "max": "max"
         }
+      },
+      {
+        "id": "ling-3.0-flash-fin-free",
+        "name": "Ling 3.0 Flash Fin Free",
+        "api": "openai-completions",
+        "provider": "opencode",
+        "baseUrl": "https://opencode.ai/zen/v1",
+        "reasoning": true,
+        "input": [
+          "text"
+        ],
+        "cost": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0
+        },
+        "compat": {
+          "supportsStore": false,
+          "supportsDeveloperRole": false,
+          "maxTokensField": "max_tokens"
+        },
+        "contextWindow": 262144,
+        "maxTokens": 32768
       },
       {
         "id": "mimo-v2.5-free",
@@ -1620,6 +1797,70 @@
         }
       },
       {
+        "id": "muse-spark-1.3",
+        "name": "Muse Spark 1.3",
+        "api": "openai-responses",
+        "provider": "opencode",
+        "baseUrl": "https://opencode.ai/zen/v1",
+        "reasoning": true,
+        "input": [
+          "text",
+          "image"
+        ],
+        "cost": {
+          "input": 1.25,
+          "output": 4.25,
+          "cacheRead": 0.15,
+          "cacheWrite": 0
+        },
+        "compat": {
+          "sessionAffinityFormat": "openai-nosession"
+        },
+        "contextWindow": 1048576,
+        "maxTokens": 131072,
+        "thinkingLevelMap": {
+          "off": null,
+          "minimal": "minimal",
+          "low": "low",
+          "medium": "medium",
+          "high": "high",
+          "xhigh": "xhigh",
+          "max": "max"
+        }
+      },
+      {
+        "id": "muse-spark-1.3-contributor-free",
+        "name": "Muse Spark 1.3 Free",
+        "api": "openai-responses",
+        "provider": "opencode",
+        "baseUrl": "https://opencode.ai/zen/v1",
+        "reasoning": true,
+        "input": [
+          "text",
+          "image"
+        ],
+        "cost": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0
+        },
+        "compat": {
+          "sessionAffinityFormat": "openai-nosession"
+        },
+        "contextWindow": 1048576,
+        "maxTokens": 131072,
+        "thinkingLevelMap": {
+          "off": null,
+          "minimal": "minimal",
+          "low": "low",
+          "medium": "medium",
+          "high": "high",
+          "xhigh": "xhigh",
+          "max": null
+        }
+      },
+      {
         "id": "nemotron-3-ultra-free",
         "name": "Nemotron 3 Ultra Free",
         "api": "openai-completions",
@@ -1708,8 +1949,8 @@
         "maxTokens": 65536
       }
     ],
-    "checkedAt": 1787993820342,
-    "lastModified": 1787917533000,
-    "etag": "W/\"5bfd649f95f953f04630db24a450e15b\""
+    "checkedAt": 1789488564014,
+    "lastModified": 1789468174000,
+    "etag": "W/\"1d9d85ca687a5877340af69ffce00612\""
   }
 }
