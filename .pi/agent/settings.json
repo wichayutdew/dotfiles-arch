@@ -1,7 +1,7 @@
 {
-  "lastChangelogVersion": "0.85.1",
-  "defaultProvider": "opencode",
-  "defaultModel": "mimo-v2.5-free",
+  "lastChangelogVersion": "0.86.1",
+  "defaultProvider": "openrouter",
+  "defaultModel": "thinkingmachines/inkling:free",
   "defaultThinkingLevel": "medium",
   "shellPath": "/usr/sbin/fish",
   "packages": [

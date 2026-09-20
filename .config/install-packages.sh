@@ -44,11 +44,11 @@ PACKAGES=(
 
   # GUI Apps
   ghostty
-  onlyoffice-bin
   spotify
+  onlyoffice-bin
   zen-browser-bin
-	obsidian
-	bitwarden
+	obsidian-bin
+	bitwarden-bin
 
   # Hyprland
   hypridle
@@ -87,7 +87,7 @@ PACKAGES=(
 	iptables-nft
 
   # AI
-  pi-coding-agent
+  pi-coding-agent-bin
 
   # Code version manager
   mise
