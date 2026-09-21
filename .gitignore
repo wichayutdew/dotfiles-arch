@@ -1,6 +1,8 @@
 # ignore everything
 /*
 /.config/Bitwarden
+/.config/discord
+/.config/onlyoffice
 /.config/dconf
 /.config/mozilla
 /.config/BraveSoftware
