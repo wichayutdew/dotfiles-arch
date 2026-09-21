@@ -180,6 +180,42 @@
       "skillFolderHash": "515d07fbd383fb9a15ad94647d133f681dc56197",
       "installedAt": "2026-08-21T18:45:39.208Z",
       "updatedAt": "2026-09-21T14:32:28.880Z"
+    },
+    "investigate": {
+      "source": "wichayutdew/workflow-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/wichayutdew/workflow-skills.git",
+      "skillPath": "skills/investigate/SKILL.md",
+      "skillFolderHash": "813b943eacc520199e2e77750f45789c6ec51bf3",
+      "installedAt": "2026-09-21T14:34:03.974Z",
+      "updatedAt": "2026-09-21T14:34:03.974Z"
+    },
+    "mr-comment": {
+      "source": "wichayutdew/workflow-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/wichayutdew/workflow-skills.git",
+      "skillPath": "skills/mr-comment/SKILL.md",
+      "skillFolderHash": "1160eaa4e0c471c6316613a62342908470066e90",
+      "installedAt": "2026-09-21T14:34:03.976Z",
+      "updatedAt": "2026-09-21T14:34:03.976Z"
+    },
+    "mr-review": {
+      "source": "wichayutdew/workflow-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/wichayutdew/workflow-skills.git",
+      "skillPath": "skills/mr-review/SKILL.md",
+      "skillFolderHash": "e1fbc7893c99d070d2a7c412c219531d8475b4e2",
+      "installedAt": "2026-09-21T14:34:03.976Z",
+      "updatedAt": "2026-09-21T14:34:03.976Z"
+    },
+    "work": {
+      "source": "wichayutdew/workflow-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/wichayutdew/workflow-skills.git",
+      "skillPath": "skills/work/SKILL.md",
+      "skillFolderHash": "97baa7ad947df1c7f726db55659b58448ee0712e",
+      "installedAt": "2026-09-21T14:34:03.976Z",
+      "updatedAt": "2026-09-21T14:34:03.976Z"
     }
   },
   "dismissed": {
