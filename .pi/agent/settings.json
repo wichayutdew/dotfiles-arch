@@ -22,11 +22,13 @@
     "reserveTokens": 32768,
     "keepRecentTokens": 24000
   },
-  "enableSkillCommands": false,
+  "enableSkillCommands": true,
   "editorPaddingX": 2,
   "autocompleteMaxVisible": 3,
   "transport": "auto",
   "quietStartup": false,
   "outputPad": 1,
-  "theme": "light/dark"
+  "theme": "light/dark",
+  "fullscreenExitOutput": "transcript",
+  "fullscreenScrollbar": "auto"
 }
