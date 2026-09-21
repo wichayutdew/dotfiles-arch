@@ -1979,6 +1979,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -2006,6 +2007,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -2033,6 +2035,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -2058,7 +2061,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -2083,7 +2097,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -2107,6 +2132,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -2132,7 +2158,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -2157,7 +2194,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -2178,7 +2226,17 @@
           "cacheWrite": 0.3
         },
         "contextWindow": 200000,
-        "maxTokens": 4096
+        "maxTokens": 4096,
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
+        }
       },
       {
         "id": "anthropic/claude-fable-5",
@@ -2210,6 +2268,16 @@
         "maxTokens": 128000,
         "compat": {
           "forceAdaptiveThinking": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -2243,6 +2311,16 @@
         "compat": {
           "supportsMidConvoEffort": true,
           "forceAdaptiveThinking": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -2275,8 +2353,19 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "cacheControlFormat": "anthropic",
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -2309,8 +2398,19 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "cacheControlFormat": "anthropic",
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -2331,7 +2431,17 @@
           "cacheWrite": 1.25
         },
         "contextWindow": 200000,
-        "maxTokens": 64000
+        "maxTokens": 64000,
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
+        }
       },
       {
         "id": "anthropic/claude-haiku-4.5:batch",
@@ -2354,8 +2464,19 @@
         "maxTokens": 64000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "cacheControlFormat": "anthropic",
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -2376,7 +2497,17 @@
           "cacheWrite": 18.75
         },
         "contextWindow": 200000,
-        "maxTokens": 32000
+        "maxTokens": 32000,
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
+        }
       },
       {
         "id": "anthropic/claude-opus-4.1",
@@ -2396,7 +2527,17 @@
           "cacheWrite": 18.75
         },
         "contextWindow": 200000,
-        "maxTokens": 32000
+        "maxTokens": 32000,
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
+        }
       },
       {
         "id": "anthropic/claude-opus-4.1:batch",
@@ -2419,8 +2560,19 @@
         "maxTokens": 32000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "cacheControlFormat": "anthropic",
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -2441,7 +2593,17 @@
           "cacheWrite": 6.25
         },
         "contextWindow": 200000,
-        "maxTokens": 64000
+        "maxTokens": 64000,
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
+        }
       },
       {
         "id": "anthropic/claude-opus-4.5:batch",
@@ -2464,8 +2626,19 @@
         "maxTokens": 64000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "cacheControlFormat": "anthropic",
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -2498,6 +2671,16 @@
         "maxTokens": 128000,
         "compat": {
           "forceAdaptiveThinking": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -2530,8 +2713,19 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "cacheControlFormat": "anthropic",
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -2565,6 +2759,16 @@
         "compat": {
           "forceAdaptiveThinking": true,
           "supportsTemperature": false
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -2597,8 +2801,19 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "cacheControlFormat": "anthropic",
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -2632,6 +2847,16 @@
         "compat": {
           "forceAdaptiveThinking": true,
           "supportsTemperature": false
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -2664,8 +2889,19 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "cacheControlFormat": "anthropic",
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -2699,6 +2935,16 @@
         "compat": {
           "forceAdaptiveThinking": true,
           "supportsTemperature": false
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -2731,8 +2977,19 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "cacheControlFormat": "anthropic",
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -2753,7 +3010,17 @@
           "cacheWrite": 3.75
         },
         "contextWindow": 200000,
-        "maxTokens": 64000
+        "maxTokens": 64000,
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
+        }
       },
       {
         "id": "anthropic/claude-sonnet-4.5",
@@ -2773,7 +3040,17 @@
           "cacheWrite": 3.75
         },
         "contextWindow": 1000000,
-        "maxTokens": 64000
+        "maxTokens": 64000,
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
+        }
       },
       {
         "id": "anthropic/claude-sonnet-4.5:batch",
@@ -2796,8 +3073,19 @@
         "maxTokens": 64000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "cacheControlFormat": "anthropic",
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -2830,6 +3118,16 @@
         "maxTokens": 128000,
         "compat": {
           "forceAdaptiveThinking": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -2862,8 +3160,19 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "cacheControlFormat": "anthropic",
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -2896,6 +3205,16 @@
         "maxTokens": 128000,
         "compat": {
           "forceAdaptiveThinking": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -2928,8 +3247,19 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "cacheControlFormat": "anthropic",
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -2956,6 +3286,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -2981,7 +3312,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -3006,7 +3348,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -3031,7 +3384,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -3056,7 +3420,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -3090,7 +3465,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -3124,7 +3510,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -3158,7 +3555,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -3182,6 +3590,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -3206,6 +3615,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -3230,6 +3640,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -3254,6 +3665,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -3278,6 +3690,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -3302,6 +3715,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -3329,6 +3743,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -3356,6 +3771,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -3380,6 +3796,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -3404,6 +3821,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -3428,6 +3846,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -3461,6 +3880,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true,
           "requiresReasoningContentOnAssistantMessages": true
         }
@@ -3485,9 +3905,9 @@
           "text"
         ],
         "cost": {
-          "input": 0.06,
-          "output": 0.12,
-          "cacheRead": 0.012,
+          "input": 0.04,
+          "output": 0.16,
+          "cacheRead": 0.016,
           "cacheWrite": 0
         },
         "contextWindow": 1048576,
@@ -3495,6 +3915,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true,
           "requiresReasoningContentOnAssistantMessages": true
         }
@@ -3529,40 +3950,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
-          "sendSessionAffinityHeaders": true,
-          "requiresReasoningContentOnAssistantMessages": true
-        }
-      },
-      {
-        "id": "deepseek/deepseek-v4-flash-0731:free",
-        "name": "DeepSeek: DeepSeek V4 Flash 0731 (free)",
-        "api": "openai-completions",
-        "baseUrl": "https://openrouter.ai/api/v1",
-        "provider": "openrouter",
-        "reasoning": true,
-        "thinkingLevelMap": {
-          "off": "none",
-          "minimal": null,
-          "low": "low",
-          "medium": null,
-          "high": "high",
-          "xhigh": null,
-          "max": "max"
-        },
-        "input": [
-          "text"
-        ],
-        "cost": {
-          "input": 0,
-          "output": 0,
-          "cacheRead": 0,
-          "cacheWrite": 0
-        },
-        "contextWindow": 1048576,
-        "maxTokens": 393216,
-        "compat": {
-          "supportsDeveloperRole": false,
-          "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true,
           "requiresReasoningContentOnAssistantMessages": true
         }
@@ -3588,18 +3976,29 @@
           "image"
         ],
         "cost": {
-          "input": 0.2156,
-          "output": 0.6468,
-          "cacheRead": 0.00686,
+          "input": 0.22,
+          "output": 0.66,
+          "cacheRead": 0.007,
           "cacheWrite": 0
         },
         "contextWindow": 1048576,
-        "maxTokens": 262144,
+        "maxTokens": 943718,
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true,
           "requiresReasoningContentOnAssistantMessages": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -3633,8 +4032,19 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true,
           "requiresReasoningContentOnAssistantMessages": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -3657,16 +4067,17 @@
           "text"
         ],
         "cost": {
-          "input": 1.6,
-          "output": 3.2,
-          "cacheRead": 0.135,
+          "input": 0.95526,
+          "output": 1.91052,
+          "cacheRead": 0.079605,
           "cacheWrite": 0
         },
-        "contextWindow": 1048576,
-        "maxTokens": 393216,
+        "contextWindow": 1024000,
+        "maxTokens": 384000,
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true,
           "requiresReasoningContentOnAssistantMessages": true
         }
@@ -3701,6 +4112,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true,
           "requiresReasoningContentOnAssistantMessages": true
         }
@@ -3735,6 +4147,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true,
           "requiresReasoningContentOnAssistantMessages": true
         }
@@ -3770,8 +4183,19 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true,
           "requiresReasoningContentOnAssistantMessages": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -3796,7 +4220,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -3821,7 +4256,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -3846,7 +4292,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -3871,7 +4328,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -3896,7 +4364,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -3924,7 +4403,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -3952,7 +4442,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -3980,7 +4481,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -4014,7 +4526,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -4048,7 +4571,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -4076,7 +4610,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -4110,7 +4655,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -4144,7 +4700,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -4178,7 +4745,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -4212,7 +4790,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -4246,7 +4835,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -4280,7 +4880,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -4314,7 +4925,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -4348,7 +4970,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -4382,7 +5015,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -4416,7 +5060,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -4450,7 +5105,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -4484,7 +5150,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -4518,7 +5195,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -4552,7 +5240,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -4586,7 +5285,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -4620,7 +5330,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -4645,7 +5366,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -4670,7 +5402,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -4695,7 +5438,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -4720,7 +5474,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -4745,7 +5510,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -4770,7 +5546,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -4793,9 +5580,9 @@
           "text"
         ],
         "cost": {
-          "input": 0.06,
-          "output": 0.25,
-          "cacheRead": 0.015,
+          "input": 0.1,
+          "output": 0.15,
+          "cacheRead": 0.05,
           "cacheWrite": 0
         },
         "contextWindow": 131072,
@@ -4803,6 +5590,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -4836,6 +5624,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -4869,6 +5658,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -4893,6 +5683,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -4917,6 +5708,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -4941,6 +5733,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -4965,6 +5758,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -4990,7 +5784,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -5015,7 +5820,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -5039,6 +5855,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -5063,6 +5880,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -5090,6 +5908,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -5114,6 +5933,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -5128,16 +5948,17 @@
           "text"
         ],
         "cost": {
-          "input": 0.4,
-          "output": 0.4,
+          "input": 0.72,
+          "output": 0.72,
           "cacheRead": 0,
           "cacheWrite": 0
         },
         "contextWindow": 131072,
-        "maxTokens": 16384,
+        "maxTokens": 8192,
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -5162,6 +5983,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -5186,6 +6008,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -5201,17 +6024,28 @@
           "image"
         ],
         "cost": {
-          "input": 0.1875,
-          "output": 0.6525,
+          "input": 0.2,
+          "output": 0.8,
           "cacheRead": 0,
           "cacheWrite": 0
         },
-        "contextWindow": 128000,
+        "contextWindow": 1048576,
         "maxTokens": 16384,
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -5236,7 +6070,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -5261,16 +6106,27 @@
         ],
         "cost": {
           "input": 0.3,
-          "output": 1.1,
+          "output": 1.2,
           "cacheRead": 0.04,
           "cacheWrite": 0
         },
         "contextWindow": 131072,
-        "maxTokens": 117964,
+        "maxTokens": 16384,
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -5304,7 +6160,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -5338,7 +6205,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -5372,7 +6250,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -5406,7 +6295,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -5440,7 +6340,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -5474,7 +6385,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -5498,6 +6420,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -5525,6 +6448,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -5552,6 +6476,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -5579,6 +6504,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -5606,6 +6532,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -5631,7 +6558,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -5656,7 +6594,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -5680,6 +6629,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -5704,6 +6654,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -5728,6 +6679,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -5753,7 +6705,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -5778,7 +6741,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -5803,7 +6777,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -5828,7 +6813,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -5852,6 +6848,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -5876,6 +6873,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -5901,7 +6899,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -5926,7 +6935,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -5960,7 +6980,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -5994,7 +7025,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -6019,7 +7061,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -6044,7 +7097,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -6068,6 +7132,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -6092,6 +7157,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -6126,7 +7192,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -6160,7 +7237,54 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
+        }
+      },
+      {
+        "id": "mistralai/mistral-small-3.1-24b-instruct",
+        "name": "Mistral: Mistral Small 3.1 24B",
+        "api": "openai-completions",
+        "baseUrl": "https://openrouter.ai/api/v1",
+        "provider": "openrouter",
+        "reasoning": false,
+        "input": [
+          "text",
+          "image"
+        ],
+        "cost": {
+          "input": 0.351,
+          "output": 0.555,
+          "cacheRead": 0,
+          "cacheWrite": 0
+        },
+        "contextWindow": 128000,
+        "maxTokens": 102400,
+        "compat": {
+          "supportsDeveloperRole": false,
+          "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
+          "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -6185,7 +7309,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -6209,6 +7344,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -6233,6 +7369,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -6257,6 +7394,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -6281,6 +7419,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -6308,6 +7447,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -6333,7 +7473,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -6358,8 +7509,19 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true,
           "requiresReasoningContentOnAssistantMessages": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -6387,7 +7549,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -6411,9 +7584,9 @@
           "image"
         ],
         "cost": {
-          "input": 2.1,
-          "output": 10.95,
-          "cacheRead": 0.23,
+          "input": 1.7,
+          "output": 8.5,
+          "cacheRead": 0.17,
           "cacheWrite": 0
         },
         "contextWindow": 1048576,
@@ -6421,7 +7594,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -6455,7 +7639,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -6489,7 +7684,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -6523,7 +7729,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -6547,6 +7764,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -6572,7 +7790,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -6605,6 +7834,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -6638,6 +7868,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -6661,16 +7892,17 @@
           "text"
         ],
         "cost": {
-          "input": 0.625,
-          "output": 3.125,
-          "cacheRead": 0.1875,
+          "input": 0.6,
+          "output": 2.4,
+          "cacheRead": 0.12,
           "cacheWrite": 0
         },
-        "contextWindow": 256000,
-        "maxTokens": 32768,
+        "contextWindow": 202800,
+        "maxTokens": 182520,
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -6704,6 +7936,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -6718,16 +7951,17 @@
           "text"
         ],
         "cost": {
-          "input": 0.08,
+          "input": 0.07,
           "output": 0.2,
           "cacheRead": 0.04,
           "cacheWrite": 0
         },
         "contextWindow": 262144,
-        "maxTokens": 131072,
+        "maxTokens": 235929,
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -6752,6 +7986,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -6775,6 +8010,7 @@
         "maxTokens": 4096,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -6798,6 +8034,7 @@
         "maxTokens": 3685,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -6821,6 +8058,7 @@
         "maxTokens": 4096,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -6844,6 +8082,7 @@
         "maxTokens": 4096,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -6867,6 +8106,7 @@
         "maxTokens": 4096,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -6891,7 +8131,18 @@
         "maxTokens": 4096,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -6915,7 +8166,18 @@
         "maxTokens": 4096,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -6939,7 +8201,18 @@
         "maxTokens": 32768,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -6963,7 +8236,18 @@
         "maxTokens": 32768,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -6987,7 +8271,18 @@
         "maxTokens": 32768,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -7011,7 +8306,18 @@
         "maxTokens": 32768,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -7035,7 +8341,18 @@
         "maxTokens": 32768,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -7059,7 +8376,18 @@
         "maxTokens": 32768,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -7083,7 +8411,18 @@
         "maxTokens": 16384,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -7107,7 +8446,18 @@
         "maxTokens": 4096,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -7131,7 +8481,18 @@
         "maxTokens": 16384,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -7155,7 +8516,18 @@
         "maxTokens": 16384,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -7179,7 +8551,18 @@
         "maxTokens": 16384,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -7203,7 +8586,18 @@
         "maxTokens": 16384,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -7227,7 +8621,18 @@
         "maxTokens": 16384,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -7251,7 +8656,18 @@
         "maxTokens": 16384,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -7284,7 +8700,18 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -7317,7 +8744,18 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -7350,7 +8788,18 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -7383,7 +8832,18 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -7416,7 +8876,18 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -7449,7 +8920,18 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -7482,7 +8964,18 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -7515,7 +9008,18 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -7548,7 +9052,18 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -7581,7 +9096,18 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -7614,7 +9140,18 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -7647,7 +9184,18 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -7680,7 +9228,18 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -7704,10 +9263,21 @@
         "maxTokens": 32000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         },
         "thinkingLevelMap": {
           "xhigh": "xhigh"
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -7740,7 +9310,18 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -7773,7 +9354,18 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -7806,7 +9398,18 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -7839,7 +9442,18 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -7872,7 +9486,18 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -7905,8 +9530,19 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true,
           "supportsMidConvoSystemMessages": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -7939,8 +9575,19 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true,
           "supportsMidConvoSystemMessages": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -7973,7 +9620,18 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -8006,7 +9664,18 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -8039,7 +9708,18 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -8072,8 +9752,19 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true,
           "supportsMidConvoSystemMessages": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -8106,7 +9797,18 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -8139,7 +9841,18 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -8172,8 +9885,19 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true,
           "supportsMidConvoSystemMessages": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -8206,7 +9930,18 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -8239,7 +9974,18 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -8272,7 +10018,18 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -8305,8 +10062,19 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true,
           "supportsMidConvoSystemMessages": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -8339,7 +10107,18 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -8372,7 +10151,18 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -8405,7 +10195,18 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -8438,8 +10239,19 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true,
           "supportsMidConvoSystemMessages": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -8472,7 +10284,18 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -8505,7 +10328,18 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -8538,7 +10372,18 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -8571,8 +10416,19 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true,
           "supportsMidConvoSystemMessages": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -8605,7 +10461,18 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -8638,7 +10505,18 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -8671,7 +10549,18 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -8704,7 +10593,18 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -8737,8 +10637,19 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true,
           "supportsMidConvoSystemMessages": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -8771,7 +10682,18 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -8804,7 +10726,18 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -8837,7 +10770,18 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -8860,6 +10804,7 @@
         "maxTokens": 16384,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -8883,6 +10828,7 @@
         "maxTokens": 16384,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -8907,7 +10853,18 @@
         "maxTokens": 128000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -8939,6 +10896,7 @@
         "maxTokens": 65536,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -8971,6 +10929,7 @@
         "maxTokens": 117964,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -9003,6 +10962,7 @@
         "maxTokens": 117964,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -9029,6 +10989,7 @@
         "maxTokens": 65536,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -9053,7 +11014,18 @@
         "maxTokens": 100000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -9077,7 +11049,18 @@
         "maxTokens": 100000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -9100,6 +11083,7 @@
         "maxTokens": 100000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -9132,6 +11116,7 @@
         "maxTokens": 100000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -9155,6 +11140,7 @@
         "maxTokens": 100000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -9179,7 +11165,18 @@
         "maxTokens": 100000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -9203,7 +11200,18 @@
         "maxTokens": 100000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -9227,7 +11235,18 @@
         "maxTokens": 100000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -9260,7 +11279,18 @@
         "maxTokens": 100000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -9284,7 +11314,18 @@
         "maxTokens": 100000,
         "compat": {
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -9309,7 +11350,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -9334,7 +11386,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -9359,7 +11422,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -9383,6 +11457,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -9407,6 +11482,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -9431,6 +11507,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -9455,6 +11532,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -9479,7 +11557,53 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        }
+      },
+      {
+        "id": "prism-ml/ternary-bonsai-2-27b",
+        "name": "PrismML: Ternary Bonsai 2 27B",
+        "api": "openai-completions",
+        "baseUrl": "https://openrouter.ai/api/v1",
+        "provider": "openrouter",
+        "reasoning": true,
+        "thinkingLevelMap": {
+          "off": "none",
+          "minimal": null,
+          "low": null,
+          "medium": "medium",
+          "high": null,
+          "xhigh": "xhigh",
+          "max": null
+        },
+        "input": [
+          "text",
+          "image"
+        ],
+        "cost": {
+          "input": 0.075,
+          "output": 0.5,
+          "cacheRead": 0,
+          "cacheWrite": 0
+        },
+        "contextWindow": 262144,
+        "maxTokens": 32768,
+        "compat": {
+          "supportsDeveloperRole": false,
+          "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
+          "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -9503,6 +11627,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -9527,6 +11652,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -9551,6 +11677,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -9575,6 +11702,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -9599,6 +11727,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -9623,6 +11752,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -9647,6 +11777,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -9674,6 +11805,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -9698,6 +11830,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -9722,6 +11855,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -9749,6 +11883,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -9773,6 +11908,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -9797,6 +11933,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -9821,6 +11958,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -9845,6 +11983,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -9869,6 +12008,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -9893,6 +12033,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -9917,6 +12058,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -9941,6 +12083,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -9965,6 +12108,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -9989,6 +12133,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -10016,6 +12161,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -10041,7 +12187,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -10069,7 +12226,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -10094,7 +12262,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -10122,7 +12301,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -10147,7 +12337,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -10172,7 +12373,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -10200,7 +12412,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -10225,7 +12448,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -10250,7 +12484,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -10265,17 +12510,28 @@
           "image"
         ],
         "cost": {
-          "input": 0.1625,
-          "output": 1.3,
-          "cacheRead": 0,
+          "input": 0.3125,
+          "output": 1.25,
+          "cacheRead": 0.15625,
           "cacheWrite": 0
         },
-        "contextWindow": 262144,
-        "maxTokens": 65536,
+        "contextWindow": 256000,
+        "maxTokens": 16384,
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -10300,7 +12556,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -10320,12 +12587,23 @@
           "cacheRead": 0,
           "cacheWrite": 0
         },
-        "contextWindow": 262144,
-        "maxTokens": 235929,
+        "contextWindow": 256000,
+        "maxTokens": 32768,
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -10350,7 +12628,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -10375,7 +12664,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -10400,7 +12700,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -10425,7 +12736,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -10450,7 +12772,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -10465,8 +12798,8 @@
           "image"
         ],
         "cost": {
-          "input": 0.1,
-          "output": 0.9,
+          "input": 0.15,
+          "output": 1,
           "cacheRead": 0.05,
           "cacheWrite": 0
         },
@@ -10475,7 +12808,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -10500,7 +12844,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -10524,6 +12879,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -10549,7 +12905,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -10574,7 +12941,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -10598,6 +12976,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -10623,7 +13002,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -10656,6 +13046,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -10689,6 +13080,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -10713,9 +13105,9 @@
           "image"
         ],
         "cost": {
-          "input": 0.214,
-          "output": 2.55,
-          "cacheRead": 0.15,
+          "input": 0.2,
+          "output": 2.5,
+          "cacheRead": 0.05,
           "cacheWrite": 0
         },
         "contextWindow": 262144,
@@ -10723,7 +13115,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -10757,7 +13160,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -10782,7 +13196,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -10816,7 +13241,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -10841,7 +13277,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -10865,6 +13312,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -10899,7 +13347,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -10933,7 +13392,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -10967,7 +13437,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -11001,7 +13482,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -11025,6 +13517,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -11052,6 +13545,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -11086,7 +13580,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -11119,6 +13624,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -11152,6 +13658,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -11185,6 +13692,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -11219,7 +13727,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -11253,7 +13772,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -11287,7 +13817,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -11321,7 +13862,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -11355,7 +13907,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -11380,7 +13943,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -11390,6 +13964,15 @@
         "baseUrl": "https://openrouter.ai/api/v1",
         "provider": "openrouter",
         "reasoning": true,
+        "thinkingLevelMap": {
+          "off": "none",
+          "minimal": "minimal",
+          "low": "low",
+          "medium": "medium",
+          "high": "high",
+          "xhigh": null,
+          "max": null
+        },
         "input": [
           "text"
         ],
@@ -11404,6 +13987,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -11414,6 +13998,15 @@
         "baseUrl": "https://openrouter.ai/api/v1",
         "provider": "openrouter",
         "reasoning": true,
+        "thinkingLevelMap": {
+          "off": "none",
+          "minimal": "minimal",
+          "low": "low",
+          "medium": "medium",
+          "high": "high",
+          "xhigh": "xhigh",
+          "max": "max"
+        },
         "input": [
           "text"
         ],
@@ -11428,6 +14021,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -11453,7 +14047,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -11487,7 +14092,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -11521,7 +14137,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -11555,7 +14182,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -11589,7 +14227,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -11617,7 +14266,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -11642,7 +14302,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -11666,6 +14337,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -11690,6 +14362,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -11714,6 +14387,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -11739,7 +14413,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -11763,6 +14448,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -11788,7 +14474,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -11812,6 +14509,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -11836,6 +14534,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -11860,6 +14559,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -11884,6 +14584,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -11908,6 +14609,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -11931,16 +14633,17 @@
           "text"
         ],
         "cost": {
-          "input": 0.5625,
-          "output": 1.8,
-          "cacheRead": 0.105,
+          "input": 0.6496,
+          "output": 2.0416,
+          "cacheRead": 0.12064,
           "cacheWrite": 0
         },
         "contextWindow": 1048576,
-        "maxTokens": 163840,
+        "maxTokens": 131072,
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -11974,6 +14677,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -11997,16 +14701,17 @@
           "text"
         ],
         "cost": {
-          "input": 1.4,
-          "output": 4.4,
-          "cacheRead": 0.26,
+          "input": 0.91,
+          "output": 2.86,
+          "cacheRead": 0.169,
           "cacheWrite": 0
         },
-        "contextWindow": 1048575,
-        "maxTokens": 943717,
+        "contextWindow": 1048576,
+        "maxTokens": 131072,
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -12041,7 +14746,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -12075,7 +14791,63 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
+        }
+      },
+      {
+        "id": "z-ai/glm-5.3-flashx",
+        "name": "Z.ai: GLM 5.3 FlashX",
+        "api": "openai-completions",
+        "baseUrl": "https://openrouter.ai/api/v1",
+        "provider": "openrouter",
+        "reasoning": true,
+        "thinkingLevelMap": {
+          "off": null,
+          "minimal": null,
+          "low": "low",
+          "medium": null,
+          "high": "high",
+          "xhigh": null,
+          "max": "max"
+        },
+        "input": [
+          "text",
+          "image"
+        ],
+        "cost": {
+          "input": 0.37,
+          "output": 1.25,
+          "cacheRead": 0.075,
+          "cacheWrite": 0
+        },
+        "contextWindow": 1048576,
+        "maxTokens": 131072,
+        "compat": {
+          "supportsDeveloperRole": false,
+          "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
+          "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -12108,6 +14880,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -12133,7 +14906,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -12167,8 +14951,19 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "cacheControlFormat": "anthropic",
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -12193,8 +14988,19 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "cacheControlFormat": "anthropic",
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -12228,8 +15034,19 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "cacheControlFormat": "anthropic",
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -12263,8 +15080,19 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "cacheControlFormat": "anthropic",
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -12288,9 +15116,9 @@
           "image"
         ],
         "cost": {
-          "input": 0.15,
-          "output": 0.6,
-          "cacheRead": 0.015,
+          "input": 0.12,
+          "output": 0.48,
+          "cacheRead": 0.0036,
           "cacheWrite": 0
         },
         "contextWindow": 1048576,
@@ -12298,7 +15126,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -12331,6 +15170,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       },
@@ -12354,9 +15194,9 @@
           "text"
         ],
         "cost": {
-          "input": 0.0558,
-          "output": 0.1767,
-          "cacheRead": 0.0088,
+          "input": 0.04,
+          "output": 0.16,
+          "cacheRead": 0.016,
           "cacheWrite": 0
         },
         "contextWindow": 1048576,
@@ -12364,6 +15204,7 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true,
           "requiresReasoningContentOnAssistantMessages": true
         }
@@ -12399,7 +15240,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -12433,7 +15285,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -12457,9 +15320,9 @@
           "image"
         ],
         "cost": {
-          "input": 2.1,
-          "output": 10.95,
-          "cacheRead": 0.23,
+          "input": 1.7,
+          "output": 8.5,
+          "cacheRead": 0.17,
           "cacheWrite": 0
         },
         "contextWindow": 1048576,
@@ -12467,7 +15330,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -12501,7 +15375,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -12535,7 +15420,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -12569,7 +15465,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -12603,7 +15510,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -12637,7 +15555,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -12671,7 +15600,18 @@
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -12701,11 +15641,22 @@
           "cacheWrite": 0
         },
         "contextWindow": 1048576,
-        "maxTokens": 131072,
+        "maxTokens": 943718,
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         }
       },
       {
@@ -12728,22 +15679,23 @@
           "text"
         ],
         "cost": {
-          "input": 0.8775,
-          "output": 2.97,
-          "cacheRead": 0.1755,
+          "input": 0.7735,
+          "output": 2.431,
+          "cacheRead": 0.127075,
           "cacheWrite": 0
         },
-        "contextWindow": 262144,
-        "maxTokens": 235929,
+        "contextWindow": 1048576,
+        "maxTokens": 943718,
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
+          "supportsStrictMode": true,
           "sendSessionAffinityHeaders": true
         }
       }
     ],
-    "checkedAt": 1789922267119,
-    "lastModified": 1789728268000,
-    "etag": "W/\"1b69bc47167e7e7bf7db18f9c7bf2a9e\""
+    "checkedAt": 1790000858965,
+    "lastModified": 1789986592000,
+    "etag": "W/\"eb4b2f5a281542278de08c1f866700ac\""
   }
 }
