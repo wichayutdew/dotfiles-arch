@@ -45,6 +45,7 @@ PACKAGES=(
   # GUI Apps
   ghostty
   spotify
+	discord
   onlyoffice-bin
   zen-browser-bin
 	obsidian-bin
@@ -79,7 +80,7 @@ PACKAGES=(
   neovim
   ripgrep
   starship
-  herdr
+  herdr-bin
   zoxide
 	docker
 	docker-compose
