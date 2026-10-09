@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "0.86.1",
+  "lastChangelogVersion": "0.87.1",
   "defaultProvider": "openrouter",
   "defaultModel": "thinkingmachines/inkling:free",
   "defaultThinkingLevel": "medium",
