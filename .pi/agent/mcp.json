@@ -1,0 +1,26 @@
+{
+  "mcpServers": {
+    "context7": {
+      "url": "https://mcp.context7.com/mcp",
+      "headers": {
+        "CONTEXT7_API_KEY": "${CONTEXT7_API_KEY}"
+      },
+      "directTools": [
+        "resolve-library-id",
+        "query-docs"
+      ]
+    },
+    "gh_grep": {
+      "url": "https://mcp.grep.app",
+      "directTools": [
+        "searchGitHub"
+      ]
+    },
+		"github": {
+      "url": "https://api.githubcopilot.com/mcp/",
+      "headers": {
+        "Authorization": "!token=$(/bin/sh -c '/usr/sbin/gh auth token') || exit $?; case \"$token\" in *[![:space:]]*) ;; *) exit 1 ;; esac; printf 'Bearer %s' \"$token\""
+      }
+    }
+  }
+}
