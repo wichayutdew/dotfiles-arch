@@ -6,9 +6,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/JuliusBrussee/caveman.git",
       "skillPath": "skills/caveman/SKILL.md",
-      "skillFolderHash": "2d9a159619205a175577d6540b1ed64fd73d83b1",
+      "skillFolderHash": "b314dd99b2b8723aae2de5a22079914567f2e58f",
       "installedAt": "2026-08-21T18:31:12.191Z",
-      "updatedAt": "2026-09-21T14:32:18.624Z"
+      "updatedAt": "2026-10-09T15:01:57.706Z"
     },
     "brainstorming": {
       "source": "obra/superpowers",
@@ -123,9 +123,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/obra/superpowers.git",
       "skillPath": "skills/writing-plans/SKILL.md",
-      "skillFolderHash": "bcaac5df52c27d16685a35932c17a1c418d8ce98",
+      "skillFolderHash": "cc97fa00eb2ccd4f283e34eb2ba06a48e1e679f7",
       "installedAt": "2026-08-21T18:33:12.340Z",
-      "updatedAt": "2026-09-21T14:32:45.740Z"
+      "updatedAt": "2026-10-09T15:02:05.721Z"
     },
     "writing-skills": {
       "source": "obra/superpowers",
@@ -141,18 +141,18 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/dietrichgebert/ponytail.git",
       "skillPath": "skills/ponytail-review/SKILL.md",
-      "skillFolderHash": "dc6d9660c4297496a9220de377f6f7df38ab1a53",
+      "skillFolderHash": "8ad8430c42a6f8cd18758dddb70cfee399725de6",
       "installedAt": "2026-08-21T18:43:58.266Z",
-      "updatedAt": "2026-08-21T18:43:58.266Z"
+      "updatedAt": "2026-10-09T15:02:11.451Z"
     },
     "ponytail-audit": {
       "source": "dietrichgebert/ponytail",
       "sourceType": "github",
       "sourceUrl": "https://github.com/dietrichgebert/ponytail.git",
       "skillPath": "skills/ponytail-audit/SKILL.md",
-      "skillFolderHash": "19744a9490abb0f5d0f18c6e39e3a3eb50f4daa1",
+      "skillFolderHash": "0c1468092a2b011b7acd369becea098f0c17f1c0",
       "installedAt": "2026-08-21T18:43:58.283Z",
-      "updatedAt": "2026-08-21T18:43:58.283Z"
+      "updatedAt": "2026-10-09T15:02:15.668Z"
     },
     "caveman-commit": {
       "source": "JuliusBrussee/caveman",
@@ -168,9 +168,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/JuliusBrussee/caveman.git",
       "skillPath": "skills/caveman-compress/SKILL.md",
-      "skillFolderHash": "21aa5ecc4fdf9667604102c6ec723030ec4f4b9c",
+      "skillFolderHash": "8bfde0c338b80b7a30c6b267ccdeb6fe9dc96a35",
       "installedAt": "2026-08-21T18:45:39.190Z",
-      "updatedAt": "2026-09-21T14:32:26.363Z"
+      "updatedAt": "2026-10-09T15:02:03.487Z"
     },
     "caveman-review": {
       "source": "JuliusBrussee/caveman",
