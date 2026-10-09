@@ -1,13 +1,11 @@
 {
-  "lastChangelogVersion": "0.87.1",
+  "lastChangelogVersion": "1.1.0",
   "defaultProvider": "openrouter",
   "defaultModel": "thinkingmachines/inkling:free",
   "defaultThinkingLevel": "medium",
   "shellPath": "/usr/sbin/fish",
   "packages": [
-    "npm:pi-zentui",
     "npm:@plannotator/pi-extension",
-    "npm:pi-mcp-adapter",
     "npm:pi-web-access"
   ],
   "terminal": {
@@ -28,7 +26,17 @@
   "transport": "auto",
   "quietStartup": false,
   "outputPad": 1,
-  "theme": "light/dark",
+  "theme": "system",
   "fullscreenExitOutput": "transcript",
-  "fullscreenScrollbar": "auto"
+  "fullscreenScrollbar": "auto",
+  "extensions": [],
+  "showHardwareCursor": false,
+  "markdown": {
+    "mermaid": "streaming"
+  },
+  "warnings": {
+    "anthropicExtraUsage": true
+  },
+  "tuiMode": "fullscreen",
+  "fullscreenWheelScrollLines": "auto"
 }
