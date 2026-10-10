@@ -5,30 +5,24 @@ description: Resolve PR or merge-request review comments through evidence collec
 
 # MR Comment
 
-## Portable execution contract
+## Workflow direction
 
-Treat the text that invoked this skill as the authoritative review-comment request. Derive the hosted-review URL, repository, branch, and unresolved-discussion context from that request and the active workspace. Do not require workflow template variables, a restart workspace, a session ID, or a state-file path.
+Treat the text that invoked this skill as the authoritative review-comment request. Derive the hosted-review URL, repository, branch, and unresolved-discussion context from that request and the active workspace.
 
-When running in Pi inside Herdr (`HERDR_ENV=1`), run the bundled adapter from this skill directory after confirming `pi` and `herdr` are available:
+Execute the linked stages sequentially. Carry the complete invoking request and prior stage artifacts forward; do not replace source evidence with a summary. Follow the declared outcome route after each stage.
 
-```sh
-python3 scripts/run-pi.py --stage <stage> --request "<natural-language request>" [--previous-handoff <path>]
-```
-
-Do not execute the stage prompts inline in that environment. For exactly one stage selected by the main agent, the adapter opens a fresh, unfocused Herd pane with an interactive Pi child. That child writes its temporary JSON handoff through the supplied completion tool, exits, and the adapter closes the child pane before returning the validated handoff to the main agent.
-
-If Pi or Herd is unavailable, use a fresh subagent when the harness supports subagents. Give that subagent only the invoking request, the prior stage artifact, and the linked stage prompt; do not give it or rely on parent conversational context. The parent retains only the resulting artifact and declared outcome before starting the next fresh subagent. If no subagent capability exists, execute the stage in the main agent pane. Carry prior artifacts there, ask one focused question only when a required business fact, access grant, or authority cannot be discovered, and stop for explicit human approval at an approval gate. A compatible harness may use equivalent authenticated tools; otherwise report that dependency as blocked.
+Use the model and thinking level specified for each stage. Model selection does not approve a plan or authorize publication. Ask one focused question only when a required business fact, access grant, or authority cannot be discovered. Stop for explicit human approval at an approval gate.
 
 ## Stages
 
-| Stage | Prompt | Pi role / model | Outcomes |
-| --- | --- | --- | --- |
-| fetch | [fetch.md](fetch.md) | scout — `gateway/gemini-3.8-flash`, low | `ready` → checkout-source; `blocked` → pause; `handoff` → fetch |
-| checkout-source | [checkout-source.md](checkout-source.md) | scout — `gateway/gemini-3.8-flash`, low | `ready` → plan; `gaps` → fetch; `blocked` → pause; `handoff` → checkout-source |
-| plan | [plan.md](plan.md) | planner — `gateway/gpt-5.6-terra`, high | `ready` → implement; `gaps` → fetch; `blocked` → pause; `handoff` → plan |
-| implement | [implement.md](implement.md) | worker — `gateway/kimi-k2.7-code`, high | `ready` → verify; `blocked` → pause; `handoff` → implement |
-| verify | [verify.md](verify.md) | reviewer — `gateway/grok-4.6`, high | `ready` → deliver; `gaps` → implement; `blocked` → pause; `handoff` → verify |
-| deliver | [publish.md](publish.md) | scout — `gateway/gemini-3.8-flash`, low | `ready` → done; `gaps` → implement; `blocked` → pause; `handoff` → deliver |
+| Stage | Prompt | Model | Thinking | Outcomes |
+| --- | --- | --- | --- | --- |
+| fetch | [fetch.md](fetch.md) | `nvidia/nemotron-3.5-lightning:free` | low | `ready` → checkout-source; `blocked` → pause; `handoff` → fetch |
+| checkout-source | [checkout-source.md](checkout-source.md) | `nvidia/nemotron-3.5-lightning:free` | low | `ready` → plan; `gaps` → fetch; `blocked` → pause; `handoff` → checkout-source |
+| plan | [plan.md](plan.md) | `nvidia/nemotron-3-ultra-550b-a55b:free` | high | `ready` → implement; `gaps` → fetch; `blocked` → pause; `handoff` → plan |
+| implement | [implement.md](implement.md) | `poolside/laguna-s-2.1:free` | high | `ready` → verify; `blocked` → pause; `handoff` → implement |
+| verify | [verify.md](verify.md) | `cohere/north-mini-code:free` | high | `ready` → deliver; `gaps` → implement; `blocked` → pause; `handoff` → verify |
+| deliver | [publish.md](publish.md) | `nvidia/nemotron-3.5-lightning:free` | low | `ready` → done; `gaps` → implement; `blocked` → pause; `handoff` → deliver |
 
 ## Comment-plan approval gate
 
@@ -39,8 +33,4 @@ Before `plan` can continue with `ready`, obtain explicit approval for an artifac
 - `Validation`
 - `Execution appendix (machine-readable)`
 
-When Plannotator is available, submit the complete artifact to Plannotator and wait for its approval before continuing. Otherwise, stop in the conversation for explicit human approval rather than claiming an extension validates it.
-
-## Pi adapter
-
-For one fresh interactive Pi process with the table's model and thinking preferences, run `python3 scripts/run-pi.py --stage <stage> --request "<natural-language request>" [--previous-handoff <path>]`. The adapter launches only that stage in a background horizontal Herd split, waits for the child to persist and signal its handoff, then closes that exact child pane without closing the caller pane. It prints the validated handoff path and contents; the invoking main agent alone reads that result and decides the next stage, retry, block, or approval gate. If Pi or Herd is unavailable, execute the documented stage in the active session instead.
+Obtain explicit human approval of the complete artifact before continuing.

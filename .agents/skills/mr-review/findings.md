@@ -1,12 +1,6 @@
 # Stage: review
 
-## Pi profile
-
-- Role: `reviewer`
-- Model: `gateway/grok-4.6`
-- Thinking: `high`
-
-The Pi adapter supplies the invoking request and previous stage artifact automatically. In a portable session, use the active conversation request and prior artifacts.
+Use the invoking request and complete prior stage artifacts from the active conversation or their existing evidence files.
 
 ---
 

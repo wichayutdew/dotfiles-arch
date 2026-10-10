@@ -15,9 +15,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/obra/superpowers.git",
       "skillPath": "skills/brainstorming/SKILL.md",
-      "skillFolderHash": "03d4c6657cd20ba0fce9d270fc688150bd191c3b",
+      "skillFolderHash": "abe5c2fed8c215d4b86b77be1d8a7d0b0562651c",
       "installedAt": "2026-08-21T18:33:12.269Z",
-      "updatedAt": "2026-09-21T14:32:30.711Z"
+      "updatedAt": "2026-10-10T09:14:37.679Z"
     },
     "dispatching-parallel-agents": {
       "source": "obra/superpowers",
@@ -33,9 +33,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/obra/superpowers.git",
       "skillPath": "skills/executing-plans/SKILL.md",
-      "skillFolderHash": "899ffeab92be3de6cd9ed0078b32737b18b8c135",
+      "skillFolderHash": "ef38c6c33e88e4248018dab6f03fc1ceda916ba0",
       "installedAt": "2026-08-21T18:33:12.280Z",
-      "updatedAt": "2026-09-21T14:32:32.523Z"
+      "updatedAt": "2026-10-10T09:14:40.477Z"
     },
     "finishing-a-development-branch": {
       "source": "obra/superpowers",
@@ -60,27 +60,27 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/obra/superpowers.git",
       "skillPath": "skills/requesting-code-review/SKILL.md",
-      "skillFolderHash": "5fcdadfccd8c90987a11969d2f8c844820fee6e1",
+      "skillFolderHash": "f4a6749898702895ea4fd57c7f186cf43205b99a",
       "installedAt": "2026-08-21T18:33:12.296Z",
-      "updatedAt": "2026-09-21T14:32:34.375Z"
+      "updatedAt": "2026-10-10T09:14:43.011Z"
     },
     "subagent-driven-development": {
       "source": "obra/superpowers",
       "sourceType": "github",
       "sourceUrl": "https://github.com/obra/superpowers.git",
       "skillPath": "skills/subagent-driven-development/SKILL.md",
-      "skillFolderHash": "5d44ced88725298e847c62c67a726dcc29e20d00",
+      "skillFolderHash": "a9ec528b252e536a404fd0522e32cec31094d669",
       "installedAt": "2026-08-21T18:33:12.301Z",
-      "updatedAt": "2026-09-21T14:32:36.453Z"
+      "updatedAt": "2026-10-10T09:14:45.432Z"
     },
     "systematic-debugging": {
       "source": "obra/superpowers",
       "sourceType": "github",
       "sourceUrl": "https://github.com/obra/superpowers.git",
       "skillPath": "skills/systematic-debugging/SKILL.md",
-      "skillFolderHash": "9a48dfda84bf339cba4b03fd803ba0dca2e158e3",
+      "skillFolderHash": "108961c080a6837ad8a188a553e593cc5e6df62d",
       "installedAt": "2026-08-21T18:33:12.307Z",
-      "updatedAt": "2026-09-21T14:32:38.918Z"
+      "updatedAt": "2026-10-10T09:14:48.186Z"
     },
     "test-driven-development": {
       "source": "obra/superpowers",
@@ -186,36 +186,36 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/wichayutdew/workflow-skills.git",
       "skillPath": "skills/investigate/SKILL.md",
-      "skillFolderHash": "813b943eacc520199e2e77750f45789c6ec51bf3",
+      "skillFolderHash": "10f3c3126ebbe59802cf5f8ad3ae336be8e9c1dc",
       "installedAt": "2026-09-21T14:34:03.974Z",
-      "updatedAt": "2026-09-21T14:34:03.974Z"
+      "updatedAt": "2026-10-10T09:40:07.595Z"
     },
     "mr-comment": {
       "source": "wichayutdew/workflow-skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/wichayutdew/workflow-skills.git",
       "skillPath": "skills/mr-comment/SKILL.md",
-      "skillFolderHash": "1160eaa4e0c471c6316613a62342908470066e90",
+      "skillFolderHash": "d1f7e2f2d04c2272c063d9162df275b84661a6ab",
       "installedAt": "2026-09-21T14:34:03.976Z",
-      "updatedAt": "2026-09-21T14:34:03.976Z"
+      "updatedAt": "2026-10-10T09:40:09.344Z"
     },
     "mr-review": {
       "source": "wichayutdew/workflow-skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/wichayutdew/workflow-skills.git",
       "skillPath": "skills/mr-review/SKILL.md",
-      "skillFolderHash": "e1fbc7893c99d070d2a7c412c219531d8475b4e2",
+      "skillFolderHash": "2ab24a9dce71a2ba4c30925bb6d3b197fc36fe01",
       "installedAt": "2026-09-21T14:34:03.976Z",
-      "updatedAt": "2026-09-21T14:34:03.976Z"
+      "updatedAt": "2026-10-10T09:40:11.174Z"
     },
     "work": {
       "source": "wichayutdew/workflow-skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/wichayutdew/workflow-skills.git",
       "skillPath": "skills/work/SKILL.md",
-      "skillFolderHash": "97baa7ad947df1c7f726db55659b58448ee0712e",
+      "skillFolderHash": "b1d29db6279dc690376a102b9e0eabc40d9ee740",
       "installedAt": "2026-09-21T14:34:03.976Z",
-      "updatedAt": "2026-09-21T14:34:03.976Z"
+      "updatedAt": "2026-10-10T09:40:13.060Z"
     }
   },
   "dismissed": {
