@@ -19,6 +19,7 @@
 /.config/zen
 /.config/obs-studio
 /.config/Postman
+/.config/herdr/session-snapshots
 
 # except these directories
 !/.config
