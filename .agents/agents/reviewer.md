@@ -1,5 +1,5 @@
 ---
-model: opencode/big-pickle
+model: openrouter/cohere/north-mini-code:free
 thinking: high
 ---
 

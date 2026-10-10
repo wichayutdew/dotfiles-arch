@@ -1,5 +1,5 @@
 ---
-model: opencode/big-pickle
+model: openrouter/nvidia/nemotron-3-ultra-550b-a55b:free
 thinking: high
 ---
 

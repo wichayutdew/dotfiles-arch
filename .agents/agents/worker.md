@@ -1,5 +1,5 @@
 ---
-model: opencode/big-pickle
+model: openrouter/poolside/laguna-s-2.1:free
 thinking: high
 ---
 

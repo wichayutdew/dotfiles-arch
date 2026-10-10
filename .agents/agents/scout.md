@@ -1,5 +1,5 @@
 ---
-model: opencode/big-pickle
+model: openrouter/nvidia/nemotron-3.5-lightning:free
 thinking: low
 ---
 
