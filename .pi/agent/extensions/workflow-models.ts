@@ -53,7 +53,7 @@ export default function (pi: ExtensionAPI) {
     async route(_request, ctx) {
       // Read the active branch, not process-global state or a possibly compacted transcript.
       const state = activeState(ctx);
-      if (!state) throw new Error("Select a physical model with workflow_set_model before using act-mkt/workflow.");
+      if (!state) throw new Error("Select a physical model with workflow_set_model before using subagent/workflow.");
       const model = await physicalModel(ctx, state.target.provider, state.target.id);
       return { model, thinkingLevel: state.target.thinking };
     },
