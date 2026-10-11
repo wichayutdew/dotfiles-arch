@@ -1,3 +1,59 @@
 {
-	"providers": {}
+  "providers": {
+    "openrouter": {
+      "name": "OpenRouter",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "authType": "bearer",
+      "models": [
+        {
+          "id": "poolside/laguna-s-2.1:free",
+          "name": "Poolside Laguna 2.1",
+          "api": "openai-completions",
+          "contextWindow": 100000,
+          "maxTokens": 32000,
+          "thinkingLevelMap": {
+            "low": "low",
+            "medium": "medium",
+            "high": "high"
+          }
+        },
+        {
+          "id": "cohere/north-mini-code:free",
+          "name": "Cohere North Mini Code",
+          "api": "openai-completions",
+          "contextWindow": 100000,
+          "maxTokens": 16000,
+          "thinkingLevelMap": {
+            "low": "low",
+            "medium": "medium",
+            "high": "high"
+          }
+        },
+        {
+          "id": "nvidia/nemotron-3.5-lightning:free",
+          "name": "NVIDIA Nemotron 3.5 Lightning",
+          "api": "openai-completions",
+          "contextWindow": 128000,
+          "maxTokens": 32000,
+          "thinkingLevelMap": {
+            "low": "low",
+            "medium": "medium",
+            "high": "high"
+          }
+        },
+        {
+          "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
+          "name": "NVIDIA Nemotron 3 Ultra 550B",
+          "api": "openai-completions",
+          "contextWindow": 1000000,
+          "maxTokens": 128000,
+          "thinkingLevelMap": {
+            "low": "low",
+            "medium": "medium",
+            "high": "high"
+          }
+        }
+      ]
+    }
+  }
 }
