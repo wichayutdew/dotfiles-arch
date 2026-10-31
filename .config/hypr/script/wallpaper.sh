@@ -11,10 +11,16 @@ get_scheme() {
 apply_wallpaper() {
     local scheme
     scheme=$(get_scheme)
+    # Preload both wallpapers (hyprpaper requires preload before setting)
+    hyprctl hyprpaper preload "$WALLPAPER_NORMAL" >/dev/null 2>&1
+    hyprctl hyprpaper preload "$WALLPAPER_DIM" >/dev/null 2>&1
+    # Get primary monitor
+    local monitor
+    monitor=$(hyprctl monitors -j | jq -r '.[0].name')
     if [[ "$scheme" == *"dark"* ]]; then
-        hyprctl hyprpaper wallpaper ",$WALLPAPER_DIM"
+        hyprctl hyprpaper wallpaper "$monitor,$WALLPAPER_DIM"
     else
-        hyprctl hyprpaper wallpaper ",$WALLPAPER_NORMAL"
+        hyprctl hyprpaper wallpaper "$monitor,$WALLPAPER_NORMAL"
     fi
 }
 
