@@ -24,6 +24,7 @@ alias cfg 'nvim ~/.config/fish/config.fish'
 alias so 'source ~/.config/fish/config.fish'
 alias cl 'clear'
 alias update-mirrorlist "sudo reflector --country TH,SG,JP,TW --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist"
+alias wt 'cd ~/repositories/worktrees'
 
 # ---- SHORT_HAND_ALIASES ----
 alias v 'nvim'
